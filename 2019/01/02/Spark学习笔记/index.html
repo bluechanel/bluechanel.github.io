@@ -103,20 +103,28 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Jon&#39;s blog">
-<meta property="og:url" content="http://bluechanel.github.io/archives/2019/index.html">
+  <meta name="description" content="###Spark学习笔记 Spark和MapReduce相比，有什么优势 Spark基于内存计算，运算速度快，延迟低 基于内存计算，天生具有迭代运算优势，并且可以实现交互式分析 算子多，更灵活，MapReduce只有map,reduce,shuffle三种 可用于机器学习，数据挖掘，Spark含有机器学习的模块ETL 容灾性更好，Spark在yarn的基础上增加了血统机制和检查点机制 可用于图计算">
+<meta name="keywords" content="Big data">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spark学习笔记">
+<meta property="og:url" content="http://bluechanel.github.io/2019/01/02/Spark学习笔记/index.html">
 <meta property="og:site_name" content="Jon&#39;s blog">
+<meta property="og:description" content="###Spark学习笔记 Spark和MapReduce相比，有什么优势 Spark基于内存计算，运算速度快，延迟低 基于内存计算，天生具有迭代运算优势，并且可以实现交互式分析 算子多，更灵活，MapReduce只有map,reduce,shuffle三种 可用于机器学习，数据挖掘，Spark含有机器学习的模块ETL 容灾性更好，Spark在yarn的基础上增加了血统机制和检查点机制 可用于图计算">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/0067Dsmmly1fze7dvzh3sj30nm0dnq6s.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/0067Dsmmly1fzee00696yj30dg0antbo.jpg">
+<meta property="og:updated_time" content="2019-02-25T05:28:35.971Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Jon&#39;s blog">
+<meta name="twitter:title" content="Spark学习笔记">
+<meta name="twitter:description" content="###Spark学习笔记 Spark和MapReduce相比，有什么优势 Spark基于内存计算，运算速度快，延迟低 基于内存计算，天生具有迭代运算优势，并且可以实现交互式分析 算子多，更灵活，MapReduce只有map,reduce,shuffle三种 可用于机器学习，数据挖掘，Spark含有机器学习的模块ETL 容灾性更好，Spark在yarn的基础上增加了血统机制和检查点机制 可用于图计算">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/0067Dsmmly1fze7dvzh3sj30nm0dnq6s.jpg">
 
 
 
 
 
 
-  <link rel="canonical" href="http://bluechanel.github.io/archives/2019/">
+  <link rel="canonical" href="http://bluechanel.github.io/2019/01/02/Spark学习笔记/">
 
 
 
@@ -126,7 +134,7 @@
   };
 </script>
 
-  <title>归档 | Jon's blog</title>
+  <title>Spark学习笔记 | Jon's blog</title>
   
 
 
@@ -174,7 +182,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -246,7 +254,7 @@
         
         
           
-          <li class="menu-item menu-item-archives menu-item-active">
+          <li class="menu-item menu-item-archives">
 
     
     
@@ -275,22 +283,6 @@
 
   
     
-
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
 
   
 
@@ -337,218 +329,343 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://bluechanel.github.io/2019/01/02/Spark学习笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jon Zhang">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jon's blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">Spark学习笔记
+
+              
+            
+          </h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-01-02 15:59:44" itemprop="dateCreated datePublished" datetime="2019-01-02T15:59:44+08:00">2019-01-02</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-02-25 13:28:35" itemprop="dateModified" datetime="2019-02-25T13:28:35+08:00">2019-02-25</time>
+              
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 10 篇日志。 继续努力。
-      </span>
-      
 
-      
-
-        
-        
-        
-
-        
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
-          </div>
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/01/22/推荐电影-大象席地而坐/" itemprop="url">
             
-              <span itemprop="name">推荐电影 《大象席地而坐》</span>
             
-          </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-01-22T11:46:33+08:00" content="2019-01-22">
-          01-22
-        </time>
-      </div>
+          
+          
 
-    </header>
-  </article>
+          
 
+          
 
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/01/10/Spark-Streaming开发/" itemprop="url">
-            
-              <span itemprop="name">Spark-Streaming开发</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-01-10T19:13:02+08:00" content="2019-01-10">
-          01-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/01/06/Spark-SQL开发/" itemprop="url">
-            
-              <span itemprop="name">Spark-SQL开发</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-01-06T19:12:37+08:00" content="2019-01-06">
-          01-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <p>###Spark学习笔记</p>
+<h3 id="Spark和MapReduce相比，有什么优势"><a href="#Spark和MapReduce相比，有什么优势" class="headerlink" title="Spark和MapReduce相比，有什么优势"></a>Spark和MapReduce相比，有什么优势</h3><ul>
+<li>Spark基于内存计算，运算速度快，延迟低</li>
+<li>基于内存计算，天生具有迭代运算优势，并且可以实现交互式分析</li>
+<li>算子多，更灵活，MapReduce只有map,reduce,shuffle三种</li>
+<li>可用于机器学习，数据挖掘，Spark含有机器学习的模块ETL</li>
+<li>容灾性更好，Spark在yarn的基础上增加了血统机制和检查点机制</li>
+<li>可用于图计算</li>
+</ul>
+<h3 id="Spark宽依赖和窄依赖"><a href="#Spark宽依赖和窄依赖" class="headerlink" title="Spark宽依赖和窄依赖"></a>Spark宽依赖和窄依赖</h3><ul>
+<li>窄依赖指父RDD的每一个分区最多被一个子RDD的分区所用</li>
+<li>宽依赖指子RDD的分区依赖与父RDD的所有分区，是STAGE划分的依据（宽依赖是一个SHUFFLE的过程，类似于洗牌）</li>
+</ul>
+<h3 id="Spark-sql和hive的区别"><a href="#Spark-sql和hive的区别" class="headerlink" title="Spark-sql和hive的区别"></a>Spark-sql和hive的区别</h3><ul>
+<li>SparkSQL是一个用于处理结构化数据的Spark组件，主要用于对结构化数据的类SQL查询</li>
+<li>spark-sql结构上和hive类似，只是底层把MapRedeuce替换为Spark，SparkSQL也把SQL语句转化为RDD的任务，处理数据的速度更快</li>
+</ul>
+<h3 id="Spark-streaming和streaming的区别"><a href="#Spark-streaming和streaming的区别" class="headerlink" title="Spark-streaming和streaming的区别"></a>Spark-streaming和streaming的区别</h3><ul>
+<li>spark-streaming主要通过微批处理的方式来实现类实时数据处理</li>
+<li>streaming是真正的实时在线计算引擎</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">SparkStreaming</th>
+<th style="text-align:center">Streaming</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">事件处理方式</td>
+<td style="text-align:center">事件累积到一定程度时进行处理</td>
+<td style="text-align:center">事件实时处理</td>
+</tr>
+<tr>
+<td style="text-align:center">延时</td>
+<td style="text-align:center">秒级</td>
+<td style="text-align:center">毫秒级</td>
+</tr>
+<tr>
+<td style="text-align:center">吞吐量</td>
+<td style="text-align:center">高</td>
+<td style="text-align:center">较高</td>
+</tr>
+<tr>
+<td style="text-align:center">事务机制</td>
+<td style="text-align:center">支持，不完善</td>
+<td style="text-align:center">支持，完善</td>
+</tr>
+<tr>
+<td style="text-align:center">容错性</td>
+<td style="text-align:center">检查点，血统，很强</td>
+<td style="text-align:center">zookeeper,acker,一般</td>
+</tr>
+<tr>
+<td style="text-align:center">动态调整并行度</td>
+<td style="text-align:center">不支持</td>
+<td style="text-align:center">支持</td>
+</tr>
+<tr>
+<td style="text-align:center">任务执行方式</td>
+<td style="text-align:center">执行逻辑即时启动，运行完收回</td>
+<td style="text-align:center">执行逻辑预选启动，持续存在</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Spark生态圈介绍"><a href="#Spark生态圈介绍" class="headerlink" title="Spark生态圈介绍"></a>Spark生态圈介绍</h3><p><img src="https://ws1.sinaimg.cn/large/0067Dsmmly1fze7dvzh3sj30nm0dnq6s.jpg" alt></p>
+<p>其中SparkCore提供内存计算框架，最大的特点是将计算结果直接放在内存中，提升计算性能。SparkCore拥有DAG执行引擎，支持在内存中进行迭代计算，还提供了丰富的算子，自带了Standalone模式的资源管理器，同时也支持YARN,MESOS的资源管理系统</p>
+<h3 id="Spark的特点"><a href="#Spark的特点" class="headerlink" title="Spark的特点"></a>Spark的特点</h3><ul>
+<li><p>轻</p>
+<ul>
+<li><p>Spark核心代码有三万行</p>
+</li>
+<li><p>scala语言的简洁和丰富的表达力</p>
+</li>
+<li>巧妙的利用了HADOOP和MESOS的基础设施</li>
+</ul>
+</li>
+<li><p>快</p>
+<ul>
+<li><p>spark对小数据集可达到压秒级的延迟</p>
+</li>
+<li><p>对大数据集的迭代机器学习，图计算等</p>
+</li>
+<li><p>内存计算，数据本地性和传输优化</p>
+</li>
+</ul>
+</li>
+<li><p>灵</p>
+<ul>
+<li><p>spark提供了不同层面的灵活性</p>
+</li>
+<li><p>允许扩展新的算子，新的数据源</p>
+</li>
+<li>spark支持内存计算，多迭代批量处理，流处理，图计算</li>
+</ul>
+</li>
+<li><p>巧</p>
+<ul>
+<li><p>巧借现有大数据组件</p>
+</li>
+<li><p>spark与hadoop无缝结合</p>
+</li>
+<li>图计算借用pregel</li>
+</ul>
+</li>
+</ul>
+<h3 id="Spark的工作原理"><a href="#Spark的工作原理" class="headerlink" title="Spark的工作原理"></a>Spark的工作原理</h3><p>Spark是一个基于内存的分布式批处理引擎，可用来进行数据处理，数据挖掘，迭代计算，Spark的任务提交到yarn上去运行，Spark应用运行流程的关键角色包括：</p>
+<ul>
+<li>Client：需求提出方，负责提交需求</li>
+<li>Driver：负责应用的业务逻辑和运行规划（DAG）</li>
+<li>ApplicationMaster：负责应用的资源管理，根据应用需要，向资源管理部门(RM)申请资源</li>
+<li>ResourceManager：资源管理部门，负责整个资源统一调度和分配</li>
+<li>Executor：负责实际计算工作，一个应用会被分拆给多个executor来计算</li>
+<li>Spark中的任务叫Application：spark用户程序没提交一次应用为一个Application，一个APP会启动一个SparkContext，也就是Application的driver，驱动整个Application运行</li>
+<li>Job：一个Application可能包含多个job，每个action算子对应一个job。</li>
+<li>Stage：每个job可能包含多个stage，划分标记为shuffle过程。</li>
+<li>Task：具体执行任务的单位，被发到executor上执行</li>
+</ul>
+<h3 id="核心概念RDD"><a href="#核心概念RDD" class="headerlink" title="核心概念RDD"></a>核心概念RDD</h3><p>RDD：弹性分布式数据集，是一个只读的，可分区的分布式数据集。这个数据集的全部或部分可以缓存在内存，在多次计算中间重用</p>
+<p>RDD文件产生的方式有两种：从hadoop文件系统输入时创建，从父RDD转换得到新的RDD</p>
+<p>RDD的特点：</p>
+<ul>
+<li>失败时自动重建</li>
+<li>可以控制存储级别</li>
+<li>是静态类型的</li>
+</ul>
+<h3 id="spark在yarn上的运行过程"><a href="#spark在yarn上的运行过程" class="headerlink" title="spark在yarn上的运行过程"></a>spark在yarn上的运行过程</h3><p><img src="https://ws1.sinaimg.cn/large/0067Dsmmly1fzee00696yj30dg0antbo.jpg" alt></p>
+<ol>
+<li><p>客户端向ResourceManager（简称RM）提交application</p>
+</li>
+<li><p>RM授受应用并根据集群资源状态决定在某个NodeManager(NM)上</p>
+</li>
+<li><p>NM节点上启动当前应用程序的调度器Driver(applicationMaster–AM)</p>
+</li>
+<li><p>AM节点向RM注册、申请资源，RM收到之后最大化的满足资源分配的请求并发送资源元数据给AM</p>
+</li>
+<li><p>AM收到元数据之后，发指令给具体机器上的NodeManager</p>
+</li>
+<li><p>每一个NodeManager会启动Container，并向AM注册Container</p>
+</li>
+<li><p>AM开始进行任务的调度和计算，直到作业执行完成</p>
+</li>
+</ol>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/01/05/Spark-常用算子/" itemprop="url">
-            
-              <span itemprop="name">Spark-常用算子</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-01-05T19:13:30+08:00" content="2019-01-05">
-          01-05
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/01/02/Spark学习笔记/" itemprop="url">
-            
-              <span itemprop="name">Spark学习笔记</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-01-02T15:59:44+08:00" content="2019-01-02">
-          01-02
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+
+    
+
+    
+    
+    
+	<div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+  
+</div>
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Big-data/" rel="tag"># Big data</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/30/Spark-Core开发/" rel="next" title="Spark-Core开发">
+                <i class="fa fa-chevron-left"></i> Spark-Core开发
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/01/05/Spark-常用算子/" rel="prev" title="Spark-常用算子">
+                Spark-常用算子 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -568,8 +685,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -636,6 +762,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Spark和MapReduce相比，有什么优势"><span class="nav-number">1.</span> <span class="nav-text">Spark和MapReduce相比，有什么优势</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spark宽依赖和窄依赖"><span class="nav-number">2.</span> <span class="nav-text">Spark宽依赖和窄依赖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spark-sql和hive的区别"><span class="nav-number">3.</span> <span class="nav-text">Spark-sql和hive的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spark-streaming和streaming的区别"><span class="nav-number">4.</span> <span class="nav-text">Spark-streaming和streaming的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spark生态圈介绍"><span class="nav-number">5.</span> <span class="nav-text">Spark生态圈介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spark的特点"><span class="nav-number">6.</span> <span class="nav-text">Spark的特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spark的工作原理"><span class="nav-number">7.</span> <span class="nav-text">Spark的工作原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#核心概念RDD"><span class="nav-number">8.</span> <span class="nav-text">核心概念RDD</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#spark在yarn上的运行过程"><span class="nav-number">9.</span> <span class="nav-text">spark在yarn上的运行过程</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -793,6 +936,10 @@
 
 
   
+  <script src="/js/src/scrollspy.js?v=7.0.1"></script>
+<script src="/js/src/post-details.js?v=7.0.1"></script>
+
+
 
   
 
@@ -808,6 +955,8 @@
 
   
 
+
+  
 
 
   

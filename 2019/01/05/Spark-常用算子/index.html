@@ -103,20 +103,49 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Jon&#39;s blog">
-<meta property="og:url" content="http://bluechanel.github.io/archives/2019/index.html">
+  <meta name="description" content="spark常用算子传递局部可序列化的变量和顶级对象中的函数始终是安全的 算子的分类 transformation 变换/转换算子：这种变换并不会触发提交作业，完成作业中间处理过程 transfoemation操作是延迟计算的，也就是说从一个RDD转换成另一个RDD的转换操作不是马上执行，需要等到有action操作的时候才会真正触发运算  value数据类型的transformation算子，这种变">
+<meta name="keywords" content="Big data">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spark-常用算子">
+<meta property="og:url" content="http://bluechanel.github.io/2019/01/05/Spark-常用算子/index.html">
 <meta property="og:site_name" content="Jon&#39;s blog">
+<meta property="og:description" content="spark常用算子传递局部可序列化的变量和顶级对象中的函数始终是安全的 算子的分类 transformation 变换/转换算子：这种变换并不会触发提交作业，完成作业中间处理过程 transfoemation操作是延迟计算的，也就是说从一个RDD转换成另一个RDD的转换操作不是马上执行，需要等到有action操作的时候才会真正触发运算  value数据类型的transformation算子，这种变">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/0067Dsmmly1fzfiqwfuxlj30ac07aaa3.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/0067Dsmmly1fzfirzuh8ij30aw07udga.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/0067Dsmmly1fzfis9uwunj309u077dfx.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/0067Dsmmly1fzfisgg66oj30fn0883zj.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/0067Dsmmly1fzfit5ovhoj30890ci74k.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/0067Dsmmly1fzfitoh37qj30aa0d2ab6.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/0067Dsmmly1fzfiu6apxoj30bs08sdg5.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/0067Dsmmly1fzfiud9w58j30ac07vaa6.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/0067Dsmmly1fzfiuoppakj30bk08bgmi.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/0067Dsmmly1fzfiuyr1klj30gh0duacb.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/0067Dsmmly1fzfiv78eg9j309k07faa5.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/0067Dsmmly1fzfiveo42rj30c1095759.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/0067Dsmmly1fzfiw4eskhj30a3074mx8.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/0067Dsmmly1fzfiwtbgxbj30aj07aweq.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/0067Dsmmly1fzgg7cso1jj30hd0bqjs9.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/0067Dsmmly1fzgg6ruu2vj30ht0afq3e.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/0067Dsmmly1fzgg689exgj30hu0d8myw.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/0067Dsmmly1fzgg5yf2g7j30ga0c1dik.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/0067Dsmmly1fzgg5b9ophj30hm0ct3zw.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/0067Dsmmly1fzgg3rpeskj3095079glp.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/0067Dsmmly1fzfln2c6lpj30ha086q4u.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/0067Dsmmly1fzflno9m03j30h2095q52.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/0067Dsmmly1fzfllu6wy0j30h508976p.jpg">
+<meta property="og:updated_time" content="2019-02-25T04:59:48.759Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Jon&#39;s blog">
+<meta name="twitter:title" content="Spark-常用算子">
+<meta name="twitter:description" content="spark常用算子传递局部可序列化的变量和顶级对象中的函数始终是安全的 算子的分类 transformation 变换/转换算子：这种变换并不会触发提交作业，完成作业中间处理过程 transfoemation操作是延迟计算的，也就是说从一个RDD转换成另一个RDD的转换操作不是马上执行，需要等到有action操作的时候才会真正触发运算  value数据类型的transformation算子，这种变">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/0067Dsmmly1fzfiqwfuxlj30ac07aaa3.jpg">
 
 
 
 
 
 
-  <link rel="canonical" href="http://bluechanel.github.io/archives/2019/">
+  <link rel="canonical" href="http://bluechanel.github.io/2019/01/05/Spark-常用算子/">
 
 
 
@@ -126,7 +155,7 @@
   };
 </script>
 
-  <title>归档 | Jon's blog</title>
+  <title>Spark-常用算子 | Jon's blog</title>
   
 
 
@@ -174,7 +203,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -246,7 +275,7 @@
         
         
           
-          <li class="menu-item menu-item-archives menu-item-active">
+          <li class="menu-item menu-item-archives">
 
     
     
@@ -275,22 +304,6 @@
 
   
     
-
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
 
   
 
@@ -337,218 +350,387 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://bluechanel.github.io/2019/01/05/Spark-常用算子/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jon Zhang">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jon's blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">Spark-常用算子
+
+              
+            
+          </h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-01-05 19:13:30" itemprop="dateCreated datePublished" datetime="2019-01-05T19:13:30+08:00">2019-01-05</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-02-25 12:59:48" itemprop="dateModified" datetime="2019-02-25T12:59:48+08:00">2019-02-25</time>
+              
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 10 篇日志。 继续努力。
-      </span>
-      
 
-      
-
-        
-        
-        
-
-        
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
-          </div>
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/01/22/推荐电影-大象席地而坐/" itemprop="url">
             
-              <span itemprop="name">推荐电影 《大象席地而坐》</span>
             
-          </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-01-22T11:46:33+08:00" content="2019-01-22">
-          01-22
-        </time>
-      </div>
+          
+          
 
-    </header>
-  </article>
+          
 
+          
 
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/01/10/Spark-Streaming开发/" itemprop="url">
-            
-              <span itemprop="name">Spark-Streaming开发</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-01-10T19:13:02+08:00" content="2019-01-10">
-          01-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/01/06/Spark-SQL开发/" itemprop="url">
-            
-              <span itemprop="name">Spark-SQL开发</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-01-06T19:12:37+08:00" content="2019-01-06">
-          01-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <h1 id="spark常用算子"><a href="#spark常用算子" class="headerlink" title="spark常用算子"></a>spark常用算子</h1><p><strong><em>传递局部可序列化的变量和顶级对象中的函数始终是安全的</em></strong></p>
+<h3 id="算子的分类"><a href="#算子的分类" class="headerlink" title="算子的分类"></a>算子的分类</h3><ul>
+<li><p>transformation 变换/转换算子：这种变换并不会触发提交作业，完成作业中间处理过程</p>
+<p>transfoemation操作是延迟计算的，也就是说从一个RDD转换成另一个RDD的转换操作不是马上执行，需要等到有action操作的时候才会真正触发运算</p>
+<ul>
+<li>value数据类型的transformation算子，这种变换并不触发提交作业，针对处理的数据项是value型的数据</li>
+<li>key-value数据类型的transformation算子，这种变换并不触发提交作业，针对处理的数据项是key-value型的数据对</li>
+</ul>
+</li>
+<li><p>action 行动算子：这类算子会触发sparkcontext提交job作业</p>
+<p>action算子会触发spark提交作业，并将数据输出spark系统</p>
+</li>
+</ul>
+<h3 id="算子的详解"><a href="#算子的详解" class="headerlink" title="算子的详解"></a>算子的详解</h3><h4 id="value数据类型的transformation算子"><a href="#value数据类型的transformation算子" class="headerlink" title="value数据类型的transformation算子"></a>value数据类型的transformation算子</h4><ul>
+<li><p>输入分区与输出分区一对一型</p>
+<ol>
+<li><p>map算子</p>
+<p>将原来RDD的每个数据项通过map中用户自定义函数f映射转变为一个新的元素</p>
+<p><img src="https://ws1.sinaimg.cn/large/0067Dsmmly1fzfiqwfuxlj30ac07aaa3.jpg" alt></p>
+</li>
+<li><p>flatMap算子</p>
+<p>将原来RDD的每个元素通过函数f转换为新的元素，并将生成的RDD的每个集合中的元素合并为一个集合</p>
+<p><img src="https://ws1.sinaimg.cn/large/0067Dsmmly1fzfirzuh8ij30aw07udga.jpg" alt></p>
+</li>
+<li><p>mapPartitions算子</p>
+<p>获取到每个分区的迭代器，在函数中通过这个分区整体的迭代器对整个分区的元素进行操作 </p>
+<p><img src="https://ws1.sinaimg.cn/large/0067Dsmmly1fzfis9uwunj309u077dfx.jpg" alt></p>
+</li>
+<li><p>glom算子</p>
+<p>该函数将每个分区形成一个数组</p>
+<p><img src="https://ws1.sinaimg.cn/large/0067Dsmmly1fzfisgg66oj30fn0883zj.jpg" alt></p>
+</li>
+</ol>
+</li>
+<li><p>输入分区与输出分区多对一型</p>
+<ol start="5">
+<li><p>union算子</p>
+<p>使用union函数时需要保证两个RDD元素的数据类型相同，返回的RDD数据类型和被合并的RDD元素数据类型相同，并不进行去重操作，保存所有元素。如果向去重可以使用distinct()</p>
+<p><img src="https://ws1.sinaimg.cn/large/0067Dsmmly1fzfit5ovhoj30890ci74k.jpg" alt></p>
+</li>
+<li><p>intersection算子</p>
+<p>求两个RDD共同的元素的RDD</p>
+</li>
+<li><p>cartesian算子</p>
+<p>对两个RDD内的所有元素进行笛卡尔积操作。</p>
+<p><img src="https://ws1.sinaimg.cn/large/0067Dsmmly1fzfitoh37qj30aa0d2ab6.jpg" alt></p>
+</li>
+</ol>
+</li>
+<li><p>输入分区与输出分区多对多型</p>
+<ol start="7">
+<li><p>groupBy算子</p>
+<p>将key相同的元素分为一组</p>
+<p><img src="https://ws1.sinaimg.cn/large/0067Dsmmly1fzfiu6apxoj30bs08sdg5.jpg" alt></p>
+</li>
+</ol>
+</li>
+<li><p>输出分区为输入分区子集型</p>
+<ol start="8">
+<li><p>filter算子</p>
+<p>对元素进行过滤，对每个元素应用f函数，返回值为true的元素在RDD中保留，返回值为false的元素将被过滤掉</p>
+<p><img src="https://ws1.sinaimg.cn/large/0067Dsmmly1fzfiud9w58j30ac07vaa6.jpg" alt></p>
+</li>
+<li><p>distinct算子</p>
+<p>将RDD中的元素进行去重</p>
+<p><img src="https://ws1.sinaimg.cn/large/0067Dsmmly1fzfiuoppakj30bk08bgmi.jpg" alt></p>
+</li>
+<li><p>subtract算子</p>
+<p>相当与 进行集合的差操作,移除一个RDD中的内容</p>
+<p><img src="https://ws1.sinaimg.cn/large/0067Dsmmly1fzfiuyr1klj30gh0duacb.jpg" alt></p>
+</li>
+<li><p>sample算子</p>
+<p>对RDD内的元素进行采样，可以设定是否有放回的抽样，百分比，随机种子</p>
+<p><img src="https://ws1.sinaimg.cn/large/0067Dsmmly1fzfiv78eg9j309k07faa5.jpg" alt></p>
+</li>
+<li><p>takeSample算子</p>
+<p>按设定的采样个数进行采样，同时返回结果的集合为单机的数组</p>
+<p><img src="https://ws1.sinaimg.cn/large/0067Dsmmly1fzfiveo42rj30c1095759.jpg" alt></p>
+</li>
+</ol>
+</li>
+<li><p>cache型</p>
+<ol start="13">
+<li><p>cache算子</p>
+<p>将RDD元素从磁盘缓存到内存</p>
+<p><img src="https://ws1.sinaimg.cn/large/0067Dsmmly1fzfiw4eskhj30a3074mx8.jpg" alt></p>
+</li>
+<li><p>persist算子</p>
+<p>对RDD进行缓存操作，数据缓存在哪里依据StorageLevel这个枚举类型进行确定</p>
+</li>
+</ol>
+</li>
+</ul>
+<h4 id="key-value数据类型的transformation算子"><a href="#key-value数据类型的transformation算子" class="headerlink" title="key-value数据类型的transformation算子"></a>key-value数据类型的transformation算子</h4><ul>
+<li><p>输入分区与输出分区一对一</p>
+<ol>
+<li><p>mapValues算子</p>
+<p>针对(KEY,VALUE)型数据中的value进行map操作，而不对key进行处理</p>
+<p><img src="https://ws1.sinaimg.cn/large/0067Dsmmly1fzfiwtbgxbj30aj07aweq.jpg" alt></p>
+</li>
+</ol>
+</li>
+<li><p>对单个RDD或两个RDD聚集</p>
+<ol start="2">
+<li><p>combineByKey算子</p>
+<p><img src="https://ws1.sinaimg.cn/large/0067Dsmmly1fzgg7cso1jj30hd0bqjs9.jpg" alt></p>
+</li>
+<li><p>reduceByKey算子</p>
+<p><img src="https://ws1.sinaimg.cn/large/0067Dsmmly1fzgg6ruu2vj30ht0afq3e.jpg" alt></p>
+</li>
+<li><p>partitionBy算子</p>
+<p><img src="https://ws1.sinaimg.cn/large/0067Dsmmly1fzgg689exgj30hu0d8myw.jpg" alt></p>
+</li>
+<li><p>Cogroup算子</p>
+<p>对在两个RDD的keyvalue类型的元素，每个RDD相同key的元素分别聚合为一个集合，并且返回两个RDD中对应key的元素集合的迭代器</p>
+<p><img src="https://ws1.sinaimg.cn/large/0067Dsmmly1fzgg5yf2g7j30ga0c1dik.jpg" alt></p>
+</li>
+</ol>
+</li>
+<li><p>连接</p>
+<ol start="6">
+<li><p>join算子</p>
+<p>join对两个需要连接的RD进行cogroup函数操作，将相同key的数据能够放在一个分区，在cogroup操作之后形成的新RDD对每个key下的元素进行笛卡尔积的操作，返回的结果在展平，对应key下的所有元组形成一个集合</p>
+<p><img src="https://ws1.sinaimg.cn/large/0067Dsmmly1fzgg5b9ophj30hm0ct3zw.jpg" alt></p>
+</li>
+<li><p>leftOutJoin算子和rightOutJoin算子</p>
+<p>左连接和右连接相当于在join的基础上先判断一侧的RDD元素是否为空，如果为空，则填充为空，如果不为空，则将数据进行连接运算，并返回结果</p>
+</li>
+</ol>
+</li>
+</ul>
+<h4 id="Action算子"><a href="#Action算子" class="headerlink" title="Action算子"></a>Action算子</h4><p>本质上在action算子中通过sparkcontext进行了提交作业的runjob操作，触发了RDD DAG的执行</p>
+<ul>
+<li><p>无输出</p>
+<ol>
+<li><p>foreach算子</p>
+<p>对RDD中的每个元素都应用f函数操作，不返回RDD的Array，而是返回unit</p>
+<p><img src="https://ws1.sinaimg.cn/large/0067Dsmmly1fzgg3rpeskj3095079glp.jpg" alt></p>
+</li>
+</ol>
+</li>
+<li><p>hdfs</p>
+<ol start="2">
+<li><p>saveAsTextFile算子</p>
+<p>函数将数据输出，存储到HDFS的指定的目录</p>
+</li>
+<li><p>saveAsObjectFile算子</p>
+<p>将分区中的组成一个Array，然后将这个Array序列化，写入HDFS为SeauenceFile的格式</p>
+</li>
+</ol>
+</li>
+<li><p>scala集合和数据类型</p>
+<ol start="4">
+<li><p>collect算子</p>
+<p>将分布式的RDD返回为一个个单机的scala Array数组</p>
+</li>
+<li><p>collectAsMap算子</p>
+<p>对（K,Y）型的RDD数据返回一个单机HashMap，对重复Key的RDD元素覆盖前面的元素</p>
+</li>
+<li><p>reduceByKeyLocally算子</p>
+<p>对RDD的整体进行reduce操作，然后收集所有结果返回为一个HashMap</p>
+</li>
+<li><p>lookup算子</p>
+<p>Lookup函数对（Key，Value）型的RDD操作，返回指定Key对应的元素形成的Seq。 这个函数处理优化的部分在于，如果这个RDD包含分区器，则只会对应处理K所在的分区，然后返回由（K，V）形成的Seq。 如果RDD不包含分区器，则需要对全RDD元素进行暴力扫描处理，搜索指定K对应的元素。</p>
+</li>
+<li><p>count算子</p>
+<p>返回整个RDD的元素的个数</p>
+</li>
+<li><p>top算子</p>
+<p>返回最大的X个元素</p>
+</li>
+<li><p>take算子</p>
+<p>返回最X个元素</p>
+</li>
+<li><p>reduce算子</p>
+<p>reduceLeft先对两个元素进行reduce函数操作，然后将结果和迭代器取出的下一个元素进行reduce函数操作，直到迭代器遍历完所有元素，得到最后结果。在RDD中，先对每个分区中的所有元素的集合分别进行reduceLeft。 每个分区形成的结果相当于一个元素，再对这个结果集合进行reduceleft操作。 </p>
+<p><img src="https://ws1.sinaimg.cn/large/0067Dsmmly1fzfln2c6lpj30ha086q4u.jpg" alt></p>
+</li>
+<li><p>fold算子</p>
+<p>fold和reduce的原理相同，但是与reduce不同，相当于每个reduce时，迭代器取的第一个元素是zeroValue。</p>
+<p><img src="https://ws1.sinaimg.cn/large/0067Dsmmly1fzflno9m03j30h2095q52.jpg" alt></p>
+</li>
+<li><p>aggregate算子</p>
+<p>aggregate先对每个分区的所有元素进行aggregate操作，再对分区的结果进行fold操作。<br>aggreagate与fold和reduce的不同之处在于，aggregate相当于采用归并的方式进行数据聚集，这种聚集是并行化的。 而在fold和reduce函数的运算过程中，每个分区中需要进行串行处理，每个分区串行计算完结果，结果再按之前的方式进行聚集，并返回最终聚集结果。</p>
+<p><img src="https://ws1.sinaimg.cn/large/0067Dsmmly1fzfllu6wy0j30h508976p.jpg" alt></p>
+</li>
+</ol>
+</li>
+</ul>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/01/05/Spark-常用算子/" itemprop="url">
-            
-              <span itemprop="name">Spark-常用算子</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-01-05T19:13:30+08:00" content="2019-01-05">
-          01-05
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/01/02/Spark学习笔记/" itemprop="url">
-            
-              <span itemprop="name">Spark学习笔记</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-01-02T15:59:44+08:00" content="2019-01-02">
-          01-02
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+
+    
+
+    
+    
+    
+	<div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+  
+</div>
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Big-data/" rel="tag"># Big data</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/02/Spark学习笔记/" rel="next" title="Spark学习笔记">
+                <i class="fa fa-chevron-left"></i> Spark学习笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/01/06/Spark-SQL开发/" rel="prev" title="Spark-SQL开发">
+                Spark-SQL开发 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -568,8 +750,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -636,6 +827,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#spark常用算子"><span class="nav-number">1.</span> <span class="nav-text">spark常用算子</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#算子的分类"><span class="nav-number">1.0.1.</span> <span class="nav-text">算子的分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算子的详解"><span class="nav-number">1.0.2.</span> <span class="nav-text">算子的详解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#value数据类型的transformation算子"><span class="nav-number">1.0.2.1.</span> <span class="nav-text">value数据类型的transformation算子</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#key-value数据类型的transformation算子"><span class="nav-number">1.0.2.2.</span> <span class="nav-text">key-value数据类型的transformation算子</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Action算子"><span class="nav-number">1.0.2.3.</span> <span class="nav-text">Action算子</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -793,6 +1001,10 @@
 
 
   
+  <script src="/js/src/scrollspy.js?v=7.0.1"></script>
+<script src="/js/src/post-details.js?v=7.0.1"></script>
+
+
 
   
 
@@ -808,6 +1020,8 @@
 
   
 
+
+  
 
 
   
