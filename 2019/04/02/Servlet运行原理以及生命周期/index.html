@@ -103,20 +103,27 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Jon&#39;s blog">
-<meta property="og:url" content="http://bluechanel.github.io/archives/index.html">
+  <meta name="description" content="Servlet运行原理以及生命周期  init()方法 init方法设计成只调用一次，它在第一次创建Servlet时被调用，在后续每次用户请求时不再调用。因此，用于一次性初始化 Servlet创建于用户第一次调用对应于该Servlet的URL时，也可以指定Servlet在服务器第一次启动时被加载 当用户调用一个Servlet时，就会创建一个Servlet实例，每一个用户请求都会产生一个新的线程适当">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Servlet运行原理以及生命周期">
+<meta property="og:url" content="http://bluechanel.github.io/2019/04/02/Servlet运行原理以及生命周期/index.html">
 <meta property="og:site_name" content="Jon&#39;s blog">
+<meta property="og:description" content="Servlet运行原理以及生命周期  init()方法 init方法设计成只调用一次，它在第一次创建Servlet时被调用，在后续每次用户请求时不再调用。因此，用于一次性初始化 Servlet创建于用户第一次调用对应于该Servlet的URL时，也可以指定Servlet在服务器第一次启动时被加载 当用户调用一个Servlet时，就会创建一个Servlet实例，每一个用户请求都会产生一个新的线程适当">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/0067Dsmmly1g1o8ibmnllj30ay06sac8.jpg">
+<meta property="og:updated_time" content="2019-04-02T06:06:35.572Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Jon&#39;s blog">
+<meta name="twitter:title" content="Servlet运行原理以及生命周期">
+<meta name="twitter:description" content="Servlet运行原理以及生命周期  init()方法 init方法设计成只调用一次，它在第一次创建Servlet时被调用，在后续每次用户请求时不再调用。因此，用于一次性初始化 Servlet创建于用户第一次调用对应于该Servlet的URL时，也可以指定Servlet在服务器第一次启动时被加载 当用户调用一个Servlet时，就会创建一个Servlet实例，每一个用户请求都会产生一个新的线程适当">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/0067Dsmmly1g1o8ibmnllj30ay06sac8.jpg">
 
 
 
 
 
 
-  <link rel="canonical" href="http://bluechanel.github.io/archives/">
+  <link rel="canonical" href="http://bluechanel.github.io/2019/04/02/Servlet运行原理以及生命周期/">
 
 
 
@@ -126,7 +133,7 @@
   };
 </script>
 
-  <title>归档 | Jon's blog</title>
+  <title>Servlet运行原理以及生命周期 | Jon's blog</title>
   
 
 
@@ -174,7 +181,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -246,7 +253,7 @@
         
         
           
-          <li class="menu-item menu-item-archives menu-item-active">
+          <li class="menu-item menu-item-archives">
 
     
     
@@ -293,25 +300,6 @@
   
     
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
   
 
   
@@ -357,398 +345,209 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
 
-      
-      <span class="archive-page-counter">
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://bluechanel.github.io/2019/04/02/Servlet运行原理以及生命周期/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jon Zhang">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://ws1.sinaimg.cn/large/0067Dsmmgy1g1at51rkybj30sg0sgjtz.jpg#/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jon's blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">Servlet运行原理以及生命周期
+
+              
+            
+          </h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-04-02 13:36:26 / 修改时间：14:06:35" itemprop="dateCreated datePublished" datetime="2019-04-02T13:36:26+08:00">2019-04-02</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 10 篇日志。 继续努力。
-      </span>
-      
 
-      
-
-        
-        
-        
-
-        
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
-          </div>
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/04/02/Servlet运行原理以及生命周期/" itemprop="url">
             
-              <span itemprop="name">Servlet运行原理以及生命周期</span>
             
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-02T13:36:26+08:00" content="2019-04-02">
-          04-02
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/01/10/Spark-Streaming开发/" itemprop="url">
-            
-              <span itemprop="name">Spark-Streaming开发</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-01-10T19:13:02+08:00" content="2019-01-10">
-          01-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/01/06/Spark-SQL开发/" itemprop="url">
-            
-              <span itemprop="name">Spark-SQL开发</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-01-06T19:12:37+08:00" content="2019-01-06">
-          01-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/01/05/Spark-常用算子/" itemprop="url">
-            
-              <span itemprop="name">Spark-常用算子</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-01-05T19:13:30+08:00" content="2019-01-05">
-          01-05
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/01/02/Spark学习笔记/" itemprop="url">
-            
-              <span itemprop="name">Spark学习笔记</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-01-02T15:59:44+08:00" content="2019-01-02">
-          01-02
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
 
-        
+          
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
 
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2018/12/30/Spark-Core开发/" itemprop="url">
-            
-              <span itemprop="name">Spark-Core开发</span>
-            
-          </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-12-30T19:12:24+08:00" content="2018-12-30">
-          12-30
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+        </div>
+      </header>
+    
 
-
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2018/12/26/Spark-基础开发/" itemprop="url">
-            
-              <span itemprop="name">Spark-基础开发</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-12-26T19:13:16+08:00" content="2018-12-26">
-          12-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2018/11/16/Hbase学习笔记/" itemprop="url">
-            
-              <span itemprop="name">Hbase学习笔记</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-16T19:11:12+08:00" content="2018-11-16">
-          11-16
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <h1 id="Servlet运行原理以及生命周期"><a href="#Servlet运行原理以及生命周期" class="headerlink" title="Servlet运行原理以及生命周期"></a>Servlet运行原理以及生命周期</h1><p><img src="https://ws1.sinaimg.cn/large/0067Dsmmly1g1o8ibmnllj30ay06sac8.jpg" alt></p>
+<ul>
+<li><p><code>init()</code>方法</p>
+<p><code>init</code>方法设计成只调用一次，它在第一次创建<code>Servlet</code>时被调用，在后续每次用户请求时不再调用。因此，用于一次性初始化</p>
+<p><code>Servlet</code>创建于用户第一次调用对应于该<code>Servlet</code>的URL时，也可以指定<code>Servlet</code>在服务器第一次启动时被加载</p>
+<p>当用户调用一个<code>Servlet</code>时，就会创建一个<code>Servlet</code>实例，每一个用户请求都会产生一个新的线程适当的时候移交给<code>doGet</code>或<code>doPost</code>方法，<code>init（）</code>方法简单的创建或加载一些数据，这些数据将用于<code>Servlet</code>的整个生命周期</p>
+<p><code>init</code>方法的定义如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> <span class="keyword">throws</span> ServletException </span>&#123;</span><br><span class="line">  <span class="comment">// 初始化代码...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>service()</code>方法</p>
+<p><code>service</code>方法是执行实际任务的主要方法。<code>Servlet</code>容器调用<code>service</code>方法来处理来自客户端的请求，并把格式化的响应写回给客户端。</p>
+<p>每次服务器接受到<code>Servlet</code>请求时，服务器会产生一个线程并调用服务。<code>service()</code>方法检查HTTP请求类型（GET,POST,PUT,DELETE等），在适当的时候调用<code>doGet</code>,<code>doPost</code>,<code>doPut</code>,<code>doDelete</code>方法。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">service</span><span class="params">(ServletRequest request, </span></span></span><br><span class="line"><span class="function"><span class="params">                    ServletResponse response)</span> </span></span><br><span class="line"><span class="function">      <span class="keyword">throws</span> ServletException, IOException</span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>doGet()</code>方法</p>
+<p>GET请求来自于一个URL的正常请求，或者来自于一个未指定<code>method</code>的HTML表单，它由<code>doGet</code>方法处理。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request,</span></span></span><br><span class="line"><span class="function"><span class="params">                  HttpServletResponse response)</span></span></span><br><span class="line"><span class="function">    <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">    <span class="comment">// Servlet 代码</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>doPost()</code>方法</p>
+<p>POST请求来自于一个特别指定了<code>method</code>为POST的HTML表单，它由<code>doPost</code>方法处理</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest request,</span></span></span><br><span class="line"><span class="function"><span class="params">                   HttpServletResponse response)</span></span></span><br><span class="line"><span class="function">    <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">    <span class="comment">// Servlet 代码</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>destroy（）</code>方法</p>
+<p><code>destory</code>方法只会被调用一次，在<code>Servlet</code>生命周期结束时被调用。<code>destory()</code>方法可以让<code>Servlet</code>关闭数据库连接，停止后台线程，把<code>Cookie</code>列表或者点击计数器写入磁盘，并执行其他类似的清理活动。在调用<code>destory</code>方法后，<code>servlet</code>对象被标记为垃圾回收。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">destroy</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="comment">// 终止化代码...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2018/11/01/Hive学习笔记/" itemprop="url">
-            
-              <span itemprop="name">Hive学习笔记</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-01T19:11:30+08:00" content="2018-11-01">
-          11-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2018/10/25/MapReduce运行过程与基础应用/" itemprop="url">
-            
-              <span itemprop="name">MapReduce运行过程与基础应用</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-10-25T19:10:39+08:00" content="2018-10-25">
-          10-25
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+
+    
+
+    
+    
+    
+	<div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+  
+</div>
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"># Java</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/10/Spark-Streaming开发/" rel="next" title="Spark-Streaming开发">
+                <i class="fa fa-chevron-left"></i> Spark-Streaming开发
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -768,8 +567,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -862,6 +670,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Servlet运行原理以及生命周期"><span class="nav-number">1.</span> <span class="nav-text">Servlet运行原理以及生命周期</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -1019,6 +844,10 @@
 
 
   
+  <script src="/js/src/scrollspy.js?v=7.0.1"></script>
+<script src="/js/src/post-details.js?v=7.0.1"></script>
+
+
 
   
 
@@ -1034,6 +863,8 @@
 
   
 
+
+  
 
 
   
