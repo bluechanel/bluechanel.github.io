@@ -2,25 +2,17 @@
 
 
 
-
-
-
-
-
-
-
-
-
   
 
 
-<html class="theme-next mist use-motion" lang="zh-CN">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
+
+<meta name="theme-color" content="#222">
 
 
 
@@ -29,7 +21,16 @@
     
     
   <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
-  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2">
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -46,26 +47,9 @@
 
 
 
-
-
-
-
-
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
-
-<link rel="stylesheet" href="/css/main.css?v=7.0.1">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.0.1">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.0.1">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.0.1">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=7.0.1" color="#222">
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -73,20 +57,61 @@
 
 
 
-<script id="hexo.configurations">
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Jon&#39;s blog">
+<meta property="og:url" content="http://bluechanel.github.io/index.html">
+<meta property="og:site_name" content="Jon&#39;s blog">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Jon&#39;s blog">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
     scheme: 'Mist',
-    version: '7.0.1',
-    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
-    back2top: true,
-    back2top_sidebar: false,
-    fancybox: false,
-    fastclick: false,
-    lazyload: false,
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
     algolia: {
       applicationID: '',
       apiKey: '',
@@ -98,33 +123,12 @@
 </script>
 
 
-  
-
-
-
-
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Jon&#39;s blog">
-<meta property="og:url" content="http://bluechanel.github.io/index.html">
-<meta property="og:site_name" content="Jon&#39;s blog">
-<meta property="og:locale" content="zh-CN">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Jon&#39;s blog">
-
-
-
-
-
 
   <link rel="canonical" href="http://bluechanel.github.io/">
 
 
 
-<script id="page.configurations">
-  CONFIG.page = {
-    sidebar: "",
-  };
-</script>
+
 
   <title>Jon's blog</title>
   
@@ -136,38 +140,9 @@
 
 
 
-
-
-
-
-  <noscript>
-  <style>
-  .use-motion .motion-element,
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-title { opacity: initial; }
-
-  .use-motion .logo,
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
-
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
-
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
@@ -180,7 +155,7 @@
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta">
+  <div class="site-meta ">
     
 
     <div class="custom-logo-site-title">
@@ -190,12 +165,13 @@
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
-    
-    
+      
+        <p class="site-subtitle"></p>
+      
   </div>
 
   <div class="site-nav-toggle">
-    <button aria-label="切换导航栏">
+    <button>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -203,97 +179,66 @@
   </div>
 </div>
 
-
-
 <nav class="site-nav">
+  
+
   
     <ul id="menu" class="menu">
       
         
-        
-        
-          
-          <li class="menu-item menu-item-home menu-item-active">
-
-    
-    
-    
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
       
-    
-
-    
-
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home  //首页"></i> <br>首页</a>
-
-  </li>
         
-        
-        
-          
-          <li class="menu-item menu-item-tags">
-
-    
-    
-    
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
       
-    
-
-    
-
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags  //标签"></i> <br>标签</a>
-
-  </li>
         
-        
-        
-          
-          <li class="menu-item menu-item-archives">
-
-    
-    
-    
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
       
-    
-
-    
-
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive  //归档"></i> <br>归档</a>
-
-  </li>
         
-        
-        
-          
-          <li class="menu-item menu-item-about">
-
-    
-    
-    
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
       
-    
 
-    
-
-    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user  //关于"></i> <br>关于</a>
-
-  </li>
-
-      
       
         <li class="menu-item menu-item-search">
           
             <a href="javascript:;" class="popup-trigger">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
         </li>
       
     </ul>
-  
-
-  
-    
-
   
 
   
@@ -322,20 +267,12 @@
 
 
 
-  
-
-
-
-</div>
+ </div>
     </header>
-
-    
-
 
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
@@ -348,8 +285,6 @@
   
   
 
-  
-
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -360,7 +295,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jon Zhang">
       <meta itemprop="description" content>
-      <meta itemprop="image" content="https://ws1.sinaimg.cn/large/0067Dsmmgy1g1at51rkybj30sg0sgjtz.jpg#/images/avatar.gif">
+      <meta itemprop="image" content="https://ws1.sinaimg.cn/large/0067Dsmmgy1g1at51rkybj30sg0sgjtz.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -374,20 +309,11 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                
-                <a href="/2019/01/10/Spark-Streaming开发/" class="post-title-link" itemprop="url">Spark-Streaming开发</a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2019/01/10/Spark-Streaming开发/" itemprop="url">Spark-Streaming开发</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-
-            
-            
-            
-
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -395,50 +321,19 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-
-              
-                
-              
-
-              <time title="创建时间：2019-01-10 19:13:02" itemprop="dateCreated datePublished" datetime="2019-01-10T19:13:02+08:00">2019-01-10</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-10T19:13:02+08:00">
+                2019-01-10
+              </time>
             
 
             
-              
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-03-01 11:41:36" itemprop="dateModified" datetime="2019-03-01T11:41:36+08:00">2019-03-01</time>
-              
             
           </span>
 
           
 
           
-            
-            
-              
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/01/10/Spark-Streaming开发/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/01/10/Spark-Streaming开发/" itemprop="commentCount"></span>
-                </a>
-              </span>
             
           
 
@@ -466,39 +361,24 @@
       
         
           
-            <p>
-              Spark-Streaming开发DStream的概念RDD的定义是一个只读，分区的数据集，而DStream又是RDD的模板，所以我们把DStream也视同数据集。简单理解，DStream是在RDD上面又封了一层的数据结构。下面是官网对DStream描述的图
-
-一个时间间隔产生且仅仅产生一个RDD，
-              ...
-            </p>
+          Spark-Streaming开发DStream的概念RDD的定义是一个只读，分区的数据集，而DStream又是RDD的模板，所以我们把DStream也视同数据集。简单理解，DStream是在RDD上
+          ...
           <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/01/10/Spark-Streaming开发/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/01/10/Spark-Streaming开发/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
           <!--/noindex-->
         
       
     </div>
+    
+    
+    
 
     
 
-    
-    
-    
-	<div>
-  
-</div>
-
-    
-
-    
-      
-    
     
 
     
@@ -529,8 +409,6 @@
 
   
   
-  
-
   
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
@@ -543,7 +421,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jon Zhang">
       <meta itemprop="description" content>
-      <meta itemprop="image" content="https://ws1.sinaimg.cn/large/0067Dsmmgy1g1at51rkybj30sg0sgjtz.jpg#/images/avatar.gif">
+      <meta itemprop="image" content="https://ws1.sinaimg.cn/large/0067Dsmmgy1g1at51rkybj30sg0sgjtz.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -557,20 +435,11 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                
-                <a href="/2019/01/06/Spark-SQL开发/" class="post-title-link" itemprop="url">Spark-SQL开发</a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2019/01/06/Spark-SQL开发/" itemprop="url">Spark-SQL开发</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-
-            
-            
-            
-
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -578,50 +447,19 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-
-              
-                
-              
-
-              <time title="创建时间：2019-01-06 19:12:37" itemprop="dateCreated datePublished" datetime="2019-01-06T19:12:37+08:00">2019-01-06</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-06T19:12:37+08:00">
+                2019-01-06
+              </time>
             
 
             
-              
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-02-25 12:59:18" itemprop="dateModified" datetime="2019-02-25T12:59:18+08:00">2019-02-25</time>
-              
             
           </span>
 
           
 
           
-            
-            
-              
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/01/06/Spark-SQL开发/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/01/06/Spark-SQL开发/" itemprop="commentCount"></span>
-                </a>
-              </span>
             
           
 
@@ -649,38 +487,25 @@
       
         
           
-            <p>
-              Spark-SQL开发RDD和DataFrame
-左侧的RDD[Person]虽然以Person为类型参数，但Spark’框架本身不了解Person类的内部结构。而右侧的DataFrame却提供了详细的结构信息，使得SparkSQL可以清楚的知道该数据集中包含那些列，每列的名称和类型是什么，Data
-              ...
-            </p>
+          Spark-SQL开发RDD和DataFrame
+左侧的RDD[Person]虽然以Person为类型参数，但Spark’框架本身不了解Person类的内部结构。而右侧的DataFrame却提供了详细
+          ...
           <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/01/06/Spark-SQL开发/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/01/06/Spark-SQL开发/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
           <!--/noindex-->
         
       
     </div>
+    
+    
+    
 
     
 
-    
-    
-    
-	<div>
-  
-</div>
-
-    
-
-    
-      
-    
     
 
     
@@ -711,8 +536,6 @@
 
   
   
-  
-
   
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
@@ -725,7 +548,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jon Zhang">
       <meta itemprop="description" content>
-      <meta itemprop="image" content="https://ws1.sinaimg.cn/large/0067Dsmmgy1g1at51rkybj30sg0sgjtz.jpg#/images/avatar.gif">
+      <meta itemprop="image" content="https://ws1.sinaimg.cn/large/0067Dsmmgy1g1at51rkybj30sg0sgjtz.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -739,20 +562,11 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                
-                <a href="/2019/01/05/Spark-常用算子/" class="post-title-link" itemprop="url">Spark-常用算子</a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2019/01/05/Spark-常用算子/" itemprop="url">Spark-常用算子</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-
-            
-            
-            
-
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -760,50 +574,19 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-
-              
-                
-              
-
-              <time title="创建时间：2019-01-05 19:13:30" itemprop="dateCreated datePublished" datetime="2019-01-05T19:13:30+08:00">2019-01-05</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-05T19:13:30+08:00">
+                2019-01-05
+              </time>
             
 
             
-              
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-02-25 12:59:48" itemprop="dateModified" datetime="2019-02-25T12:59:48+08:00">2019-02-25</time>
-              
             
           </span>
 
           
 
           
-            
-            
-              
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/01/05/Spark-常用算子/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/01/05/Spark-常用算子/" itemprop="commentCount"></span>
-                </a>
-              </span>
             
           
 
@@ -831,40 +614,27 @@
       
         
           
-            <p>
-              spark常用算子传递局部可序列化的变量和顶级对象中的函数始终是安全的
+          spark常用算子传递局部可序列化的变量和顶级对象中的函数始终是安全的
 算子的分类
 transformation 变换/转换算子：这种变换并不会触发提交作业，完成作业中间处理过程
-transfoemation操作是延迟计算的，也就是说从一个RDD转换成另一个RDD的转换操作不是马上执行，需要等到有a
-              ...
-            </p>
+transfoema
+          ...
           <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/01/05/Spark-常用算子/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/01/05/Spark-常用算子/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
           <!--/noindex-->
         
       
     </div>
+    
+    
+    
 
     
 
-    
-    
-    
-	<div>
-  
-</div>
-
-    
-
-    
-      
-    
     
 
     
@@ -895,8 +665,6 @@ transfoemation操作是延迟计算的，也就是说从一个RDD转换成另一
 
   
   
-  
-
   
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
@@ -909,7 +677,7 @@ transfoemation操作是延迟计算的，也就是说从一个RDD转换成另一
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jon Zhang">
       <meta itemprop="description" content>
-      <meta itemprop="image" content="https://ws1.sinaimg.cn/large/0067Dsmmgy1g1at51rkybj30sg0sgjtz.jpg#/images/avatar.gif">
+      <meta itemprop="image" content="https://ws1.sinaimg.cn/large/0067Dsmmgy1g1at51rkybj30sg0sgjtz.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -923,20 +691,11 @@ transfoemation操作是延迟计算的，也就是说从一个RDD转换成另一
         
           <h1 class="post-title" itemprop="name headline">
                 
-                
-                <a href="/2019/01/02/Spark学习笔记/" class="post-title-link" itemprop="url">Spark学习笔记</a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2019/01/02/Spark学习笔记/" itemprop="url">Spark学习笔记</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-
-            
-            
-            
-
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -944,50 +703,19 @@ transfoemation操作是延迟计算的，也就是说从一个RDD转换成另一
               
                 <span class="post-meta-item-text">发表于</span>
               
-
-              
-                
-              
-
-              <time title="创建时间：2019-01-02 15:59:44" itemprop="dateCreated datePublished" datetime="2019-01-02T15:59:44+08:00">2019-01-02</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-02T15:59:44+08:00">
+                2019-01-02
+              </time>
             
 
             
-              
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-02-25 13:28:35" itemprop="dateModified" datetime="2019-02-25T13:28:35+08:00">2019-02-25</time>
-              
             
           </span>
 
           
 
           
-            
-            
-              
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/01/02/Spark学习笔记/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/01/02/Spark学习笔记/" itemprop="commentCount"></span>
-                </a>
-              </span>
             
           
 
@@ -1015,42 +743,28 @@ transfoemation操作是延迟计算的，也就是说从一个RDD转换成另一
       
         
           
-            <p>
-              ###Spark学习笔记
+          ###Spark学习笔记
 Spark和MapReduce相比，有什么优势
 Spark基于内存计算，运算速度快，延迟低
 基于内存计算，天生具有迭代运算优势，并且可以实现交互式分析
-算子多，更灵活，MapReduce只有map,reduce,shuffle三种
-可用于机器学习，数据挖掘，Spark含有机
-              ...
-            </p>
+算子多，更灵活，Map
+          ...
           <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/01/02/Spark学习笔记/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/01/02/Spark学习笔记/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
           <!--/noindex-->
         
       
     </div>
+    
+    
+    
 
     
 
-    
-    
-    
-	<div>
-  
-</div>
-
-    
-
-    
-      
-    
     
 
     
@@ -1081,8 +795,6 @@ Spark基于内存计算，运算速度快，延迟低
 
   
   
-  
-
   
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
@@ -1095,7 +807,7 @@ Spark基于内存计算，运算速度快，延迟低
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jon Zhang">
       <meta itemprop="description" content>
-      <meta itemprop="image" content="https://ws1.sinaimg.cn/large/0067Dsmmgy1g1at51rkybj30sg0sgjtz.jpg#/images/avatar.gif">
+      <meta itemprop="image" content="https://ws1.sinaimg.cn/large/0067Dsmmgy1g1at51rkybj30sg0sgjtz.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1109,20 +821,11 @@ Spark基于内存计算，运算速度快，延迟低
         
           <h1 class="post-title" itemprop="name headline">
                 
-                
-                <a href="/2018/12/30/Spark-Core开发/" class="post-title-link" itemprop="url">Spark-Core开发</a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2018/12/30/Spark-Core开发/" itemprop="url">Spark-Core开发</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-
-            
-            
-            
-
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -1130,50 +833,19 @@ Spark基于内存计算，运算速度快，延迟低
               
                 <span class="post-meta-item-text">发表于</span>
               
-
-              
-                
-              
-
-              <time title="创建时间：2018-12-30 19:12:24" itemprop="dateCreated datePublished" datetime="2018-12-30T19:12:24+08:00">2018-12-30</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-30T19:12:24+08:00">
+                2018-12-30
+              </time>
             
 
             
-              
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-02-25 12:59:06" itemprop="dateModified" datetime="2019-02-25T12:59:06+08:00">2019-02-25</time>
-              
             
           </span>
 
           
 
           
-            
-            
-              
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/12/30/Spark-Core开发/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/12/30/Spark-Core开发/" itemprop="commentCount"></span>
-                </a>
-              </span>
             
           
 
@@ -1201,37 +873,24 @@ Spark基于内存计算，运算速度快，延迟低
       
         
           
-            <p>
-              Spark-Core开发下载spark-core包&lt;!-- https://mvnrepository.com/artifact/org.apache.spark/spark-core --&gt;&lt;dependency&gt;    &lt;groupId&gt;org.apache.
-              ...
-            </p>
+          Spark-Core开发下载spark-core包123456&lt;!-- https://mvnrepository.com/artifact/org.apache.spark/spark-cor
+          ...
           <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2018/12/30/Spark-Core开发/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/12/30/Spark-Core开发/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
           <!--/noindex-->
         
       
     </div>
+    
+    
+    
 
     
 
-    
-    
-    
-	<div>
-  
-</div>
-
-    
-
-    
-      
-    
     
 
     
@@ -1262,8 +921,6 @@ Spark基于内存计算，运算速度快，延迟低
 
   
   
-  
-
   
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
@@ -1276,7 +933,7 @@ Spark基于内存计算，运算速度快，延迟低
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jon Zhang">
       <meta itemprop="description" content>
-      <meta itemprop="image" content="https://ws1.sinaimg.cn/large/0067Dsmmgy1g1at51rkybj30sg0sgjtz.jpg#/images/avatar.gif">
+      <meta itemprop="image" content="https://ws1.sinaimg.cn/large/0067Dsmmgy1g1at51rkybj30sg0sgjtz.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1290,20 +947,11 @@ Spark基于内存计算，运算速度快，延迟低
         
           <h1 class="post-title" itemprop="name headline">
                 
-                
-                <a href="/2018/12/26/Spark-基础开发/" class="post-title-link" itemprop="url">Spark-基础开发</a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2018/12/26/Spark-基础开发/" itemprop="url">Spark-基础开发</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-
-            
-            
-            
-
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -1311,50 +959,19 @@ Spark基于内存计算，运算速度快，延迟低
               
                 <span class="post-meta-item-text">发表于</span>
               
-
-              
-                
-              
-
-              <time title="创建时间：2018-12-26 19:13:16" itemprop="dateCreated datePublished" datetime="2018-12-26T19:13:16+08:00">2018-12-26</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-26T19:13:16+08:00">
+                2018-12-26
+              </time>
             
 
             
-              
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-02-25 12:59:38" itemprop="dateModified" datetime="2019-02-25T12:59:38+08:00">2019-02-25</time>
-              
             
           </span>
 
           
 
           
-            
-            
-              
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/12/26/Spark-基础开发/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/12/26/Spark-基础开发/" itemprop="commentCount"></span>
-                </a>
-              </span>
             
           
 
@@ -1382,41 +999,27 @@ Spark基于内存计算，运算速度快，延迟低
       
         
           
-            <p>
-              Spark学习笔记Spark和MapReduce相比，有什么优势
+          Spark学习笔记Spark和MapReduce相比，有什么优势
 Spark基于内存计算，运算速度快，延迟低
 基于内存计算，天生具有迭代运算优势，并且可以实现交互式分析
-算子多，更灵活，MapReduce只有map,reduce,shuffle三种
-可用于机器学习，数据挖掘，Spark含有机器学习的
-              ...
-            </p>
+算子多，更灵活，MapRedu
+          ...
           <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2018/12/26/Spark-基础开发/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/12/26/Spark-基础开发/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
           <!--/noindex-->
         
       
     </div>
+    
+    
+    
 
     
 
-    
-    
-    
-	<div>
-  
-</div>
-
-    
-
-    
-      
-    
     
 
     
@@ -1447,8 +1050,6 @@ Spark基于内存计算，运算速度快，延迟低
 
   
   
-  
-
   
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
@@ -1461,7 +1062,7 @@ Spark基于内存计算，运算速度快，延迟低
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jon Zhang">
       <meta itemprop="description" content>
-      <meta itemprop="image" content="https://ws1.sinaimg.cn/large/0067Dsmmgy1g1at51rkybj30sg0sgjtz.jpg#/images/avatar.gif">
+      <meta itemprop="image" content="https://ws1.sinaimg.cn/large/0067Dsmmgy1g1at51rkybj30sg0sgjtz.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1475,20 +1076,11 @@ Spark基于内存计算，运算速度快，延迟低
         
           <h1 class="post-title" itemprop="name headline">
                 
-                
-                <a href="/2018/11/16/Hbase学习笔记/" class="post-title-link" itemprop="url">Hbase学习笔记</a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2018/11/16/Hbase学习笔记/" itemprop="url">Hbase学习笔记</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-
-            
-            
-            
-
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -1496,50 +1088,19 @@ Spark基于内存计算，运算速度快，延迟低
               
                 <span class="post-meta-item-text">发表于</span>
               
-
-              
-                
-              
-
-              <time title="创建时间：2018-11-16 19:11:12" itemprop="dateCreated datePublished" datetime="2018-11-16T19:11:12+08:00">2018-11-16</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-16T19:11:12+08:00">
+                2018-11-16
+              </time>
             
 
             
-              
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-02-25 12:57:51" itemprop="dateModified" datetime="2019-02-25T12:57:51+08:00">2019-02-25</time>
-              
             
           </span>
 
           
 
           
-            
-            
-              
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/11/16/Hbase学习笔记/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/11/16/Hbase学习笔记/" itemprop="commentCount"></span>
-                </a>
-              </span>
             
           
 
@@ -1567,43 +1128,29 @@ Spark基于内存计算，运算速度快，延迟低
       
         
           
-            <p>
-              Hbase学习笔记
+          Hbase学习笔记
 Hbase模块解释
 Client（客户端）
 整个HBase集群的入口
 使用Hbase RPC机制与HMaster和HRegionServer通信
-包含访问Hbase的接口，并维护cache来加快对Hbase的访问，与HRegionServer交互
-与HRegionServer通信
-              ...
-            </p>
+包含访问Hbase的接口，并维护c
+          ...
           <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2018/11/16/Hbase学习笔记/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/11/16/Hbase学习笔记/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
           <!--/noindex-->
         
       
     </div>
+    
+    
+    
 
     
 
-    
-    
-    
-	<div>
-  
-</div>
-
-    
-
-    
-      
-    
     
 
     
@@ -1634,8 +1181,6 @@ Client（客户端）
 
   
   
-  
-
   
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
@@ -1648,7 +1193,7 @@ Client（客户端）
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jon Zhang">
       <meta itemprop="description" content>
-      <meta itemprop="image" content="https://ws1.sinaimg.cn/large/0067Dsmmgy1g1at51rkybj30sg0sgjtz.jpg#/images/avatar.gif">
+      <meta itemprop="image" content="https://ws1.sinaimg.cn/large/0067Dsmmgy1g1at51rkybj30sg0sgjtz.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1662,20 +1207,11 @@ Client（客户端）
         
           <h1 class="post-title" itemprop="name headline">
                 
-                
-                <a href="/2018/11/01/Hive学习笔记/" class="post-title-link" itemprop="url">Hive学习笔记</a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2018/11/01/Hive学习笔记/" itemprop="url">Hive学习笔记</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-
-            
-            
-            
-
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -1683,50 +1219,19 @@ Client（客户端）
               
                 <span class="post-meta-item-text">发表于</span>
               
-
-              
-                
-              
-
-              <time title="创建时间：2018-11-01 19:11:30" itemprop="dateCreated datePublished" datetime="2018-11-01T19:11:30+08:00">2018-11-01</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-01T19:11:30+08:00">
+                2018-11-01
+              </time>
             
 
             
-              
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-02-25 12:58:45" itemprop="dateModified" datetime="2019-02-25T12:58:45+08:00">2019-02-25</time>
-              
             
           </span>
 
           
 
           
-            
-            
-              
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/11/01/Hive学习笔记/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/11/01/Hive学习笔记/" itemprop="commentCount"></span>
-                </a>
-              </span>
             
           
 
@@ -1754,8 +1259,7 @@ Client（客户端）
       
         
           
-            <p>
-              Hive学习笔记Hive Shell命令基本操作
+          Hive学习笔记Hive Shell命令基本操作
 创建数据库
 create database zhang;
 
@@ -1767,36 +1271,24 @@ use zhang;
 普通表
 
 分隔符为，
-create table student(    &gt; sno string,    &gt; sname strin
-              ...
-            </p>
+1234567crea
+          ...
           <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2018/11/01/Hive学习笔记/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/11/01/Hive学习笔记/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
           <!--/noindex-->
         
       
     </div>
+    
+    
+    
 
     
 
-    
-    
-    
-	<div>
-  
-</div>
-
-    
-
-    
-      
-    
     
 
     
@@ -1827,8 +1319,6 @@ create table student(    &gt; sno string,    &gt; sname strin
 
   
   
-  
-
   
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
@@ -1841,7 +1331,7 @@ create table student(    &gt; sno string,    &gt; sname strin
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jon Zhang">
       <meta itemprop="description" content>
-      <meta itemprop="image" content="https://ws1.sinaimg.cn/large/0067Dsmmgy1g1at51rkybj30sg0sgjtz.jpg#/images/avatar.gif">
+      <meta itemprop="image" content="https://ws1.sinaimg.cn/large/0067Dsmmgy1g1at51rkybj30sg0sgjtz.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1855,20 +1345,11 @@ create table student(    &gt; sno string,    &gt; sname strin
         
           <h1 class="post-title" itemprop="name headline">
                 
-                
-                <a href="/2018/10/25/MapReduce运行过程与基础应用/" class="post-title-link" itemprop="url">MapReduce运行过程与基础应用</a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2018/10/25/MapReduce运行过程与基础应用/" itemprop="url">MapReduce运行过程与基础应用</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-
-            
-            
-            
-
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -1876,50 +1357,19 @@ create table student(    &gt; sno string,    &gt; sname strin
               
                 <span class="post-meta-item-text">发表于</span>
               
-
-              
-                
-              
-
-              <time title="创建时间：2018-10-25 19:10:39" itemprop="dateCreated datePublished" datetime="2018-10-25T19:10:39+08:00">2018-10-25</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-25T19:10:39+08:00">
+                2018-10-25
+              </time>
             
 
             
-              
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-02-25 12:58:56" itemprop="dateModified" datetime="2019-02-25T12:58:56+08:00">2019-02-25</time>
-              
             
           </span>
 
           
 
           
-            
-            
-              
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/10/25/MapReduce运行过程与基础应用/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/10/25/MapReduce运行过程与基础应用/" itemprop="commentCount"></span>
-                </a>
-              </span>
             
           
 
@@ -1947,41 +1397,28 @@ create table student(    &gt; sno string,    &gt; sname strin
       
         
           
-            <p>
-              MapReduce运行过程与基础应用运行过程 
+          MapReduce运行过程与基础应用运行过程 
 
 
 Mapper阶段
-当系统对数据进行分块后，每个输入分块会分配到一个Mapper任务来处理。随后Mapper节点输出的数据将保存到一个缓存区中(缓冲区的大小默认为512M，可通过mapreduce.task.io.sort.mb属性进行修改)，缓冲区
-              ...
-            </p>
+当系统对数据进行分块后，每个输入分块会分配到一个Mapper任务来处理。随后Mapper节点输出的数据将保存到一个缓存区中(缓冲区
+          ...
           <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2018/10/25/MapReduce运行过程与基础应用/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/10/25/MapReduce运行过程与基础应用/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
           <!--/noindex-->
         
       
     </div>
+    
+    
+    
 
     
 
-    
-    
-    
-	<div>
-  
-</div>
-
-    
-
-    
-      
-    
     
 
     
@@ -2014,8 +1451,6 @@ Mapper阶段
   
   
 
-  
-
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -2026,7 +1461,7 @@ Mapper阶段
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jon Zhang">
       <meta itemprop="description" content>
-      <meta itemprop="image" content="https://ws1.sinaimg.cn/large/0067Dsmmgy1g1at51rkybj30sg0sgjtz.jpg#/images/avatar.gif">
+      <meta itemprop="image" content="https://ws1.sinaimg.cn/large/0067Dsmmgy1g1at51rkybj30sg0sgjtz.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -2040,20 +1475,11 @@ Mapper阶段
         
           <h1 class="post-title" itemprop="name headline">
                 
-                
-                <a href="/2018/08/02/Servlet运行原理以及生命周期/" class="post-title-link" itemprop="url">Servlet运行原理以及生命周期</a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2018/08/02/Servlet运行原理以及生命周期/" itemprop="url">Servlet运行原理以及生命周期</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-
-            
-            
-            
-
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -2061,50 +1487,19 @@ Mapper阶段
               
                 <span class="post-meta-item-text">发表于</span>
               
-
-              
-                
-              
-
-              <time title="创建时间：2018-08-02 13:36:26" itemprop="dateCreated datePublished" datetime="2018-08-02T13:36:26+08:00">2018-08-02</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-02T13:36:26+08:00">
+                2018-08-02
+              </time>
             
 
             
-              
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-04-02 14:08:42" itemprop="dateModified" datetime="2019-04-02T14:08:42+08:00">2019-04-02</time>
-              
             
           </span>
 
           
 
           
-            
-            
-              
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/08/02/Servlet运行原理以及生命周期/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/08/02/Servlet运行原理以及生命周期/" itemprop="commentCount"></span>
-                </a>
-              </span>
             
           
 
@@ -2132,42 +1527,28 @@ Mapper阶段
       
         
           
-            <p>
-              Servlet运行原理以及生命周期
+          Servlet运行原理以及生命周期
 
 init()方法
 init方法设计成只调用一次，它在第一次创建Servlet时被调用，在后续每次用户请求时不再调用。因此，用于一次性初始化
-Servlet创建于用户第一次调用对应于该Servlet的URL时，也可以指定Servlet在服务器第一次启动时被加载
-当
-              ...
-            </p>
+Servlet创建于用
+          ...
           <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2018/08/02/Servlet运行原理以及生命周期/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/08/02/Servlet运行原理以及生命周期/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
           <!--/noindex-->
         
       
     </div>
+    
+    
+    
 
     
 
-    
-    
-    
-	<div>
-  
-</div>
-
-    
-
-    
-      
-    
     
 
     
@@ -2200,6 +1581,9 @@ Servlet创建于用户第一次调用对应于该Servlet的URL时，也可以指
           </div>
           
 
+
+          
+
         </div>
         
           
@@ -2213,104 +1597,81 @@ Servlet创建于用户第一次调用对应于该Servlet的URL时，也可以指
   </div>
 
   <aside id="sidebar" class="sidebar">
+    
     <div class="sidebar-inner">
 
       
 
       
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="https://ws1.sinaimg.cn/large/0067Dsmmgy1g1at51rkybj30sg0sgjtz.jpg#/images/avatar.gif" alt="Jon Zhang">
+              <img class="site-author-image" itemprop="image" src="https://ws1.sinaimg.cn/large/0067Dsmmgy1g1at51rkybj30sg0sgjtz.jpg" alt="Jon Zhang">
             
               <p class="site-author-name" itemprop="name">Jon Zhang</p>
-              <div class="site-description motion-element" itemprop="description"></div>
+              <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives/">
-                
-                    <span class="site-state-item-count">10</span>
-                    <span class="site-state-item-name">日志</span>
-                  </a>
-                </div>
-              
+          <nav class="site-state motion-element">
 
+            
+              <div class="site-state-item site-state-posts">
               
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
 
-              
-                
-                
-                <div class="site-state-item site-state-tags">
-                  
-                    
-                      <a href="/tags/">
-                    
-                  
-                    
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">2</span>
-                    <span class="site-state-item-name">标签</span>
-                  </a>
-                </div>
-              
-            </nav>
-          
+            
 
-          
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
 
           
 
           
             <div class="links-of-author motion-element">
-              
-                <span class="links-of-author-item">
-                  
-                  
-                    
-                  
-                  
-                    
-                  
-                  <a href="mailto:bluechanel@gmail@gmail.com" title="E-Mail &rarr; mailto:bluechanel@gmail@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                    
-                  
-                  
-                    
-                  
-                  <a href="https://www.jianshu.com/u/2355915d532d" title="简 &rarr; https://www.jianshu.com/u/2355915d532d" rel="noopener" target="_blank"><i class="fa fa-fw fa-jianshu"></i>简</a>
-                </span>
-              
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:bluechanel612@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.jianshu.com/u/2355915d532d" target="_blank" title="简书">
+                      
+                        <i class="fa fa-fw fa-jianshu"></i>简书</a>
+                  </span>
+                
             </div>
           
 
           
-
-          
           
 
           
-            
           
+
           
 
         </div>
-      </div>
+      </section>
 
       
 
@@ -2318,7 +1679,6 @@ Servlet创建于用户第一次调用对应于该Servlet的URL时，也可以指
 
     </div>
   </aside>
-  
 
 
         
@@ -2327,36 +1687,23 @@ Servlet创建于用户第一次调用对应于该Servlet的URL时，也可以指
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love" id="animate">
+  <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <div class="powered-by">
-<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
-  本站访客数:<span id="busuanzi_value_site_uv"></span>
-</span>
-</div>
-
-
-<span id="busuanzi_container_site_pv">
-    本站总访问量<span id="busuanzi_value_site_pv"></span>次
-</span>
-
-
-<span id="busuanzi_container_site_uv">
-  本站总访问量<span id="busuanzi_value_site_uv"></span>次
-</span>
-
-  <span class="author" itemprop="copyrightHolder">Jon Zhang</span>
-
-  
+  <span class="author" itemprop="copyrightHolder">JonZhang</span>
 
   
 </div>
 
 
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
+  本站访客数:<span id="busuanzi_value_site_pv"></span>
+</span>
+</div>
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
 
 
@@ -2364,18 +1711,12 @@ Servlet创建于用户第一次调用对应于该Servlet的URL时，也可以指
 
 
 
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.0.1</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
 
 
 
-
-<div class="theme-info">
-  <div class="powered-by"></div>
-  <span class="post-count">博客全站共11.8k字</span>
-</div>
 
         
-
 
 
 
@@ -2396,14 +1737,11 @@ Servlet创建于用户第一次调用对应于该Servlet的URL时，也可以指
 
     
 
-    
-
-    
   </div>
 
   
 
-<script>
+<script type="text/javascript">
   if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
     window.Promise = null;
   }
@@ -2417,17 +1755,7 @@ Servlet创建于用户第一次调用对应于该Servlet的URL时，也可以指
 
 
 
-
-
-
-
-
   
-    
-    
-  
-  <script color="0,0,255" opacity="0.5" zindex="-1" count="99" src="/lib/canvas-nest/canvas-nest.min.js"></script>
-
 
 
 
@@ -2441,74 +1769,93 @@ Servlet创建于用户第一次调用对应于该Servlet的URL时，也可以指
 
 
   
-  <script src="/lib/jquery/index.js?v=2.1.3"></script>
-
   
-  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
   
-  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-
-  
-
-
-  <script src="/js/src/utils.js?v=7.0.1"></script>
-
-  <script src="/js/src/motion.js?v=7.0.1"></script>
-
-
-  
-    <script type="text/javascript">
-      (function(d, s) {
-        var j, e = d.getElementsByTagName(s)[0];
-        if (typeof LivereTower === 'function') { return; }
-        j = d.createElement(s);
-        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-        j.async = true;
-        e.parentNode.insertBefore(j, e);
-      })(document, 'script');
-    </script>
-  
-
-
-
 
   
   
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
 
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
 
-  <script src="/js/src/schemes/muse.js?v=7.0.1"></script>
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
 
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
 
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
 
 
   
 
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
   
-
-
-  <script src="/js/src/next-boot.js?v=7.0.1"></script>
-
-
   
 
   
 
   
 
-  
-  
-  <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
 
-
-
-
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
 
 
 
   
-  <script>
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
     // Popup Window;
     var isfetched = false;
     var isXml = true;
@@ -2557,8 +1904,6 @@ Servlet创建于用户第一次调用对应于该Servlet的URL时，也可以指
         .css('overflow', 'hidden');
       $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
 
-      
-
       $.ajax({
         url: path,
         dataType: isXml ? "xml" : "json",
@@ -2592,9 +1937,8 @@ Servlet创建于用户第一次调用对应于该Servlet的URL时，也可以指
                 var title = data.title.trim();
                 var titleInLowerCase = title.toLowerCase();
                 var content = data.content.trim().replace(/<[^>]+>/g,"");
-                
                 var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var articleUrl = decodeURIComponent(data.url);
                 var indexOfTitle = [];
                 var indexOfContent = [];
                 // only match articles with not empty titles
@@ -2763,9 +2107,9 @@ Servlet创建于用户第一次调用对应于该Servlet的URL时，也可以指
               })
             };
             if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
             } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
             } else {
               resultItems.sort(function (resultLeft, resultRight) {
                 if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
@@ -2839,19 +2183,6 @@ Servlet创建于用户第一次调用对应于该Servlet的URL时，也可以指
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
   
 
   
