@@ -1,0 +1,8 @@
+baseURL: https://bluechanel.github.io/
+languageCode: en-us
+title: My New Hugo Site
+theme: ["PaperMod"]
+
+caches:
+  images:
+    dir: :cacheDir/images
