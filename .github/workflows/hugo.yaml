@@ -56,6 +56,10 @@ jobs:
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
+      - name: Get Theme
+        run: git submodule update --init --recursive
+      - name: Update theme to Latest commit
+        run: git submodule update --remote --merge
       - name: Install Node.js dependencies
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
       - name: Cache Restore
