@@ -1,0 +1,3 @@
+[submodule "themes/Gallery"]
+	path = themes/Gallery
+	url = git@github.com:bluechanel/hugo_gallery.git
