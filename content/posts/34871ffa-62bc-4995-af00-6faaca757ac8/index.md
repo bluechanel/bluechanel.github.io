@@ -2,6 +2,7 @@
 title: 🍚 向量检索Chroma使用和服务端docker部署
 description: 介绍向量检索数据库Chroma的服务端Docker部署，以及客户端基本的使用
 date: 2024-08-23
+updateDate: 2024-10-24
 tags: ["RAG","Vector Store"]
 cover:
     image: images/34871ffa-62bc-4995-af00-6faaca757ac8_0811b826df695886a5343f75e23b570b.png

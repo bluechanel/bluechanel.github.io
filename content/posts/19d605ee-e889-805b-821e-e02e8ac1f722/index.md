@@ -2,6 +2,7 @@
 title: 🏓 通往AGI-结构化输出(Structured Outputs)
 description: 本文主要介绍结构化输出以及Function call的重要性，并介绍其开源实现。
 date: 2025-02-17
+updateDate: 2025-07-04
 tags: ["AI","LLM","Prompt"]
 cover:
     image: images/19d605ee-e889-805b-821e-e02e8ac1f722_37dc9acfc3fb369c41e91f2bd54c7dcd.jpg

@@ -2,6 +2,7 @@
 title: 🔖 Prompt编写
 description: 该文档是关于Prompt编写指南的，介绍了26种技巧与效果，以及进阶的CoT、类推提示法、PoT、ToT和GoT等方法，用于提升大模型的推理能力。
 date: 2024-05-20
+updateDate: 2024-11-23
 tags: ["LLM","Prompt"]
 cover:
     image: images/ad71285d-325f-42ad-a6f9-28e6cf90571c_460eeddd1622745dca8c19c0491754b8.png

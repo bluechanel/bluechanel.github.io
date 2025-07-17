@@ -1,7 +1,8 @@
 ---
 title: 🥠 修改FastChat使支持工具调用(LangGraph适配FastChat)
-description: 本文介绍了如何修改FastChat以支持工具调用和LangGraph适配FastChat的问题。针对LangGraph的问题，我们将在后续文章中详细介绍。
+description: 本文介绍了如何修改FastChat以支持工具调用和LangGraph适配FastChat的问题。针对
 date: 2024-05-08
+updateDate: 2024-06-20
 tags: ["LLM","LangChain","LangGraph"]
 cover:
     image: images/c8a30e22-25df-414c-aa1d-2582622256e5_fdcb66a6a0840f2ca7837acaad8e548b.png

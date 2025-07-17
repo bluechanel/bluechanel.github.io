@@ -2,6 +2,7 @@
 title: 🎚️ LangGraph实战 子图、流响应
 description: 记录Langgraph使用过程中遇到的问题以及解决方法
 date: 2024-09-11
+updateDate: 2024-09-12
 tags: ["LangGraph"]
 cover:
     image: images/1738c66d-44b6-45a1-bfeb-f50062d3efec_9d66b50af6cba34e5b96c55454c6012b.png

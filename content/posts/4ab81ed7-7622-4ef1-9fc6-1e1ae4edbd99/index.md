@@ -2,7 +2,8 @@
 title: 🚥 如何选择大模型(榜单+指标)
 description: 在选择大模型之前，需要明确自己对语言、通识、推理、数学、代码、长文本和工具等七大能力的偏好。评测指标包括MMLU、C Eval、ARC-C、BBH、GSM8K、MBPP、Human Eval、L-Eval和T-Eval。常用榜单包括OpenCompass司南榜单、Huggingface榜单和MTEB榜单。
 date: 2024-06-03
-tags: ['LLM']
+updateDate: 2025-05-16
+tags: ["LLM"]
 cover:
     image: images/4ab81ed7-7622-4ef1-9fc6-1e1ae4edbd99_77ff0447ba6e77705bd22a0d0b8826c0.png
 ShowToc: true

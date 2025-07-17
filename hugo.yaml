@@ -19,7 +19,7 @@ params:
   author: Wiley Zhang
   description: "A technical blog focusing on AI, LLM development, and cutting-edge technology insights. Sharing practical experiences and in-depth analysis in artificial intelligence and large language models."
   keywords: ['AI', 'LLM', 'Machine Learning', 'Artificial Intelligence', 'Developer Blog', 'Technical Writing', 'Programming']
-  images: ["<link or path of image for opengraph, twitter-cards>"]
+  images: ["cover.png"]  # 此处配置 og x 平台分享图片
   DateFormat: "January 2, 2006"
   defaultTheme: auto # dark, light
   disableThemeToggle: false
@@ -31,6 +31,7 @@ params:
   comments: true
   hidemeta: false
   hideSummary: false
+  hideFooter: true
 
 
   assets:
@@ -66,20 +67,10 @@ params:
     minMatchCharLength: 0
     limit: 10 # refer: https://www.fusejs.io/api/methods.html#search
     keys: ["title", "permalink", "summary", "content"]
-menu:
-  main:
-    - identifier: categories
-      name: categories
-      url: /categories/
-      weight: 10
-    - identifier: tags
-      name: tags
-      url: /tags/
-      weight: 20
-    - identifier: example
-      name: example.org
-      url: https://example.org
-      weight: 30
+  
+  sortField: updateDate       # 按哪个字段排序，可以是 updateDate 或 date 等
+  sortOrder: desc             # asc 或 desc
+  mainSections: ["posts"]     # 指定文章内容文件夹
 
 pygmentsUseClasses: true
 markup:

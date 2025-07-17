@@ -2,6 +2,7 @@
 title: ⚽ 编写支持VLLM部署Qwen3-32B的MCP Cleint/Server
 description: 本文详细介绍了MCP Server与MCP Client的开发并给出了示例代码，支持将MCP tool转换为OpenAI tool，使其支持了使用VLLM部署的本地大模型Qwen3-32B。并进行了简单的测试验证，完整的完成了数据库查询，文件写入等MCP tool的调用。
 date: 2025-03-18
+updateDate: 2025-06-30
 tags: ["AI","MCP","LLM"]
 cover:
     image: images/222605ee-e889-8098-b91e-f684acac99d2_c200aebc3cf47a1441f95a98a9f61de7.png

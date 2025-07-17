@@ -2,6 +2,7 @@
 title: 🍚 向量/混合检索-Elasticsearch
 description: 介绍ES的docker部署，以及在RAG应用中，向量和混合检索的使用
 date: 2024-10-11
+updateDate: 2024-10-24
 tags: ["RAG","Vector Store"]
 cover:
     image: images/11c605ee-e889-80ae-8ef8-f4497de6e3d5_26b46fb1baae0d581df27ab37a57b445.png

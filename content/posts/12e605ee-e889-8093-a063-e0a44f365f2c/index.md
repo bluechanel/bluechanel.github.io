@@ -2,6 +2,7 @@
 title: ♨️ 向量数据库Milvus混合检索
 description: 介绍Milvus的使用，以及混合检索示例代码
 date: 2024-10-29
+updateDate: 2025-02-05
 tags: ["RAG","LLM","Vector Store"]
 cover:
     image: images/12e605ee-e889-8093-a063-e0a44f365f2c_08c5eab9196a574179ecff097a7188e2.png

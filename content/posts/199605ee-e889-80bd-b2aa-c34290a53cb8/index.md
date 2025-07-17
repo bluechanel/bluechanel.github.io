@@ -2,6 +2,7 @@
 title: 🪢 窦娥冤·新编(By Claude)
 description: 本篇是由Claude对戏剧“窦娥冤”的续写。
 date: 2025-02-13
+updateDate: 2025-02-13
 tags: ["AI"]
 cover:
     image: images/199605ee-e889-80bd-b2aa-c34290a53cb8_b683be52f94ff099cd437a800ffb634b.webp

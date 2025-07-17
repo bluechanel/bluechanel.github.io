@@ -2,6 +2,7 @@
 title: 💽 适用于AI的向量数据库
 description: 适用于LLM的数据库调查列表，Chroma，Milvus，Elasticsearch，Faiss
 date: 2024-10-24
+updateDate: 2025-02-05
 tags: ["RAG","Vector Store"]
 cover:
     image: images/128605ee-e889-808d-b8d0-d925a4269247_b532de96f7b456539449a7efe2eb696d.png

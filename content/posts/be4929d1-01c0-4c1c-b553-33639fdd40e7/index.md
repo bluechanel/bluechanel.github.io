@@ -2,6 +2,7 @@
 title: 📘 企业级知识库选择
 description: 知识库选择
 date: 2022-09-14
+updateDate: 2024-06-15
 tags: ["Knowledge"]
 cover:
     image: images/be4929d1-01c0-4c1c-b553-33639fdd40e7_6479fa9d4c0c1dbcd84847cda4a34184.png

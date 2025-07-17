@@ -2,7 +2,8 @@
 title: 🕛 AI与人机交互演进：从浏览器自动化到接口化未来
 description: 作者通过人机交互演进，认为AI时代，人机交互将进一步被简化。
 date: 2025-04-28
-tags: ['AI']
+updateDate: 2025-04-28
+tags: ["AI"]
 cover:
     image: images/1e3605ee-e889-80d4-89e3-c5f24730f271_5aea2e916bdbbb86c34b0512dc21187e.png
 ShowToc: true

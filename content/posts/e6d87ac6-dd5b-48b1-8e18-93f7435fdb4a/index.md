@@ -2,6 +2,7 @@
 title: 🤖 AI开发基础资料和相关技术介绍
 description: 这篇文章介绍了关于AI开发的基础资料，包括开发工具LangChain和LlamaIndex，以及LangGraph框架。还讨论了LLMs微调的挑战和提示工程技术的应用。此外，还介绍了RAG（增强检索）的基本原理和优化方法，以及向量数据库和Agent的相关内容。
 date: 2023-08-09
+updateDate: 2025-06-11
 tags: ["LLM","RAG","Prompt"]
 cover:
     image: images/e6d87ac6-dd5b-48b1-8e18-93f7435fdb4a_c3f4caa2f32e244e8297d9690a0e536d.png
