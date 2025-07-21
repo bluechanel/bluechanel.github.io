@@ -15,7 +15,7 @@ ShowToc: true
 LLM模型，Embedding模型选择参考下面的文章
 
 
-[link_to_page](https://wileyzhang.com/posts/4ab81ed7-7622-4ef1-9fc6-1e1ae4edbd99)
+[link_to_page](https://www.wileyzhang.com/posts/4ab81ed7-7622-4ef1-9fc6-1e1ae4edbd99)
 
 
 # 模型下载
@@ -34,7 +34,7 @@ LLM模型，Embedding模型选择参考下面的文章
 
 2. 复制模型名称
 
-    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/da864e11-683f-4c2d-a264-16ecdf57fff9/94c1b3e8-aeeb-4fdb-adf5-fedb3bad4f75/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466UE5H4SW6%2F20250717%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250717T080840Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEFcaCXVzLXdlc3QtMiJHMEUCIQCsP0tiqMa679AUmhlvxVRi62ymUOhnxqJCV7KJ%2BPkSLwIgDDvrB9FREd3HFoCZX%2FCMfcSe2BCsWcGRVY502%2Fnbx98q%2FwMIcBAAGgw2Mzc0MjMxODM4MDUiDMLAh03ZjxOb%2BzhyESrcAxG3S8lBJeXZHzLCSkgV1SJJjq9wVZY2m0APRzjhnDAU48xLvuec%2BTZhlI8QzB3SPwWXPDbgT8BCVwA6B48uL1cPlPiNiklcpqsfCLTrj0TZu7CggyGY05n1yAnWTaV8mKqAmXle2PYeLFOJC2qBPMvz2gzsJhesELgjZh4Uas617N8qhkoy2nRMgYStKJDG7HJYU3lbVWaHEqWXVmD0VUi8QOl578SLP5IX78UjQ%2FZrk4STYP242WoQKeKYdG9yaURcnkbhVqTGwAYxk2xeUywXmYUFqHio8odNCrO5S0QQmQTn%2FHFsXITbAnMtNP7PzshWzHP6BwcvRLfOuzAz8yb%2FcZiLJJraE%2FjrNO7uAwOj88RBneek6tNu18iWh%2BEgBlNHR48i6eApeiIYh5NGxyhAFnQcuUyovPSDkaSmcQT9d2G07XTJJ%2B9ZcR33Dol3RFpMZDORUhSe4OnWteMefwMuskSTzcEQ0OxQ96Z3I4J5dBNn5CePJj6%2B3WvFQ3Szo5rySTf8dXhr7PQTXlg8%2FKmLWVCvqcVcOG0I5UjFyGPHEHKAk1C9HS8ZBUt79BOkAA6qbfR8jysSHhHEpfnQgBga8BXVoWiSKRWLlz9JRj%2F6A6dFHrSpwJo5RUumMOnA4sMGOqUBD1bA%2FKJ9AdQRpS5eazN2C93SQ%2FJVgp8wcgmD7SdN05rifePgALvep9JTVemuBBvXwjyjJB32fYSWT%2BYrfEvmo24i7zI72s%2BOZxG9UgjNV3FSE2l3s2bHrD67aMpXhNJfY65dVAgmuI%2BxJwFZd%2B57ONW0EET%2B8fm8Cz6TNOTM6aJ2TD5OgeApdnjx%2F%2Bu6OHmlFZ%2FDR8owjDG6W3pS2X6JaM%2FL3SN8&X-Amz-Signature=8164ce690cb2ccc3d0e9e840de0f2a9a629d0cc7cdfbf10b2c2d172d28f6a3f9&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+    ![image.png](images/6e4516ff-0701-4009-9841-b0f023ca43a6_bcb9317bd2567d5b5ed4b4e712c69804.png)
 
 3. 下载模型到指定目录
 
@@ -218,7 +218,7 @@ LLM模型，Embedding模型选择参考下面的文章
 3. 启动`docker compose up -d`
 4. 查看api文档embedding: `http://ip:1282/docs` rerank:`http://ip:1283/docs`
 
-    ![Untitled.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/da864e11-683f-4c2d-a264-16ecdf57fff9/e1756aaa-6b65-4e54-a5fe-aa2bba18033b/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466X3AIYBM6%2F20250717%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250717T080855Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEFcaCXVzLXdlc3QtMiJIMEYCIQCC%2B0b4jbAAuNGO2bLKcikSvMBSMgbBMmhyB6I9UQFz2AIhAJrLAH5bAWiW4IG6ssy%2FgnTchfi7fHI9q6uU095fyGBaKv8DCHAQABoMNjM3NDIzMTgzODA1IgxVR04nLM9rw%2BiPZEUq3AO1JuI6stJlrdsabGA9SodhGtmkzIcxzrpm20qxYTNKdmVV%2BiIc3jrbLOQVaGI3fNooeJpmRfKIur6NtnF2Wg6Y50F1JSaSD776pT2QeR4Fc9g4CaXek%2FZ0aVLHl9VLKPQNiDFqcSG3kmZcmWDph09R%2BoIk3qekRFlpTe4usyGSxtt8LrJUg72V5lKwNBQXqfdUbyGO93mO7DJKQ0kA7Z191K2amPM3Y%2FjJOi4ZmyJ1ZK%2B%2BXrRdcCslkaAAYkG02BmXNpjZ1dY36%2F6Z2OhSvXz1u3XEoogXvCxvqSsUHjy%2BexaFtBqrK9i7WnxeKCBoxrTcXBe2OqCYDg%2FIa5wTHwjBfr8AqN5wXkjQy%2FkWsQAcdbu4uGxzN34%2FfTaPtJAQBYfKbVJ0plKYG7ioiUNINX3eal5Zo5sHbq6Yv4zXMoTtqDl2efwMubBncveyRqWw4%2Bh1Dgq9vuOkY5HEcComqbXRCYiEDMAth1teOCYe9%2BfttWNPmusZU%2Bs9vC3moyky2r%2FB6CCRatDP0ywG1vzYpQ%2Fofi9n7bKRhRirAzLAxO29hAfgMIe78m7kj4hNzInrs7oqiDrqjn7v6vUjahXnxYaRk6htcAj3JEeFSzY9BdII9Ot6LacgebI86z4oODDyv%2BLDBjqkAfsusLSf9MFH1jOhJGKP3C9PPEHSCuUytSOqh2fbQT9Wzb6Hel5b6k1RfyeJyqZW4EeyaqT%2BSsmRHm%2BiBo5gbxhiMLPEp2%2BwoNcLxa%2F79LzpdEi0oq168khTgwBiyyQ3aYYNW9ugjETCtYRs5IzCjSBf6ciyBhPLo%2BPcfqgmJ5kdvfA0FHE4sHtLtPDnAJMKUGUh74XWu3WYDLvWEsSA%2BiMMbdax&X-Amz-Signature=38edf2f7463fbac1a69ebb9b9de2bedae3e496012a41d181ab5d8bf2a0bcd58b&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+    ![Untitled.png](images/6e4516ff-0701-4009-9841-b0f023ca43a6_358e8bcac991860e8256d597a4f27e3f.png)
 
 
 **排错**
@@ -227,7 +227,7 @@ LLM模型，Embedding模型选择参考下面的文章
 vllm启动可能会有如下报错，在docker compose中修改`shm_size`的值为错误提示的值，即可
 
 
-![Untitled.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/da864e11-683f-4c2d-a264-16ecdf57fff9/bae86682-7725-440f-a248-074de305b696/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466QJCPKEAC%2F20250717%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250717T080850Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEFcaCXVzLXdlc3QtMiJHMEUCIF0jQGS5Efs%2FelSl7lVpSAvITe3HbkX00qN4zukuKyytAiEAqiU80ho1AHKgXFcrkTRHcWwwWHcO73v3im9f35zjzeUq%2FwMIcBAAGgw2Mzc0MjMxODM4MDUiDLe8Egn6kFWXzUSPtyrcA6tOBD6BAMmaJgCVj%2Bvm54qyxSXCTd9MBR9PFPk4RpeI5k7KfPbssT0zq9FnwaF38j8zS7lBWCtFJG3%2BYDYYqgdNCZXQ6MMWcUS%2FkJKyU4QWETtOF8SkKCKjgP8B0qSh6mQHVMYY2JFNeXPZoa1UuwBe0LjY9WpOcQ6DQ0IlsOyWiQ2fvn8eghKfWHKwIjBOdM6Hu7r5zHxEf0pjxYqr3Snl5RrHWnh26s%2FIAHx7peTLtakvAGCjk4d0qoz9F3Vlx5Wn777phmU2JQuX4ft8Bp7Bxte5ThDcaZ3MW6v3BLeqfBklaauLtLRlOgqtZBo16fF3nYB9DoQnRLdIiot0jYNxCtTWJbgFLiW0YuIynzR%2FPWyWpdlms9Av1mObovuE0kGciEx%2FmL61aYoItuhFz4B4YtdDuW0CCFvyv%2BrG3AUQk1a0vxuswbyPTTrc8i0W7ClPk75G6TXYY%2BS9PpU4WxMhA9DfP%2FTbSGX0lzQNrID%2FMZN%2Fp%2FEcJ2n5vO7nd9UX4UwoMl8py0mhvR1RS4HgWIB%2BQsv5IZtKDpp%2BRWUB4yTpaX7fT1m3RxRpVSV4jKQo9%2FHmDUtE74KzVVXc%2FNq3MKIK0bYifWfwVG1W6QdLiJvo4bKKJLZ11wbA732LML7A4sMGOqUBKW9V3%2F51SVeKmtblzVAsRqSGQqfP78BpGPtHCTGWGnfG6MHGN2s%2B%2FobV33qROpnO%2BMm32XryCEtD9VXXYT6o5gRxc94jG8RvNuiVS46YEr%2B8WExgbUeJQ0%2BBjgzZEZxp5777L0oR74%2BeEEyPM%2F1UTNFxD0CbG%2BZCGcKO%2BfZkNfHJHRRfbXAQFI2k7d3FLwmEzmViYRUjGzApf9FrFRebPxtxqCrz&X-Amz-Signature=d9659de7dee2d5545391ecfd0ca0599952aec8bc65c50070f92dd7a356391a98&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+![Untitled.png](images/6e4516ff-0701-4009-9841-b0f023ca43a6_7ca341ec25a450e85cdfcee0df2af03e.png)
 
 
 ## 已废弃部署方法（20240918）
@@ -303,7 +303,7 @@ vllm启动可能会有如下报错，在docker compose中修改`shm_size`的值�
 
 4. 查看api文档`http://ip:1281/docs`
 
-    ![Untitled.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/da864e11-683f-4c2d-a264-16ecdf57fff9/5813f5f8-9f74-497d-a7d3-ff6317a1e549/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB46662FQ6BII%2F20250717%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250717T080904Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEFcaCXVzLXdlc3QtMiJHMEUCIFcEjMHoIW%2B3mu6fCbH8NLOxe3tVbPgvxx9fJVuPQrHZAiEAyK07F3daamkY%2BRJxd9TTVV1qSWOjG9IIPVrIeqHbU3Mq%2FwMIcBAAGgw2Mzc0MjMxODM4MDUiDCfE1FsHd8Cr77R9dyrcA%2BWMsBD84qXtIHKyhPIGgLXPu3At6sKJx%2FoPsRc7hQ2gnZUjXRrB%2F9jSJk%2FApN%2FyRGMT6nrq3tbR1Yz3rArFraOFHBTPWEentiIAu4yzn3inB8OQMWmNviz2DsHlPBNKRIWYAcGVgmxyWEDQdUlXfUJ13QyQHWzG0GBj%2BZfN1BJWJVkKQvtDtG0RBrtmoUTgl2%2FOD6M4GW1nrWNk1RF%2FsX%2F1KLInYqJiNLAPj3Pf7wrWnMHakaWjGfOO%2FdOt6DpOjjCYD%2FJL3LrBDHw0DCnShc3U2o7w%2BTjIt5O8MfvjTbgvo2ysR3Y3hODFmXY5J28WFmjDTYsfn1WSmdpaKC1oojxJD0KrnuHsm1mnrPX4PW8RA5w5Naxv2k6bqCTn7gjBXRPyETCGMAw1b5HFPByf3cw3xwslJ%2BbRfyMfcDIxidVdt%2FLV37t8jhemmbm%2Fs2OQ034MPiC3orUr2WSWAhcevOYt%2FD25w%2FnMwOlVvFz9dqnYkZpYUnZJXoAtfbF%2BkE%2F1lY%2FsgQA9tqykvZQFn%2BeWw9N%2BzAQkq6DibgFgAirObrz%2BmeYqKSFRYDaBNDOgyB3QhQFBnpzdNHDHApEojY5NQ7oaQ7NhK%2BY%2BlfnwQW7gF1RLgA5mhHTLY0%2BL2gcfMLPA4sMGOqUBydhoj4lJsK2vXswhZtgL0rRIVNEWk2zM%2BWKyuETrVR6p18ellV8twu8xtdP%2FshvLBrCeVEtztaTdvmFVo7t%2F1rPtzFW0HdXc8z6OEvk9d97JcE3h93DUlRAo2UdR2VkYPYXmIwRyQN5qaCk5ulyExAjz0fWq%2FVrQhSo%2Ft8LIliqI8Iuz391Yb3OqDp2EfgG6RmTc4ytuY1bn1IsU7s%2FyJa%2FE3aLW&X-Amz-Signature=9190edb6f9adb02009159a7030e83f9bd2c1b014d2edb492784ee024d5d42d76&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+    ![Untitled.png](images/6e4516ff-0701-4009-9841-b0f023ca43a6_b38bdaf64eca9f8f568f0cb1a22d1120.png)
 
 
 ## 方案2：本地环境部署
