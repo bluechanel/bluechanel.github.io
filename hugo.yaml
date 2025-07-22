@@ -32,6 +32,7 @@ params:
   hideSummary: false
   hideFooter: true
   comment: true
+  disableGoogleAnalytics: true
   
   giscus:
     repo: "bluechanel/bluechanel.github.io"
@@ -64,7 +65,8 @@ params:
 
   analytics:
     google:
-      SiteVerificationTag: "G-9QC19VEKH0"
+      SiteVerificationTag: "m9WkslZ46bN3h4BjbYDbDkPOTvaTuDgVtZnUez_AXPc"
+      AnalyticsId: "G-9QC19VEKH0"
     bing:
       SiteVerificationTag: "XYZabc"
     yandex:
