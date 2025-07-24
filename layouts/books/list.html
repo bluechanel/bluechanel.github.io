@@ -1,0 +1,86 @@
+{{ define "main" }}
+  {{ $books := site.Data.books }}
+
+  <h2 class="text-xl font-bold py-4">📖 正在阅读</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+    {{ range $books.reading }}
+    <div class="p-6 bg-white dark:bg-gray-800 rounded-lg shadow hover:shadow-lg transition">
+      <a href="{{ .link }}" target="_blank" rel="noopener noreferrer">
+        <h2 class="text-lg font-bold text-blue-600 hover:underline mb-2">{{ .name }}</h2>
+      </a>
+      <!-- Author -->
+      <p class="text-sm text-gray-600 dark:text-gray-400 mb-1">👤 作者：{{ .author }}</p>
+      <!-- Date -->
+      <p class="text-sm text-gray-600 dark:text-gray-400 mb-1">📅 开始日期：{{ .date | time.Format "2006-01-02" }}</p>
+      <!-- Carrier -->
+      <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">💻 阅读方式：{{ .carrier }}</p>
+      <!-- Tags -->
+      {{ if .tags }}
+        <div class="mt-2 flex flex-wrap gap-2">
+          {{ range .tags }}
+            <span class="inline-block text-xs px-2 py-1 rounded-full  dark:text-white">
+              #{{ . }}
+            </span>
+          {{ end }}
+        </div>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+
+
+  <h2 class="text-xl font-bold py-4">📚 想读</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+    {{ range $books.toRead }}
+    <div class="p-6 bg-white dark:bg-gray-800 rounded-lg shadow hover:shadow-lg transition">
+      <a href="{{ .link }}" target="_blank" rel="noopener noreferrer">
+        <h2 class="text-lg font-bold text-blue-600 hover:underline mb-2">{{ .name }}</h2>
+      </a>
+      <!-- Author -->
+      <p class="text-sm text-gray-600 dark:text-gray-400 mb-1">👤 作者：{{ .author }}</p>
+      <!-- Date -->
+      <p class="text-sm text-gray-600 dark:text-gray-400 mb-1">📅 开始日期：{{ .date | time.Format "2006-01-02" }}</p>
+      <!-- Carrier -->
+      <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">💻 阅读方式：{{ .carrier }}</p>
+      <!-- Tags -->
+      {{ if .tags }}
+        <div class="mt-2 flex flex-wrap gap-2">
+          {{ range .tags }}
+            <span class="inline-block text-xs px-2 py-1 rounded-full  dark:text-white">
+              #{{ . }}
+            </span>
+          {{ end }}
+        </div>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+
+  <h2 class="text-xl font-bold py-4">✅ 已读完</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+    {{ range $books.Finished }}
+    <div class="p-6 bg-white dark:bg-gray-800 rounded-lg shadow hover:shadow-lg transition">
+      <a href="{{ .link }}" target="_blank" rel="noopener noreferrer">
+        <h2 class="text-lg font-bold text-blue-600 hover:underline mb-2">{{ .name }}</h2>
+      </a>
+      <!-- Author -->
+      <p class="text-sm text-gray-600 dark:text-gray-400 mb-1">👤 作者：{{ .author }}</p>
+      <!-- Date -->
+      <p class="text-sm text-gray-600 dark:text-gray-400 mb-1">📅 开始日期：{{ .date | time.Format "2006-01-02" }}</p>
+      <!-- Carrier -->
+      <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">💻 阅读方式：{{ .carrier }}</p>
+      <!-- Tags -->
+      {{ if .tags }}
+        <div class="mt-2 flex flex-wrap gap-2">
+          {{ range .tags }}
+            <span class="inline-block text-xs px-2 py-1 rounded-full  dark:text-white">
+              #{{ . }}
+            </span>
+          {{ end }}
+        </div>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+
+{{ end }}

@@ -101,6 +101,19 @@ markup:
     # lineNos: true
     style: monokai
 
+menu:
+  main:
+    - identifier: "books"
+      name: "读书"
+      url: "/books"
+      weight: 1
+    - identifier: "about"
+      name: "关于"
+      url: "https://about.wileyzhang.com/"
+      weight: 2
+      params:
+        external: true
+
 caches:
   images:
     dir: :cacheDir/images
