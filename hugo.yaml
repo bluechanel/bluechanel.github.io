@@ -107,10 +107,14 @@ menu:
       name: "读书"
       url: "/books"
       weight: 1
+    - identifier: "films"
+      name: "观影"
+      url: "/films"
+      weight: 2
     - identifier: "about"
       name: "关于"
       url: "https://about.wileyzhang.com/"
-      weight: 2
+      weight: 3
       params:
         external: true
 

@@ -1,0 +1,32 @@
+{{ define "main" }}
+  {{ $films := site.Data.films }}
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+    {{ range $films.read }}
+    <div class="p-5 bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 rounded-2xl shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+      
+      <!-- 标题 -->
+      <a href="{{ .describe }}" target="_blank" rel="noopener noreferrer">
+        <h2 class="text-lg font-bold hover:underline mb-3 truncate">{{ .name }}</h2>
+      </a>
+
+      <!-- 开始日期 -->
+      <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">
+        📅 <span class="font-medium">开始日期：</span>{{ .date | time.Format "2006-01-02" }}
+      </p>
+
+      <!-- 标签 -->
+      {{ if .tags }}
+        <div class="flex flex-wrap gap-2">
+          {{ range .tags }}
+            <span class="inline-block text-xs font-medium px-2 py-0.5 rounded-full bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">
+              #{{ . }}
+            </span>
+          {{ end }}
+        </div>
+      {{ end }}
+
+    </div>
+    {{ end }}
+  </div>
+{{ end }}
