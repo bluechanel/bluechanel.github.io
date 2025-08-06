@@ -1,7 +1,6 @@
 baseURL: https://www.wileyzhang.com/
 languageCode: zh-cn
 title: Wiley Blog | AI/LLM developer blog
-theme: "Gallery"
 
 hasCJKLanguage: true
 enableRobotsTXT: true

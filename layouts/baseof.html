@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language.LanguageCode }}" dir="{{ or site.Language.LanguageDirection `ltr` }}">
+<head>
+  {{ partial "head.html" . }}
+</head>
+<body class="flex flex-col min-h-screen bg-gray-100/80 dark:bg-gray-900/80">
+  
+  <!-- 页头 -->
+  <header>
+    {{ partial "header.html" . }}
+  </header>
+
+  <!-- 主体内容：自动填满剩余空间 -->
+  <main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-12 mt-16">
+    {{ block "main" . }}{{ end }}
+  </main>
+
+  <!-- 页脚：始终在最底部 -->
+  {{ with site.Params.hideFooter }}
+  <footer class="w-full h-24 border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 px-4">
+    {{ partial "footer.html" . }}
+  </footer>
+  {{ end }}
+
+</body>
+</html>

@@ -46,3 +46,7 @@ example
 scripts
 themes/PaperMod
 .hugo_build.lock
+input.css
+package-lock.json
+package.json
+tmp*

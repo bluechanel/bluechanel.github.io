@@ -1,0 +1,12 @@
+<div class="max-w-6xl mx-auto h-full flex flex-col sm:flex-row justify-between items-center">
+    <!-- 左侧版权 -->
+    <div class="text-sm text-gray-600 dark:text-gray-400">
+        © 2020-{{ now.Year }} Wiley's Blog
+    </div>
+
+    <!-- 右侧公众号图 -->
+    <div class="mt-2 sm:mt-0 flex flex-row items-center space-x-2">
+        <span class="text-sm text-gray-700 dark:text-gray-300 px-4">扫码关注:</span>
+        <img src="{{ "wechat.png" | relURL }}" alt="微信公众号" class="h-24 w-auto" />
+    </div>
+</div>
