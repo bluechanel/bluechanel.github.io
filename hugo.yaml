@@ -22,6 +22,8 @@ params:
   DateFormat: "January 2, 2006"
   defaultTheme: auto # dark, light
   disableThemeToggle: false
+  books: 71
+  films: 505
   
   ShowBreadCrumbs: true
   ShowRssButtonInSectionTermList: true
