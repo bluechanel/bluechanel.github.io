@@ -23,7 +23,7 @@ params:
   defaultTheme: auto # dark, light
   disableThemeToggle: false
   books: 71
-  films: 505
+  films: 506
   
   ShowBreadCrumbs: true
   ShowRssButtonInSectionTermList: true
