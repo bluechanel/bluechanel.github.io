@@ -1,5 +1,4 @@
 import type { PageMapItem } from 'nextra'
-import { version } from 'nextra/package.json'
 import type { FC, ReactNode } from 'react'
 import { Footer } from './footer'
 import { Navbar } from './navbar'
@@ -19,7 +18,7 @@ export const NextraTheme: FC<{
           fontWeight: 'normal'
         }}
       >
-        Custom theme demo for <strong>Nextra {version}</strong>
+        Custom theme demo for <strong>Nextra</strong>
       </h1>
       <Navbar pageMap={pageMap} />
       <div style={{ display: 'flex' }}>

@@ -2,7 +2,7 @@ import nextra from 'nextra'
 
 
 const isProduction = process.env.NODE_ENV === 'production';
-const repositoryName = 'my-awesome-docs'; // <--- 替换成你的仓库名！
+const repositoryName = 'test-blog'; // <--- 替换成你的仓库名！
 
 const withNextra = nextra({})
 
