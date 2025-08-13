@@ -3,12 +3,9 @@ export default {
     title: '首页',
     type: 'page'
   },
-  docs: {
+  books: {
     title: '读书',
     type: 'page',
-    items: {
-      'one-level': ''
-    }
   },
   films: {
     title: '观影',
