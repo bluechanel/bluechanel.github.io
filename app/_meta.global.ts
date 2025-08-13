@@ -10,14 +10,9 @@ export default {
       'one-level': ''
     }
   },
-  posts: {
+  films: {
     title: '观影',
     type: 'page',
-    items: {
-      draft: {
-        display: 'hidden'
-      }
-    }
   },
   _: {
     title: '关于',

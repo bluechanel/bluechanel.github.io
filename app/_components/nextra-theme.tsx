@@ -11,11 +11,11 @@ export const NextraTheme: FC<{
   return (
     <>
       <Navbar pageMap={pageMap} />
-      <div className='flex'>
-        <Sidebar pageMap={pageMap} />
+      <div className='flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-12 mt-16'>
+        {/* <Sidebar pageMap={pageMap} /> */}
         {children}
       </div>
-      <Footer />
+      <Footer className="w-full h-24 bg-gray-100 dark:bg-gray-950 px-4"/>
     </>
   )
 }
