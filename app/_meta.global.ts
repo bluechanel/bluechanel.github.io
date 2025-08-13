@@ -1,16 +1,17 @@
 export default {
   index: {
+    title: '首页',
     type: 'page'
   },
   docs: {
-    title: 'Documentation',
+    title: '读书',
     type: 'page',
     items: {
       'one-level': ''
     }
   },
   posts: {
-    title: '博客',
+    title: '观影',
     type: 'page',
     items: {
       draft: {
@@ -19,8 +20,13 @@ export default {
     }
   },
   _: {
+    title: '关于',
     type: 'page',
-    href: 'https://nextra.site',
-    title: 'Nextra Docs'
+    href: 'https://about.wileyzhang.com/'
+  },
+  a: {
+    title: '开往',
+    type: 'page',
+    href: 'https://www.travellings.cn/go.html'
   }
 }

@@ -10,18 +10,8 @@ export const NextraTheme: FC<{
 }> = ({ children, pageMap }) => {
   return (
     <>
-      <h1
-        style={{
-          margin: 0,
-          padding: 20,
-          background: 'lightslategray',
-          fontWeight: 'normal'
-        }}
-      >
-        Custom theme demo for <strong>Nextra</strong>
-      </h1>
       <Navbar pageMap={pageMap} />
-      <div style={{ display: 'flex' }}>
+      <div className='flex'>
         <Sidebar pageMap={pageMap} />
         {children}
       </div>
