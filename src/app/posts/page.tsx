@@ -1,5 +1,5 @@
-import Link from 'next/link';
 import { getSortedPostsData } from '@/lib/posts';
+import Image from 'next/image';
 
 export default function Home() {
   const allPostsData = getSortedPostsData();
@@ -11,7 +11,7 @@ export default function Home() {
                 {allPostsData.map((post) => (
                     <article key={post.id} className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ease-in-out">
                         <div className="relative h-48 w-full">
-                                <img src={`/posts/${post.cover}`} alt="封面图片" className="h-full w-full object-cover" />
+                            <Image src={`/posts/${post.cover}`} alt="封面图片" fill className="object-cover" />
                         </div>
                         <div className="px-4 py-2">
                             <div className="flex flex-wrap gap-2 mb-2">
