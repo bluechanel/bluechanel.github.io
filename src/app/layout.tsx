@@ -2,6 +2,8 @@ import "./globals.css";
 import type { Metadata } from 'next'
 import type { FC, ReactNode } from 'react'
 import { ThemeProvider } from 'next-themes'
+import { Navbar } from "@/components/navbar";
+import { Footer } from "@/components/footer";
 
 export const metadata: Metadata = {
   title: {
@@ -13,9 +15,11 @@ export const metadata: Metadata = {
 const RootLayout: FC<{ children: ReactNode }> = async ({ children }) => {
   return (
     <html lang="en" dir="ltr" suppressHydrationWarning >
-      <body style={{ margin: 0 }} className='bg-gray-100 dark:bg-gray-950'>
+      <body style={{ margin: 0 }} className='min-h-screen flex flex-col bg-gray-100 dark:bg-gray-950'>
         <ThemeProvider>
-          {children}
+          <Navbar />
+          <main className='flex-1'>{children}</main>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
