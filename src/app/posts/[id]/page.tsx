@@ -20,7 +20,6 @@ export default async function Post({
   try {
     postData = await getPostData(id);
   } catch (error) {
-    // 如果找不到文章，显示 404 页面
     notFound();
   }
 

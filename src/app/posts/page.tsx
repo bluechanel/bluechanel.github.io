@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div className='flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-12 mt-16'>
         <div className="flex flex-row lg:flex-row gap-4">
-            <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+            <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                 {allPostsData.map((post) => (
                     <article key={post.id} className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ease-in-out">
                         <div className="relative h-48 w-full">
