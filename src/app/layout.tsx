@@ -1,9 +1,11 @@
 import "./globals.css";
+import 'highlight.js/styles/github-dark.css';
 import type { Metadata } from 'next'
 import type { FC, ReactNode } from 'react'
 import { ThemeProvider } from 'next-themes'
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
+
 
 export const metadata: Metadata = {
   title: {

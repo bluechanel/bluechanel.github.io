@@ -1,8 +1,6 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import { remark } from 'remark';
-import html from 'remark-html';
 
 // posts 文件夹的路径
 const postsDirectory = path.join(process.cwd(), 'content');
@@ -83,15 +81,9 @@ export async function getPostData(id: string) {
   const fileName = `${id}.md`;
   const { metaData, content } = parsePostFile(fileName);
 
-  // 将 markdown 转换为 HTML
-  const processedContent = await remark()
-    .use(html)
-    .process(content);
-  const contentHtml = processedContent.toString();
-
   // 组合元数据和 HTML 内容
   return {
     ...metaData,
-    contentHtml,
+    content
   };
 }

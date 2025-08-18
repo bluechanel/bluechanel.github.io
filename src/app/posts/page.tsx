@@ -1,8 +1,9 @@
 import { getSortedPostsData } from '@/lib/posts';
 import Image from 'next/image';
 
-export default function Home() {
+export default function Posts() {
   const allPostsData = getSortedPostsData();
+  console.log(allPostsData);
 
   return (
     <div className='flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-12 mt-16'>
