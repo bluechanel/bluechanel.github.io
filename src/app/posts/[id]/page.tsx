@@ -7,6 +7,19 @@ import TableOfContents from '@/components/table-contents';
 import { PostContent } from '@/components/content';
 import { Comment } from '@/components/comment';
 
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>
+}) {
+  const { id } = await params;
+  const post = await getPostData(id);
+
+  return {
+    title: `${post.title}`
+  }
+}
+
 // 这个函数会在构建时生成所有可能的文章路径
 export async function generateStaticParams() {
   const paths = getAllPostIds();

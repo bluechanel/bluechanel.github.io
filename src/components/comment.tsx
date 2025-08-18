@@ -15,7 +15,7 @@ export function  Comment() {
         reactionsEnabled="1"
         emitMetadata="0"
         inputPosition="top"
-        // theme="light"
+        theme="light"
         lang="zh-CN"
         loading="lazy"
       />
