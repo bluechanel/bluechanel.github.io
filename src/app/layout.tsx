@@ -1,5 +1,4 @@
 import "./globals.css";
-import 'highlight.js/styles/github-dark.css';
 import { GoogleAnalytics } from '@next/third-parties/google'
 import type { Metadata } from 'next'
 import type { FC, ReactNode } from 'react'
