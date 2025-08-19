@@ -1,5 +1,6 @@
 import { getSortedPostsData } from '@/lib/posts';
 import Image from 'next/image';
+import { format } from 'date-fns';
 
 export async function generateMetadata(props: { params: any }) {
   const params = await props.params
@@ -36,7 +37,7 @@ export default function Posts() {
                             </div>
                             <div className='flex flex-row justify-between'>
                                 <div className="text-sm text-gray-500 dark:text-gray-400">
-                                    {post.updateDate.toDateString()}
+                                    {format(post.updateDate, 'yyyy-MM-dd')}
                                 </div>
                                 <div className="text-sm text-gray-500 dark:text-gray-400">
                                     {post.readingTime} min

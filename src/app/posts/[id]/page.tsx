@@ -1,6 +1,7 @@
 import { getPostData, getAllPostIds } from '@/lib/posts';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
+import { format } from 'date-fns';
 
 import { Calculator, Clock, Hourglass } from 'lucide-react'
 import TableOfContents from '@/components/table-contents';
@@ -62,12 +63,12 @@ export default async function Post({
               <div className='flex flex-row '>
                 <div className="flex flex-row text-sm text-gray-500 dark:text-gray-400">
                   <Calculator className="w-4 h-4 mr-2" />
-                  {postData.date.toDateString()}
+                  {format(postData.date, 'yyyy-MM-dd')}
                 </div>
                 <div className="h-4 w-0.5 bg-gray-300 dark:bg-gray-600 mx-4"></div>
                 <div className="flex flex-row text-sm text-gray-500 dark:text-gray-400">
                   <Clock className="w-4 h-4 mr-2" />
-                  {postData.updateDate.toDateString()}
+                  {format(postData.updateDate, 'yyyy-MM-dd')}
                 </div>
                 <div className="h-4 w-0.5 bg-gray-300 dark:bg-gray-600 mx-4"></div>
                 <div className="flex flex-row text-sm text-gray-500 dark:text-gray-400">
