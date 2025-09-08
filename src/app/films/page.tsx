@@ -4,7 +4,8 @@ import { Info } from 'lucide-react'
 export async function generateMetadata(props: { params: any }) {
   const params = await props.params
   return {
-    title: `观影 | Wiley`
+    title: `观影 | Wiley`,
+    description: '观影，展示我的生活瞬间，记录我的生活。'
   }
 }
 

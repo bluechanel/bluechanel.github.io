@@ -22,6 +22,7 @@ export const Navbar: FC<{ }> = ({ }) => {
     { title: "文章", route: "/posts" },
     { title: "读书", route: "/books" },
     { title: "观影", route: "/films" },
+    { title: "相册", route: "/gallary" },
     { title: "开往", route: "https://www.travellings.cn/go.html" },
     { title: "关于", route: "https://about.wileyzhang.com/" }
   ];

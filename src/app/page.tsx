@@ -1,20 +1,9 @@
 import Image from 'next/image';
 import { getSortedPostsData } from '@/lib/posts';
-
-const liveImages = [
-  {
-    href: "https://i.postimg.cc/BvsWQXp6/Untitled.jpg",
-    desc: "🐼遥望远方的熊猫"
-  },
-  {
-    href: "https://i.postimg.cc/MHvMLr1Z/6-A02-A11-B-DACC-4542-9-BC2-7-A165-D8-DAA2-E.jpg",
-    desc: "💮平安桥天主教堂的玉兰花"
-  },
-  {
-    href: "https://i.postimg.cc/6qg2xLhr/Untitled2.jpg",
-    desc: "🏔昆仑山脉的冰川"
-  },
-]
+import PhotoGalleryWithLightbox from '@/components/gallary';
+import photos from '@/data/gallay.json';
+import { Photo } from "@/types/photo";
+const liveImages: Photo[] = photos.slice(0, 3);
 
 export default function Home() {
   const allPostsData = getSortedPostsData().slice(0, 3);
@@ -34,7 +23,7 @@ export default function Home() {
       <section className="container mx-auto px-4 py-8">
         <div className="flex flex-row items-center justify-between mt-6">
           <h2 className="text-xl font-bold mb-6">最新文章</h2>
-          <a href="/posts" className="px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded hover:bg-gray-300 dark:hover:bg-gray-600">查看更多文章</a>
+          <a href="/posts" className="px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded hover:bg-gray-300 dark:hover:bg-gray-600">查看更多</a>
         </div>
         <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {allPostsData.map((post) => (
@@ -53,21 +42,12 @@ export default function Home() {
 
 
       <section className="container mx-auto px-4 py-8">
-        <h2 className="text-xl font-bold mb-6">生活瞬间</h2>
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {liveImages.map((image, index) => (
-            <div key={index} className="bg-white dark:bg-gray-800 rounded-lg shadow overflow-hidden">
-              <div className='relative w-full h-48'>
-                <Image src={image.href} alt="生活照片" fill sizes="100vw" className="object-cover" />
-              </div>
-              <div className="p-4">
-                <p className="text-sm text-gray-600 dark:text-gray-400">{image.desc}</p>
-              </div>
-            </div>
-          ))}
+        <div className="flex flex-row items-center justify-between mt-6">
+          <h2 className="text-xl font-bold mb-6">生活瞬间</h2>
+          <a href="/gallary" className="px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded hover:bg-gray-300 dark:hover:bg-gray-600">查看更多</a>
         </div>
+        <PhotoGalleryWithLightbox photos={liveImages} />
       </section>
     </div>
-
   );
 }
