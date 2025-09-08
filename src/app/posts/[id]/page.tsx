@@ -17,7 +17,8 @@ export async function generateMetadata({
   const post = await getPostData(id);
 
   return {
-    title: `${post.title}`
+    title: `${post.title}-WileyZhang`,
+    description: post.description,
   }
 }
 
@@ -41,10 +42,32 @@ export default async function Post({
   } catch (error) {
     notFound();
   }
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: postData.title,
+    datePublished: postData.date,
+    dateModified: postData.updateDate, // 如果有最后修改时间
+    author: [{
+      '@type': 'Person',
+      name: 'WileyZhang',
+      url: `https://wileyzhang.com/about`,
+    }],
+    image: postData.cover,
+    description: postData.description,
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://wileyzhang.com/posts/${postData.id}`,
+    },
+  };
 
   return (
     <div className="max-w-6xl mx-auto px-4 flex gap-8">
       <article className="flex-1 bg-white dark:bg-gray-800 rounded-lg shadow-sm overflow-hidden">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <div className="relative h-64 sm:h-96 w-full">
           <Image src={postData.cover} alt="文章封面" className="object-cover" fill/>
         </div>

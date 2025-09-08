@@ -12,7 +12,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   // 为每篇文章创建一个 sitemap 条目
   const postUrls = posts.map(post => ({
-    url: `${baseUrl}/blog/${post.id}`,
+    url: `${baseUrl}/posts/${post.id}`,
     lastModified: new Date(post.updateDate),
     changeFrequency: 'weekly' as const, // 或者 'daily', 'monthly', 'yearly', 'always', 'never'
     priority: 0.8,
