@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     template: '%s | Wiley Blog',
     default: 'Wiley Blog | AI/LLM developer blog'
   },
-  description: 'A technical blog focusing on AI, LLM development, and cutting-edge technology insights. Sharing practical experiences and in-depth analysis in artificial intelligence and large language models.',
+  description: '一个专注于人工智能、大型语言模型开发和前沿技术见解的技术博客。分享在人工智能和大型语言模型方面的实践经验和深入分析。涉及的技术栈包括，LangGraph，RAG，Agent，MCP，Python，NextJS，LLM等',
   keywords: ['AI', 'LLM', 'Machine Learning', 'Artificial Intelligence', 'Developer Blog', 'Technical Writing', 'Programming'],
   authors: [{ name: 'Wiley Zhang' }],
   creator: 'Wiley Zhang',
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     locale: 'zh_CN',
     url: 'https://wileyzhang.com',
     title: 'Wiley Blog | AI/LLM developer blog',
-    description: 'A technical blog focusing on AI, LLM development, and cutting-edge technology insights. Sharing practical experiences and in-depth analysis in artificial intelligence and large language models.',
+    description: '一个专注于人工智能、大型语言模型开发和前沿技术见解的技术博客。分享在人工智能和大型语言模型方面的实践经验和深入分析。涉及的技术栈包括，LangGraph，RAG，Agent，MCP，Python，NextJS，LLM等',
     siteName: 'Wiley Blog',
     images: [
       {
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Wiley Blog | AI/LLM developer blog',
-    description: 'A technical blog focusing on AI, LLM development, and cutting-edge technology insights. Sharing practical experiences and in-depth analysis in artificial intelligence and large language models.',
+    description: '一个专注于人工智能、大型语言模型开发和前沿技术见解的技术博客。分享在人工智能和大型语言模型方面的实践经验和深入分析。涉及的技术栈包括，LangGraph，RAG，Agent，MCP，Python，NextJS，LLM等',
     creator: '@wileyzhang',
   },
   alternates: {

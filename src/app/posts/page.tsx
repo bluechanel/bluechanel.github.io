@@ -1,12 +1,11 @@
 import { getSortedPostsData } from '@/lib/posts';
-import Image from 'next/image';
-import { format } from 'date-fns';
 import { PostCard } from '@/components/postcard';
 
 export async function generateMetadata(props: { params: any }) {
   const params = await props.params
   return {
-    title: `文章 | Wiley`
+    title: `文章 | Wiley`,
+    description: '一个专注于人工智能、大型语言模型开发和前沿技术见解的技术博客。分享在人工智能和大型语言模型方面的实践经验和深入分析。涉及的技术栈包括，LangGraph，RAG，Agent，MCP，Python，NextJS，LLM等',
   }
 }
 
