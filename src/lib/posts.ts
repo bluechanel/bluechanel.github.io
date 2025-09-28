@@ -64,6 +64,27 @@ export function getSortedPostsData() {
   });
 }
 
+// 添加分页数据获取函数
+export function getPaginatedPostsData(page: number, postsPerPage: number = 9) {
+  const allPosts = getSortedPostsData();
+  const totalPosts = allPosts.length;
+  const totalPages = Math.ceil(totalPosts / postsPerPage);
+  
+  // 确保页码在有效范围内
+  if (page < 1) page = 1;
+  if (page > totalPages) page = totalPages;
+  
+  const startIndex = (page - 1) * postsPerPage;
+  const paginatedPosts = allPosts.slice(startIndex, startIndex + postsPerPage);
+  
+  return {
+    posts: paginatedPosts,
+    totalPages,
+    currentPage: page,
+    totalPosts
+  };
+}
+
 export function getAllPostIds() {
   const fileNames = fs.readdirSync(postsDirectory);
 
