@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     siteName: 'Wiley Blog',
     images: [
       {
-        url: 'https://wileyzhang.com/cover.png',
+        url: 'https://wileyzhang.com/cover.jpg',
         width: 1200,
         height: 630,
         alt: 'Wiley Blog | AI/LLM developer blog',
