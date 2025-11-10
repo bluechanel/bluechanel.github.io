@@ -22,3 +22,179 @@ html.dark .shiki span {
 .shiki {
   @apply overflow-x-auto rounded-xl p-5;
 }
+
+/* Google CSE 自定义样式 */
+/* 完整搜索组件样式 */
+.gcse-search {
+  background: transparent !important;
+  border: none !important;
+}
+
+/* 搜索框样式 */
+.gcse-search table,
+.gcse-searchbox-only table {
+  margin: 0 !important;
+}
+
+.gcse-search input.gsc-input,
+.gcse-searchbox-only input.gsc-input {
+  background-color: transparent !important;
+  color: inherit !important;
+  font-size: 1.125rem !important;
+  padding: 0.75rem !important;
+  border: 1px solid #d1d5db !important;
+  border-radius: 0.5rem !important;
+  box-shadow: none !important;
+}
+
+/* 暗色主题下的搜索框 */
+.dark .gcse-search input.gsc-input,
+.dark .gcse-searchbox-only input.gsc-input {
+  color: #f3f4f6 !important;
+  border-color: #4b5563 !important;
+}
+
+.gcse-search input.gsc-input::placeholder,
+.gcse-searchbox-only input.gsc-input::placeholder {
+  color: #9ca3af !important;
+}
+
+/* 搜索按钮 */
+.gcse-search button.gsc-search-button,
+.gcse-searchbox-only button.gsc-search-button {
+  background: #10b981 !important;
+  border: none !important;
+  margin-left: 0.5rem !important;
+  border-radius: 0.5rem !important;
+  padding: 0.5rem 1rem !important;
+}
+
+.gcse-search button.gsc-search-button:hover,
+.gcse-searchbox-only button.gsc-search-button:hover {
+  background: #059669 !important;
+}
+
+/* 搜索结果容器 - 移除高度限制，让外层容器控制滚动 */
+.gcse-search .gsc-results-wrapper-overlay,
+.gcse-search .gsc-results-wrapper-visible {
+  overflow: visible !important;
+  max-height: none !important;
+}
+
+/* 搜索结果样式 */
+.gsc-results {
+  width: 100% !important;
+}
+
+.gsc-result {
+  background: transparent !important;
+  border: none !important;
+  padding: 1rem 0 !important;
+  border-bottom: 1px solid #e5e7eb !important;
+}
+
+.dark .gsc-result {
+  border-bottom-color: #374151 !important;
+}
+
+.gsc-result:last-child {
+  border-bottom: none !important;
+}
+
+/* 搜索结果标题 */
+.gsc-result .gs-title {
+  color: #2563eb !important;
+  text-decoration: none !important;
+  font-size: 1.125rem !important;
+  font-weight: 600 !important;
+}
+
+.dark .gsc-result .gs-title {
+  color: #60a5fa !important;
+}
+
+.gsc-result .gs-title:hover {
+  text-decoration: underline !important;
+}
+
+/* 搜索结果摘要 */
+.gsc-result .gs-snippet {
+  color: #4b5563 !important;
+  margin-top: 0.25rem !important;
+}
+
+.dark .gsc-result .gs-snippet {
+  color: #d1d5db !important;
+}
+
+/* 搜索结果 URL */
+.gsc-result .gs-visibleUrl {
+  color: #059669 !important;
+  font-size: 0.875rem !important;
+}
+
+.dark .gsc-result .gs-visibleUrl {
+  color: #34d399 !important;
+}
+
+/* 清除 Google 默认样式 */
+.gsc-control-cse {
+  padding: 0 !important;
+  border: none !important;
+  background: transparent !important;
+}
+
+.gsc-above-wrapper-area {
+  border: none !important;
+}
+
+.gsc-table-result {
+  background: transparent !important;
+}
+
+/* 隐藏 Google 品牌和广告 */
+.gsc-adBlock {
+  display: none !important;
+}
+
+.gcsc-branding {
+  display: none !important;
+}
+
+/* 分页样式 */
+.gsc-cursor-box {
+  margin-top: 1rem !important;
+}
+
+.gsc-cursor-page {
+  background: transparent !important;
+  border: 1px solid #d1d5db !important;
+  color: #374151 !important;
+  padding: 0.5rem 0.75rem !important;
+  margin: 0 0.25rem !important;
+  border-radius: 0.375rem !important;
+}
+
+.dark .gsc-cursor-page {
+  border-color: #4b5563 !important;
+  color: #e5e7eb !important;
+}
+
+.gsc-cursor-page:hover {
+  background: #f3f4f6 !important;
+}
+
+.dark .gsc-cursor-page:hover {
+  background: #374151 !important;
+}
+
+.gsc-cursor-current-page {
+  background: #10b981 !important;
+  border-color: #10b981 !important;
+  color: white !important;
+}
+
+.dark .gsc-cursor-current-page {
+  background: #10b981 !important;
+  border-color: #10b981 !important;
+}
