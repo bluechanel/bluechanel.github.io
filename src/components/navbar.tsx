@@ -55,36 +55,71 @@ export const Navbar: FC<{}> = ({}) => {
             document.body.style.overflow = "hidden";
             // 设置加载状态
             setIsSearchLoading(true);
+            // 增加 key 以强制重新渲染搜索组件
+            setSearchKey((prev) => prev + 1);
 
             if (typeof window !== "undefined") {
-                // 等待 Google CSE 脚本加载完成
-                const checkAndRender = () => {
-                    if ((window as any).google?.search?.cse) {
-                        // Google CSE 已加载，会自动渲染 gcse- 开头的 div
-                        // 等待一小段时间确保渲染完成
-                        setTimeout(() => {
-                            const searchBox = document.querySelector(".gsc-input");
-                            if (searchBox) {
-                                setIsSearchLoading(false);
-                            } else {
-                                // 如果还没找到，继续等待
-                                setTimeout(checkAndRender, 200);
+                // 等待 Google CSE 脚本加载完成并手动渲染
+                const initSearch = () => {
+                    const goog = (window as any).google;
+                    if (goog?.search?.cse?.element) {
+                        try {
+                            // 清空容器
+                            const container = document.getElementById(
+                                `search-container-${searchKey + 1}`,
+                            );
+                            if (container) {
+                                container.innerHTML = "";
+
+                                // 手动渲染 Google CSE
+                                goog.search.cse.element.render({
+                                    div: `search-container-${searchKey + 1}`,
+                                    tag: "search",
+                                });
+
+                                // 等待渲染完成
+                                const waitForInput = (attempts = 0) => {
+                                    const searchBox =
+                                        container.querySelector(".gsc-input");
+                                    if (searchBox) {
+                                        setIsSearchLoading(false);
+                                        (searchBox as HTMLInputElement).focus();
+                                    } else if (attempts < 20) {
+                                        setTimeout(
+                                            () => waitForInput(attempts + 1),
+                                            100,
+                                        );
+                                    } else {
+                                        setIsSearchLoading(false);
+                                    }
+                                };
+                                waitForInput();
                             }
-                        }, 300);
-                        return;
+                        } catch (error) {
+                            console.error("Google CSE 渲染失败:", error);
+                            setIsSearchLoading(false);
+                        }
+                    } else if ((window as any).__gcse) {
+                        // 如果存在 __gcse 对象，尝试触发回调
+                        setTimeout(initSearch, 100);
                     } else {
-                        // 继续等待
-                        setTimeout(checkAndRender, 100);
+                        // 继续等待 CSE 脚本加载
+                        setTimeout(initSearch, 100);
                     }
                 };
-                checkAndRender();
+
+                // 延迟一点以确保 DOM 已更新
+                setTimeout(initSearch, 50);
             }
         } else {
             // 恢复 body 滚动
             document.body.style.overflow = "";
 
             // 清除 Google CSE 添加的 URL hash
-            if (typeof window !== "undefined" && window.location.hash.includes("gsc.")) {
+            if (
+                typeof window !== "undefined" &&
+                window.location.hash.includes("gsc.")
+            ) {
                 window.history.replaceState(
                     null,
                     "",
@@ -97,13 +132,6 @@ export const Navbar: FC<{}> = ({}) => {
             // 清理：恢复 body 滚动
             document.body.style.overflow = "";
         };
-    }, [isSearchOpen]);
-
-    // 当搜索框打开时，强制重新渲染 Google CSE
-    useEffect(() => {
-        if (isSearchOpen) {
-            setSearchKey((prev) => prev + 1);
-        }
     }, [isSearchOpen]);
 
     // On initial render, return null to avoid hydration mismatch
@@ -216,7 +244,7 @@ export const Navbar: FC<{}> = ({}) => {
                                     <div className="flex items-center justify-center space-x-2">
                                         <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-green-500"></div>
                                         <span className="text-gray-600 dark:text-gray-400">
-                                            正在加载搜索框...
+                                            正在加载搜索...
                                         </span>
                                     </div>
                                 </div>
@@ -233,7 +261,10 @@ export const Navbar: FC<{}> = ({}) => {
                                     e.stopPropagation();
                                 }}
                             >
-                                <div key={searchKey} className="gcse-search"></div>
+                                <div
+                                    id={`search-container-${searchKey}`}
+                                    key={searchKey}
+                                ></div>
                             </div>
 
                             <div className="border-t border-gray-200 dark:border-gray-700 px-4 py-2 flex-shrink-0">
