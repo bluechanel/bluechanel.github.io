@@ -50,13 +50,64 @@ html.dark .shiki span {
 /* 暗色主题下的搜索框 */
 .dark .gcse-search input.gsc-input,
 .dark .gcse-searchbox-only input.gsc-input {
+  background-color: #1f2937 !important;
   color: #f3f4f6 !important;
   border-color: #4b5563 !important;
+}
+
+/* 暗色主题下的搜索框容器 */
+.dark .gsc-input-box {
+  background-color: #1f2937 !important;
+  border-color: #4b5563 !important;
+}
+
+/* 确保输入框内的文字在暗色模式下可见 */
+.dark .gsib_a {
+  background-color: #1f2937 !important;
+}
+
+.dark .gsib_b {
+  color: #f3f4f6 !important;
+}
+
+/* 更强的选择器来覆盖 Google CSE 的内联样式 */
+.dark .gsc-input-box,
+.dark .gsc-input-box-hover,
+.dark .gsc-input-box-focus {
+  background: #1f2937 !important;
+  border-color: #4b5563 !important;
+}
+
+/* 覆盖所有可能的输入框元素 */
+.dark input[type="text"].gsc-input,
+.dark .gsc-input-box input.gsc-input,
+.dark td.gsc-input input {
+  background-color: #1f2937 !important;
+  color: #f3f4f6 !important;
+}
+
+/* 覆盖 Google CSE 的内部表格单元格 */
+.dark td.gsc-input {
+  background-color: #1f2937 !important;
+}
+
+/* 覆盖所有可能的文本颜色 */
+.dark .gsc-input-box .gsc-input,
+.dark .gsib_a,
+.dark .gsib_b {
+  color: #f3f4f6 !important;
+  background-color: #1f2937 !important;
 }
 
 .gcse-search input.gsc-input::placeholder,
 .gcse-searchbox-only input.gsc-input::placeholder {
   color: #9ca3af !important;
+}
+
+/* 暗色主题下的 placeholder */
+.dark .gcse-search input.gsc-input::placeholder,
+.dark .gcse-searchbox-only input.gsc-input::placeholder {
+  color: #6b7280 !important;
 }
 
 /* 搜索按钮 */

@@ -7,6 +7,95 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
 
+// 辅助函数：强制应用暗色模式样式到 Google CSE
+const applyDarkModeStyles = (container: HTMLElement) => {
+    // 查找并修改所有相关元素的样式
+    const inputBox = container.querySelector(".gsc-input-box") as HTMLElement;
+    const tdInput = container.querySelector("td.gsc-input") as HTMLElement;
+    const gsibA = container.querySelector(".gsib_a") as HTMLElement;
+    const gsibB = container.querySelector(".gsib_b") as HTMLElement;
+
+    // 最关键：找到实际的输入框元素（在嵌套的 table 中）
+    const actualInput = container.querySelector("input.gsc-input") as HTMLInputElement;
+    const allInputs = container.querySelectorAll("input[type='text']");
+
+    // 设置暗色背景和文字颜色
+    const darkBg = "#1f2937";
+    const lightText = "#f3f4f6";
+    const borderColor = "#4b5563";
+
+    if (inputBox) {
+        inputBox.style.setProperty("background", darkBg, "important");
+        inputBox.style.setProperty("background-color", darkBg, "important");
+        inputBox.style.setProperty("border-color", borderColor, "important");
+    }
+
+    if (tdInput) {
+        tdInput.style.setProperty("background", darkBg, "important");
+        tdInput.style.setProperty("background-color", darkBg, "important");
+    }
+
+    if (gsibA) {
+        gsibA.style.setProperty("background", darkBg, "important");
+        gsibA.style.setProperty("background-color", darkBg, "important");
+    }
+
+    if (gsibB) {
+        gsibB.style.setProperty("background", darkBg, "important");
+        gsibB.style.setProperty("background-color", darkBg, "important");
+    }
+
+    // 最重要：直接修改实际输入框的内联样式
+    if (actualInput) {
+        actualInput.style.background = darkBg;
+        actualInput.style.backgroundColor = darkBg;
+        actualInput.style.color = lightText;
+        actualInput.style.setProperty("background", darkBg, "important");
+        actualInput.style.setProperty("background-color", darkBg, "important");
+        actualInput.style.setProperty("color", lightText, "important");
+    }
+
+    // 覆盖所有 input 元素
+    allInputs.forEach((el) => {
+        const input = el as HTMLInputElement;
+        input.style.background = darkBg;
+        input.style.backgroundColor = darkBg;
+        input.style.color = lightText;
+        input.style.setProperty("background", darkBg, "important");
+        input.style.setProperty("background-color", darkBg, "important");
+        input.style.setProperty("color", lightText, "important");
+    });
+
+    // 使用 MutationObserver 监听样式变化，防止 Google CSE 重新设置样式
+    const observer = new MutationObserver(() => {
+        if (actualInput) {
+            const currentBg = actualInput.style.background;
+            if (currentBg.includes("255, 255, 255") || currentBg === "rgb(255, 255, 255)") {
+                actualInput.style.background = darkBg;
+                actualInput.style.backgroundColor = darkBg;
+                actualInput.style.color = lightText;
+            }
+        }
+        allInputs.forEach((el) => {
+            const input = el as HTMLInputElement;
+            const currentBg = input.style.background;
+            if (currentBg.includes("255, 255, 255") || currentBg === "rgb(255, 255, 255)") {
+                input.style.background = darkBg;
+                input.style.backgroundColor = darkBg;
+                input.style.color = lightText;
+            }
+        });
+    });
+
+    if (container) {
+        observer.observe(container, {
+            attributes: true,
+            attributeFilter: ["style"],
+            subtree: true,
+        });
+    }
+};
+
 export const Navbar: FC<{}> = ({}) => {
     const { theme, setTheme } = useTheme();
     const pathname = usePathname();
@@ -84,6 +173,18 @@ export const Navbar: FC<{}> = ({}) => {
                                     if (searchBox) {
                                         setIsSearchLoading(false);
                                         (searchBox as HTMLInputElement).focus();
+
+                                        // 延迟应用暗色模式样式，确保元素已完全渲染
+                                        setTimeout(() => {
+                                            const isDark =
+                                                document.documentElement.classList.contains('dark') ||
+                                                document.body.classList.contains('dark') ||
+                                                theme === 'dark';
+
+                                            if (isDark) {
+                                                applyDarkModeStyles(container);
+                                            }
+                                        }, 200);
                                     } else if (attempts < 20) {
                                         setTimeout(
                                             () => waitForInput(attempts + 1),
@@ -131,6 +232,23 @@ export const Navbar: FC<{}> = ({}) => {
         return () => {
             // 清理：恢复 body 滚动
             document.body.style.overflow = "";
+        };
+    }, [isSearchOpen]);
+
+    // 监听 ESC 键关闭搜索框
+    useEffect(() => {
+        const handleEscKey = (event: KeyboardEvent) => {
+            if (event.key === "Escape" && isSearchOpen) {
+                setIsSearchOpen(false);
+            }
+        };
+
+        if (isSearchOpen) {
+            document.addEventListener("keydown", handleEscKey);
+        }
+
+        return () => {
+            document.removeEventListener("keydown", handleEscKey);
         };
     }, [isSearchOpen]);
 
@@ -226,11 +344,6 @@ export const Navbar: FC<{}> = ({}) => {
                 <div
                     className="fixed inset-0 z-50 flex items-start justify-center bg-black/50 backdrop-blur-sm pt-20"
                     onClick={() => setIsSearchOpen(false)}
-                    onKeyDown={(e) => {
-                        if (e.key === "Escape") {
-                            setIsSearchOpen(false);
-                        }
-                    }}
                 >
                     <div
                         className="w-full max-w-3xl mx-4 max-h-[80vh] flex flex-col"
