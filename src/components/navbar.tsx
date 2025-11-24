@@ -96,7 +96,7 @@ const applyDarkModeStyles = (container: HTMLElement) => {
     }
 };
 
-export const Navbar: FC<{}> = ({}) => {
+export const Navbar: FC<{}> = ({ }) => {
     const { theme, setTheme } = useTheme();
     const pathname = usePathname();
 
@@ -117,8 +117,8 @@ export const Navbar: FC<{}> = ({}) => {
         { title: "读书", route: "/books" },
         { title: "观影", route: "/films" },
         { title: "相册", route: "/gallary" },
+        { title: "关于", route: "/about" },
         { title: "开往", route: "https://www.travellings.cn/go.html" },
-        { title: "关于", route: "https://about.wileyzhang.com/" },
     ];
 
     // Effect for mounting and preventing hydration mismatch
@@ -261,11 +261,11 @@ export const Navbar: FC<{}> = ({}) => {
         // 1. 修改了根元素：从 div 改为 nav，并应用了 sticky 定位和动态样式
         <nav
             className={clsx(
-                "sticky top-0 z-50 w-full transition-all duration-300 ease-in-out",
+                "sticky top-0 z-50 w-full transition-all duration-300 ease-in-out border-b",
                 // 根据 isScrolled 状态动态添加毛玻璃效果
                 isScrolled
-                    ? "bg-gray-100/80 dark:bg-gray-950/80 backdrop-blur-lg border-b border-gray-200/50 dark:border-gray-800/50"
-                    : "bg-transparent",
+                    ? "bg-gray-100/80 dark:bg-gray-950/80 backdrop-blur-lg border-gray-200/50 dark:border-gray-800/50"
+                    : "bg-transparent border-transparent",
             )}
         >
             {/* 2. 添加了一个容器来控制 navbar 内容的最大宽度和居中 */}
@@ -289,11 +289,10 @@ export const Navbar: FC<{}> = ({}) => {
                                     key={item.title}
                                     id={`link-${item.route}`}
                                     href={item.route}
-                                    className={`relative pb-1 transition-colors duration-300 ${
-                                        isActive
-                                            ? "text-green-500"
-                                            : "text-gray-700 dark:text-gray-300 hover:text-green-500"
-                                    }`}
+                                    className={`relative pb-1 transition-colors duration-300 ${isActive
+                                        ? "text-blue-500"
+                                        : "text-gray-700 dark:text-gray-300 hover:text-blue-500"
+                                        }`}
                                 >
                                     {item.title}
                                 </Link>

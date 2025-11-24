@@ -15,7 +15,7 @@ export default function Home() {
         <div>
           <h2 className="text-2xl font-bold mb-3">Hi，我是 Wiley 👋</h2>
           <p className="mb-4">一名热爱技术与创作的开发者，专注 AI 应用开发与知识管理。喜欢写作、电影和一切有趣的事物。</p>
-          <a href="https://about.wileyzhang.com/" className="inline-block px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600">了解更多</a>
+          <a href="/about" className="inline-block px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600">了解更多</a>
         </div>
       </section>
 
