@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
     return (
-        <div className="min-h-screen bg-gray-50 dark:bg-gray-950 text-gray-800 dark:text-gray-200 py-12">
+        <div className="py-12">
             <div className="container mx-auto px-4 lg:px-8">
                 <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
                     {/* Sidebar - Sticky on Desktop */}
@@ -78,15 +78,16 @@ export default function AboutPage() {
                             </div>
                             <div className="prose dark:prose-invert max-w-none text-gray-600 dark:text-gray-300 leading-relaxed">
                                 <p>
-                                    Hi，我是 Wiley。我是一名热衷于<strong>人工智能</strong>和<strong>大型语言模型</strong>的开发者。
-                                    我的技术之旅始于对机器如何学习的好奇，这促使我深入探索神经网络和 NLP 的世界。
+                                    Hi，我是 Wiley。一名对<strong>人工智能</strong>和<strong>大型语言模型</strong>怀抱热情的开发者。
                                 </p>
                                 <p>
-                                    目前，我专注于构建智能 Agent 并探索最新 LLM 的能力。
-                                    我相信开源和知识分享的力量，这也是我创建这个博客的原因。
+                                    我坚信<em>“AI 之初，性本善”</em>，AI 有能力改变世界。
                                 </p>
                                 <p>
-                                    不写代码的时候，我喜欢看科幻电影、阅读技术博客，或者带着相机探索城市。
+                                    目前，我专注于构建智能 Agent，并深入探索最新 LLM 的潜力。我坚信知识分享是推动技术进步的关键。
+                                </p>
+                                <p>
+                                    工作之余，我喜欢看电影、阅读博客、以及第九艺术，或者在草地上晒太阳，偶尔发现美。
                                 </p>
                             </div>
                         </section>
