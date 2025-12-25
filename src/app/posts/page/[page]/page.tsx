@@ -1,6 +1,7 @@
-import { getPaginatedPostsData, getSortedPostsData } from '@/lib/posts';
+import { getPaginatedPostsData, getSortedPostsData, getAllTags } from '@/lib/posts';
 import { PostCard } from '@/components/postcard';
 import { Pagination } from '@/components/pagination';
+import { TagCloud } from '@/components/tag-cloud';
 import { notFound } from 'next/navigation';
 
 interface PageProps {
@@ -44,14 +45,15 @@ export async function generateStaticParams() {
 export default async function PostsPage({ params }: PageProps) {
   const { page } = await params;
   const pageNumber = parseInt(page, 10);
-  
+
   // 验证页码
   if (isNaN(pageNumber) || pageNumber < 1) {
     notFound();
   }
 
   const { posts: paginatedPosts, totalPages, currentPage } = getPaginatedPostsData(pageNumber, 9);
-  
+  const allTags = getAllTags();
+
   // 如果页码超出范围，返回404
   if (pageNumber > totalPages) {
     notFound();
@@ -59,12 +61,15 @@ export default async function PostsPage({ params }: PageProps) {
 
   return (
     <div className='flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-12 mt-16'>
-      <div className="flex flex-row lg:flex-row gap-4">
-        <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-          {paginatedPosts.map((post) => (
-            <PostCard key={post.id} post={post} />
-          ))}
-        </div>
+      {/* 标签云 */}
+      <div className="mb-8">
+        <TagCloud tags={allTags} />
+      </div>
+
+      <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 auto-rows-fr">
+        {paginatedPosts.map((post) => (
+          <PostCard key={post.id} post={post} />
+        ))}
       </div>
       <Pagination currentPage={currentPage} totalPages={totalPages} />
     </div>

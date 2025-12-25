@@ -108,3 +108,48 @@ export async function getPostData(id: string) {
     content
   };
 }
+
+// 获取所有标签及其文章数量
+export function getAllTags() {
+  const allPosts = getSortedPostsData();
+  const tagCount: { [key: string]: number } = {};
+
+  allPosts.forEach((post) => {
+    post.tags.forEach((tag) => {
+      tagCount[tag] = (tagCount[tag] || 0) + 1;
+    });
+  });
+
+  // 返回按文章数量降序排序的标签
+  return Object.entries(tagCount)
+    .map(([tag, count]) => ({ tag, count }))
+    .sort((a, b) => b.count - a.count);
+}
+
+// 根据标签过滤文章
+export function getPostsByTag(tag: string) {
+  const allPosts = getSortedPostsData();
+  return allPosts.filter((post) => post.tags.includes(tag));
+}
+
+// 根据标签分页获取文章
+export function getPaginatedPostsByTag(tag: string, page: number, postsPerPage: number = 9) {
+  const tagPosts = getPostsByTag(tag);
+  const totalPosts = tagPosts.length;
+  const totalPages = Math.ceil(totalPosts / postsPerPage);
+
+  // 确保页码在有效范围内
+  if (page < 1) page = 1;
+  if (page > totalPages && totalPages > 0) page = totalPages;
+
+  const startIndex = (page - 1) * postsPerPage;
+  const paginatedPosts = tagPosts.slice(startIndex, startIndex + postsPerPage);
+
+  return {
+    posts: paginatedPosts,
+    totalPages,
+    currentPage: page,
+    totalPosts,
+    tag
+  };
+}
