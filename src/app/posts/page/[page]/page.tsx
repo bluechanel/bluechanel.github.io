@@ -67,8 +67,8 @@ export default async function PostsPage({ params }: PageProps) {
       </div>
 
       <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 auto-rows-fr">
-        {paginatedPosts.map((post) => (
-          <PostCard key={post.id} post={post} />
+        {paginatedPosts.map((post, index) => (
+          <PostCard key={post.id} post={post} index={index} />
         ))}
       </div>
       <Pagination currentPage={currentPage} totalPages={totalPages} />

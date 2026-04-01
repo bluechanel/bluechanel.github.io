@@ -61,7 +61,7 @@ export function Pagination({ currentPage, totalPages, basePath = '/posts' }: Pag
       {currentPage > 1 && (
         <Link 
           href={getPageHref(currentPage - 1)} 
-          className="px-3 py-2 rounded-md text-sm font-medium text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700"
+          className="px-3 py-2 rounded-md text-sm font-medium text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-200"
         >
           上一页
         </Link>
@@ -85,7 +85,7 @@ export function Pagination({ currentPage, totalPages, basePath = '/posts' }: Pag
             key={page as number}
             href={getPageHref(page as number)}
             className={clsx(
-              'px-3 py-2 rounded-md text-sm font-medium border',
+              'px-3 py-2 rounded-md text-sm font-medium border transition-all duration-200',
               currentPage === page
                 ? 'bg-blue-50 dark:bg-blue-900 text-blue-600 dark:text-blue-200 border-blue-500 dark:border-blue-500'
                 : 'text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700'
@@ -101,7 +101,7 @@ export function Pagination({ currentPage, totalPages, basePath = '/posts' }: Pag
       {currentPage < totalPages && (
         <Link 
           href={getPageHref(currentPage + 1)} 
-          className="px-3 py-2 rounded-md text-sm font-medium text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700"
+          className="px-3 py-2 rounded-md text-sm font-medium text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-200"
         >
           下一页
         </Link>

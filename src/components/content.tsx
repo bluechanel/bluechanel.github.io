@@ -81,7 +81,16 @@ export function PostContent({ content} : {content: string}) {
                 components={{
                   table: CustomTable,
                   code: CustomCodeComponent,
-                  a: ({ href }) => <a className="text-blue-500 underline underline-offset-4 decoration-blue-500" href={href}>{href}</a>
+                  a: ({ href, children }) => (
+                    <a
+                      className="text-blue-500 underline underline-offset-4 decoration-blue-500"
+                      href={href}
+                      target={href?.startsWith('http') ? '_blank' : undefined}
+                      rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
+                    >
+                      {children}
+                    </a>
+                  )
                 }}
               >
                 {content}

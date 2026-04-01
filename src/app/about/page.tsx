@@ -21,6 +21,7 @@ import {
   MessageSquare,
   Zap,
 } from "lucide-react";
+import { FadeIn } from "@/components/motion";
 
 export const metadata: Metadata = {
   title: "About Me",
@@ -34,6 +35,7 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
           {/* Sidebar - Sticky on Desktop */}
           <aside className="lg:col-span-1">
+            <FadeIn>
             <div className="lg:sticky lg:top-24 space-y-8">
               {/* Profile Card */}
               <div className="text-center lg:text-left">
@@ -97,11 +99,13 @@ export default function AboutPage() {
                 </a>
               </div>
             </div>
+            </FadeIn>
           </aside>
 
           {/* Main Content */}
           <main className="lg:col-span-3 space-y-12">
             {/* Bio Section */}
+            <FadeIn delay={0.1}>
             <section className="space-y-6">
               <div className="flex items-center gap-3 mb-6">
                 <div className="p-2 bg-green-100 dark:bg-green-900/30 rounded-lg">
@@ -126,8 +130,10 @@ export default function AboutPage() {
                 </p>
               </div>
             </section>
+            </FadeIn>
 
             {/* My Gear Section */}
+            <FadeIn delay={0.2}>
             <section className="space-y-6">
               <div className="flex items-center gap-3 mb-6">
                 <div className="p-2 bg-teal-100 dark:bg-teal-900/30 rounded-lg">
@@ -279,8 +285,10 @@ export default function AboutPage() {
                 </div>
               </div>
             </section>
+            </FadeIn>
 
             {/* Tech Stack Section */}
+            <FadeIn delay={0.3}>
             <section className="space-y-6">
               <div className="flex items-center gap-3 mb-6">
                 <div className="p-2 bg-purple-100 dark:bg-purple-900/30 rounded-lg">
@@ -359,6 +367,7 @@ export default function AboutPage() {
                 </div>
               </div>
             </section>
+            </FadeIn>
           </main>
         </div>
       </div>

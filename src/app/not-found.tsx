@@ -11,11 +11,11 @@ export default function NotFound() {
             <p className="text-xl text-gray-600 dark:text-gray-400 mb-6">
             抱歉，您访问的页面不存在。
             </p>
-            <a href="/" 
+            <Link href="/"
               className="flex items-center justify-center px-6 py-3 rounded-lg text-black dark:text-white transition">
               <ArrowLeft className="w-4 h-4 mr-2" />
               <span>返回首页</span>
-            </a>
+            </Link>
         </div>
     </section>
   )

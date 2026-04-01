@@ -1,7 +1,16 @@
 'use client'
+import { useState, useEffect } from 'react';
+import { useTheme } from 'next-themes';
 import Giscus from '@giscus/react';
 
-export function  Comment() {
+export function Comment() {
+  const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   return (
     <div className="w-full h-full">
       <Giscus
@@ -11,11 +20,10 @@ export function  Comment() {
         category="Announcements"
         categoryId="DIC_kwDOPJbDvc4CtPDS"
         mapping="pathname"
-        // term="Welcome to @giscus/react component!"
         reactionsEnabled="1"
         emitMetadata="0"
         inputPosition="top"
-        theme="light"
+        theme={mounted && resolvedTheme === 'dark' ? 'dark' : 'light'}
         lang="zh-CN"
         loading="lazy"
       />

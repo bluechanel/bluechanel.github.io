@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
+import { AnimatePresence, motion } from 'motion/react';
 
 interface Tag {
   tag: string;
@@ -15,7 +16,8 @@ interface TagCloudProps {
 
 export function TagCloud({ tags, currentTag }: TagCloudProps) {
   const [showAll, setShowAll] = useState(false);
-  const displayTags = showAll ? tags : tags.slice(0, 8);
+  const visibleTags = tags.slice(0, 8);
+  const extraTags = tags.slice(8);
 
   if (tags.length === 0) {
     return null;
@@ -36,7 +38,7 @@ export function TagCloud({ tags, currentTag }: TagCloudProps) {
           全部
         </Link>
 
-        {displayTags.map(({ tag, count }) => {
+        {visibleTags.map(({ tag, count }) => {
           const isActive = currentTag === tag;
           return (
             <Link
@@ -52,6 +54,33 @@ export function TagCloud({ tags, currentTag }: TagCloudProps) {
             </Link>
           );
         })}
+
+        {/* Animated extra tags */}
+        <AnimatePresence>
+          {showAll && extraTags.map(({ tag, count }, index) => {
+            const isActive = currentTag === tag;
+            return (
+              <motion.div
+                key={tag}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.8 }}
+                transition={{ duration: 0.15, delay: index * 0.02 }}
+              >
+                <Link
+                  href={`/posts/tag/${encodeURIComponent(tag)}`}
+                  className={`text-xs px-2 py-1 rounded-full transition-colors duration-200 ${
+                    isActive
+                      ? 'bg-blue-600 dark:bg-blue-600 text-white'
+                      : 'bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 hover:bg-blue-200 dark:hover:bg-blue-800'
+                  }`}
+                >
+                  #{tag}
+                </Link>
+              </motion.div>
+            );
+          })}
+        </AnimatePresence>
 
         {/* 显示更多/收起按钮 */}
         {tags.length > 8 && (
