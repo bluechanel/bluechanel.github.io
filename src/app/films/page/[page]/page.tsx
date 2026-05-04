@@ -2,20 +2,56 @@ import films from "@/data/films.json";
 import { Info } from "lucide-react";
 import { FadeIn } from "@/components/motion";
 import { Pagination } from "@/components/pagination";
+import { notFound } from "next/navigation";
 
 const FILMS_PER_PAGE = 12;
 
-export async function generateMetadata(props: { params: any }) {
-  const params = await props.params;
+interface PageProps {
+  params: Promise<{
+    page: string;
+  }>;
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ page: string }> }) {
+  const { page } = await params;
+  const pageNumber = parseInt(page, 10);
+  const totalPages = Math.ceil(films.read.length / FILMS_PER_PAGE);
+
+  if (isNaN(pageNumber) || pageNumber < 1 || pageNumber > totalPages) {
+    return {
+      title: `观影 | Wiley`,
+      description: "观影，展示我的生活瞬间，记录我的生活。",
+    };
+  }
+
   return {
-    title: `观影 | Wiley`,
-    description: "观影，展示我的生活瞬间，记录我的生活。",
+    title: `观影 | 第${pageNumber}页 | Wiley`,
+    description: `观影列表第${pageNumber}页 - 记录我的观影生活。`,
   };
 }
 
-export default async function FilmPage(props: { params: any }) {
+export async function generateStaticParams() {
   const totalPages = Math.ceil(films.read.length / FILMS_PER_PAGE);
-  const paginatedFilms = films.read.slice(0, FILMS_PER_PAGE);
+
+  const paths = [];
+  for (let i = 2; i <= totalPages; i++) {
+    paths.push({ page: i.toString() });
+  }
+
+  return paths;
+}
+
+export default async function FilmPagePage({ params }: PageProps) {
+  const { page } = await params;
+  const pageNumber = parseInt(page, 10);
+  const totalPages = Math.ceil(films.read.length / FILMS_PER_PAGE);
+
+  if (isNaN(pageNumber) || pageNumber < 1 || pageNumber > totalPages) {
+    notFound();
+  }
+
+  const startIndex = (pageNumber - 1) * FILMS_PER_PAGE;
+  const paginatedFilms = films.read.slice(startIndex, startIndex + FILMS_PER_PAGE);
 
   return (
     <div className="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-12 mt-16">
@@ -40,7 +76,7 @@ export default async function FilmPage(props: { params: any }) {
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 py-2">
         {paginatedFilms.map((film, index) => (
-          <FadeIn key={`${film.name}-${index}`} delay={index * 0.06}>
+          <FadeIn key={`${film.name}-${(pageNumber - 1) * FILMS_PER_PAGE + index}`} delay={index * 0.06}>
             <div className="p-5 bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 rounded-2xl shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
               {film.cover && (
                 <div className="mb-4 overflow-hidden rounded-xl">
@@ -82,7 +118,7 @@ export default async function FilmPage(props: { params: any }) {
           </FadeIn>
         ))}
       </div>
-      <Pagination currentPage={1} totalPages={totalPages} basePath="/films" />
+      <Pagination currentPage={pageNumber} totalPages={totalPages} basePath="/films" />
     </div>
   );
 }
