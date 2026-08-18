@@ -1,4 +1,5 @@
 import films from "@/data/films.json";
+import douban from "@/data/douban.json";
 import { Info } from "lucide-react";
 import { FadeIn } from "@/components/motion";
 import { Pagination } from "@/components/pagination";
@@ -62,11 +63,11 @@ export default async function FilmPagePage({ params }: PageProps) {
         <p className="text-sm text-gray-800 dark:text-gray-200">
           已看{" "}
           <span className="font-semibold text-blue-600 dark:text-blue-400">
-            {films.read.length}
+            {douban.films.watchedCount}
           </span>{" "}
           部剧
           <a
-            href="https://movie.douban.com/people/155507928/collect"
+            href={douban.films.collectUrl}
             target="_blank"
             className="ml-1 text-blue-500 hover:underline"
           >

@@ -1,4 +1,5 @@
 import books from "@/data/books.json";
+import douban from "@/data/douban.json";
 import { Info } from "lucide-react";
 import { FadeIn } from "@/components/motion";
 
@@ -21,11 +22,11 @@ export default async function BookPage(props: { params: any }) {
           <p className="text-sm text-gray-800 dark:text-gray-200">
             已读{" "}
             <span className="font-semibold text-blue-600 dark:text-blue-400">
-              73
+              {douban.books.readCount}
             </span>{" "}
             本书
             <a
-              href="https://book.douban.com/people/155507928/collect"
+              href={douban.books.collectUrl}
               target="_blank"
               className="ml-1 text-blue-500 hover:underline"
             >
