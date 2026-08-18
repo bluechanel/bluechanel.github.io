@@ -1,10 +1,10 @@
 {
   "books": {
     "collectUrl": "https://book.douban.com/people/155507928/collect",
-    "readCount": 73
+    "readCount": 74
   },
   "films": {
     "collectUrl": "https://movie.douban.com/people/155507928/collect",
-    "watchedCount": 530
+    "watchedCount": 554
   }
 }
