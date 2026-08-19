@@ -1,9 +1,5 @@
-import films from "@/data/films.json";
+import douban from "@/data/douban.json";
 import { Info } from "lucide-react";
-import { FadeIn } from "@/components/motion";
-import { Pagination } from "@/components/pagination";
-
-const FILMS_PER_PAGE = 12;
 
 export async function generateMetadata(props: { params: any }) {
   const params = await props.params;
@@ -14,9 +10,6 @@ export async function generateMetadata(props: { params: any }) {
 }
 
 export default async function FilmPage(props: { params: any }) {
-  const totalPages = Math.ceil(films.read.length / FILMS_PER_PAGE);
-  const paginatedFilms = films.read.slice(0, FILMS_PER_PAGE);
-
   return (
     <div className="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-12 mt-16">
       <div className="flex items-center gap-3 max-w-md">
@@ -26,11 +19,11 @@ export default async function FilmPage(props: { params: any }) {
         <p className="text-sm text-gray-800 dark:text-gray-200">
           已看{" "}
           <span className="font-semibold text-blue-600 dark:text-blue-400">
-            {films.read.length}
+            {douban.films.watchedCount}
           </span>{" "}
           部剧
           <a
-            href="https://movie.douban.com/people/155507928/collect"
+            href={douban.films.collectUrl}
             target="_blank"
             className="ml-1 text-blue-500 hover:underline"
           >
@@ -38,51 +31,6 @@ export default async function FilmPage(props: { params: any }) {
           </a>
         </p>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 py-2">
-        {paginatedFilms.map((film, index) => (
-          <FadeIn key={`${film.name}-${index}`} delay={index * 0.06}>
-            <div className="p-5 bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 rounded-2xl shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
-              {film.cover && (
-                <div className="mb-4 overflow-hidden rounded-xl">
-                  <img
-                    src={film.cover}
-                    alt={film.name}
-                    referrerPolicy="no-referrer"
-                    className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-              )}
-
-              <a href={film.describe} target="_blank" rel="noopener noreferrer">
-                <h2 className="text-lg font-bold text-black dark:text-white hover:underline mb-3 truncate">
-                  {film.name}
-                </h2>
-              </a>
-
-              <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">
-                📅 <span className="font-medium">开始日期：</span>
-                {new Date(film.date).toLocaleDateString("zh-CN", {
-                  year: "numeric",
-                  month: "2-digit",
-                  day: "2-digit",
-                })}
-              </p>
-
-              <div className="flex flex-wrap gap-2">
-                {film.tags.map((tag) => (
-                  <span
-                    key={`${film.name}-${tag}`}
-                    className="inline-block text-xs font-medium px-2 py-0.5 rounded-full bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </FadeIn>
-        ))}
-      </div>
-      <Pagination currentPage={1} totalPages={totalPages} basePath="/films" />
     </div>
   );
 }

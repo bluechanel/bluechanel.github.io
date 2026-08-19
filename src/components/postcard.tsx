@@ -25,15 +25,20 @@ export function PostCard({ className, index = 0, post }: PostCardProps) {
             <article key={post.id}
                 className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ease-in-out w-full max-w-sm justify-self-start">
                 <div className="relative h-48 w-full">
-                    <Image src={`/posts/${post.cover}`} alt="封面图片" fill className="object-cover" />
+                    {post.cover ? (
+                        <Image src={`/posts/${post.cover}`} alt="封面图片" fill className="object-cover" />
+                    ) : (
+                        <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-purple-500" />
+                    )}
                 </div>
                 <div className="px-4 py-2">
-                    <div className="flex flex-wrap gap-2 mb-2">
+                    {/* tag 只占一行：flex 默认不换行 + overflow-hidden 裁剪超出的 tag */}
+                    <div className="flex gap-2 mb-2 overflow-hidden">
                         {post.tags.map((tag) => (
                             <Link
                                 key={tag}
                                 href={`/posts/tag/${encodeURIComponent(tag)}`}
-                                className="text-xs px-2 py-1 rounded-full bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 hover:bg-blue-200 dark:hover:bg-blue-800 transition-colors duration-200"
+                                className="whitespace-nowrap text-xs px-2 py-1 rounded-full bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 hover:bg-blue-200 dark:hover:bg-blue-800 transition-colors duration-200"
                             >
                                 #{tag}
                             </Link>

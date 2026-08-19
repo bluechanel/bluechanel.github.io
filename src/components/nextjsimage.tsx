@@ -1,4 +1,3 @@
-import Image, { StaticImageData } from "next/image";
 import {
   RenderSlideProps,
   isImageFitCover,
@@ -8,7 +7,16 @@ import {
   Slide,
 } from "yet-another-react-lightbox";
 
-function isNextJsImage(slide: Slide): slide is StaticImageData {
+// src/data/gallay.json 里的相册图片结构
+type GallerySlide = {
+  src: string;
+  width: number;
+  height: number;
+  srcSet?: { src: string; width: number; height: number }[];
+  blurDataURL?: string;
+};
+
+function isGallerySlide(slide: Slide): slide is GallerySlide {
   return (
     isImageSlide(slide) &&
     typeof slide.width === "number" &&
@@ -26,7 +34,7 @@ export default function NextJsImage({ slide, offset, rect }: RenderSlideProps) {
 
   const cover = isImageSlide(slide) && isImageFitCover(slide, imageFit);
 
-  if (!isNextJsImage(slide)) return undefined;
+  if (!isGallerySlide(slide)) return undefined;
 
   const width = !cover
     ? Math.round(
@@ -40,20 +48,37 @@ export default function NextJsImage({ slide, offset, rect }: RenderSlideProps) {
       )
     : rect.height;
 
+  const srcSet = slide.srcSet
+    ?.map((s) => `${s.src} ${s.width}w`)
+    .join(", ");
+
   return (
     <div style={{ position: "relative", width, height }}>
-      <Image
-        fill
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          backgroundImage: slide.blurDataURL
+            ? `url(${slide.blurDataURL})`
+            : undefined,
+          backgroundSize: "cover",
+        }}
+      />
+      <img
+        src={slide.src}
+        srcSet={srcSet}
+        sizes={`${Math.ceil((width / window.innerWidth) * 100)}vw`}
         alt=""
-        src={slide}
         loading="eager"
         draggable={false}
-        placeholder={slide.blurDataURL ? "blur" : undefined}
         style={{
+          position: "absolute",
+          inset: 0,
+          width: "100%",
+          height: "100%",
           objectFit: cover ? "cover" : "contain",
           cursor: click ? "pointer" : undefined,
         }}
-        sizes={`${Math.ceil((width / window.innerWidth) * 100)}vw`}
         onClick={
           offset === 0 ? () => click?.({ index: currentIndex }) : undefined
         }

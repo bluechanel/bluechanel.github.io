@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next';
 import { getSortedPostsData } from '@/lib/posts';
+import { getSortedNotesData } from '@/lib/notes';
 
 export const dynamic = 'force-static';
 
@@ -16,6 +17,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     lastModified: new Date(post.updateDate),
     changeFrequency: 'weekly' as const, // 或者 'daily', 'monthly', 'yearly', 'always', 'never'
     priority: 0.8,
+  }));
+
+  // 读书笔记
+  const notes = await getSortedNotesData();
+  const noteUrls = notes.map(note => ({
+    url: `${baseUrl}/books/${note.id}`,
+    lastModified: new Date(note.updateDate),
+    changeFrequency: 'monthly' as const,
+    priority: 0.6,
   }));
   
   // 静态页面的 URL
@@ -40,9 +50,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }
   ];
 
-  // 合并静态页面和动态生成的文章页面
+  // 合并静态页面、读书笔记和动态生成的文章页面
   return [
     ...staticUrls,
+    ...noteUrls,
     ...postUrls
   ];
 }

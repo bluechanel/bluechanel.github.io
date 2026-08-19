@@ -1,0 +1,192 @@
+---
+title: 从ReAct Agent到Harness Agent
+pageId: 3b2605ee-e889-80b0-beda-c6064b4e0f1e
+description: 从ReAct Agent演进到Harness Agent，作者用个人到企业的变迁，类比Agent的发展，认为Harness Agent的诞生就是为了像企业一样完成复杂任务。并介绍了实现最小Harness Agent的方案。
+date: 2026-08-05
+updateDate: 2026-08-05
+tags: [AI, LLM]
+cover: cover/3b2605ee-e889-80b0-beda-c6064b4e0f1e_68340a9c7c4879e6896ef747306dcdf5.png
+---
+
+# 从ReAct Agent到Harness Agent
+
+Agent 的概念从 23 年就已经很火了，一开始主流就是 ReAct Agent。发展到现在，出现了 Harness Agent 这种更偏工程化的形态。
+
+![ChatGPT_Image_Aug_5_2026_10_46_07_AM.png](images/3b2605ee-e889-80b0-beda-c6064b4e0f1e/3b2605ee-e889-80b0-beda-c6064b4e0f1e_ae4c78f45df24c1b0a7f6787519ec55c.png)
+
+Agent的这种发展，本身是为了使LLM能够完成更加复杂的问题，类比人类社会的发展从个人逐步发展到企业，是社会生产力的总体提升。
+
+| 阶段 | 类比 | 关注点 |
+| --- | --- | --- |
+| Prompt | 教一个人如何回答问题 | 回答能力 |
+| CoT | 教一个人如何思考 | 思维能力 |
+| ReAct | 教一个人遇到问题知道去查资料、打电话、使用工具 | 行动能力 |
+| Workflow Agent | 让一个团队协同完成任务 | 协作能力 |
+| Runtime Agent | 建立企业的管理制度 | 持续运行能力 |
+| Harness Agent | 建立一家能够长期稳定运转的企业 | 整个组织能力 |
+
+## 基于ReAct Agent的抽象：认知模型
+
+![image.png](images/3b2605ee-e889-80b0-beda-c6064b4e0f1e/3b2605ee-e889-80b0-beda-c6064b4e0f1e_d690172b634be8dbfe8729333049a5b6.png)
+
+这是基于ReAct agent(Thought→Action→Observation→Thought→Action)的抽象架构，相信大家都很熟悉了。里面包含了4个模块
+
+- Planning：任务拆解、工具选择、反思
+
+- Tool：知识库、网络搜索、长期记忆
+
+- Memory：短期记忆、长期记忆
+
+- Action：执行具体动作
+
+这一套本质上是 Agent 的「认知模型」，即模型如何理解任务、调用工具、利用记忆、不断循环迭代。目前大多数通用 Agent 都可以抽象为这一认知循环。
+
+## Harness Agent：从认知到运行时
+
+LLM 本身是无状态的，真正让它能够完成复杂任务的是外面的那一层「harness」——用工程手段给模型提供足够的信息、合适的上下文，以及安全的执行环境，维护状态。
+
+Harness除了给模型高效提供信息外，还给 LLM 套上缰绳：
+
+- 限制它可以访问 /修改的资源；
+
+- 必要的时候调整它的行为朝着正确的目标前进；
+
+- 当工具调用出错时，及时给出结构化反馈，甚至引导它如何修复。
+
+Harness Agent并没有对认知模型进行替换，是在它之上做了更多的限制性工作，好比是企业制度，降低个人错误率，提示总体的成功率。
+
+![ChatGPT_Image_Aug_4_2026_05_13_59_PM.png](images/3b2605ee-e889-80b0-beda-c6064b4e0f1e/3b2605ee-e889-80b0-beda-c6064b4e0f1e_103d1c08c39fa714fe56e35395b06485.png)
+
+传统讨论更关注的是：
+
+
+> 💡 Memory 如何帮助推理？
+> 
+> Tool 应该什么时候调用？
+
+而 Harness 关心的是另外一组更工程化的问题：
+
+
+> - Memory 什么时候加载？
+> 
+> - Memory 什么时候压缩？
+> 
+> - Token 用满了怎么办？
+> 
+> - Memory 如何持久化？
+> 
+> - Tool 怎么发现？
+> 
+> - Tool 怎么授权？
+> 
+> - Tool 输出如何裁剪？
+> 
+> - Tool 是否需要审批？
+> 
+> - Tool 是否运行在 Sandbox 里？
+
+「什么时候调用」可以交给模型自己学会；但「能不能调用、调用有什么副作用、需要谁批准」，这些必须由 Harness 来兜底。
+
+# 实现一个最小的Harness Agent
+
+Claude Code 作者 **Boris Cherny** 在 **YC访谈** 中提到：
+
+> **Claude Code is built with Claude Code.**  
+> Claude Code 开发 Claude Code。
+
+也就是说Claude Code本身已经完成了自举。
+
+**自举**的含义是：先手搓或者用prompt写一个能跑的最小 agent，然后用这个 agent 反过来开发、自己，逐步完善。
+
+暂时去掉一切非必要的东西：
+
+- **不需要 MCP**——第一版工具直接 hardcode 在代码里
+
+- **不需要 session 管理**——一个 REPL 进程就是一次会话
+
+- **不需要多模型切换**——先用 Anthropic API 跑通
+
+- **不需要沙箱**——第一版在我自己的项目里跑，信任自己的命令
+
+- **不需要 hooks / extensions**——那是自举之后再加的
+
+## 最小工具集
+
+自举开发至少需要4个工具：
+
+| 工具 | 作用 | 优先级 |
+| --- | --- | --- |
+| `read_file` | 读自己的源代码 | P0 |
+| `write_file` | 创建/覆写文件 | P0 |
+| `edit_file`（或 `apply_patch`） | 精确修改文件 | P0 |
+| `bash` / `run_shell` | 跑测试、lint、git 操作 | P0 |
+
+
+> 💡 这四个工具已经能够覆盖"读取代码→修改代码→运行验证→再次修改"这一完整闭环，因此已经具备了持续开发自身的能力。
+
+## 最小 Agent Loop
+
+核心 loop 不到 30 行：
+
+```python
+async def run_agent(task: str, max_turns: int = 25):
+    messages = [
+        {"role": "user", "content": task}
+    ]
+
+    for turn in range(max_turns):
+        response = await call_llm(messages, tools=TOOLS)
+
+        # 提取文本和 tool_calls
+        text, tool_calls = parse_response(response)
+
+        # 没有 tool call → 结束
+        if not tool_calls:
+            return text
+
+        # 执行工具
+        messages.append(assistant_msg(response))
+        tool_results = []
+        for tc in tool_calls:
+            result = execute_tool(tc.name, tc.input)
+            tool_results.append(tool_result(tc.id, result))
+        messages.append({"role": "user", "content": tool_results})
+
+    return "Max turns reached"
+```
+
+这就是 Claude Code 和 Codex 的核心引擎的微缩版。
+
+## 上下文管理的最小方案
+
+对最小版本来说：
+
+- **不持久化**——第一版不需要跨进程保存会话。agent 进程跑完就结束了
+
+- **上下文裁剪**——当 messages 太多时，保留 system prompt + 最近 N 轮 + 对旧轮的摘要
+
+- 这个裁剪逻辑可以是 **20 行的 token 估算 + 摘要调用**
+
+等 agent 能自己改代码之后，再让它给自己加上 JSON 持久化。
+
+## 文件结构
+
+```plain text
+wy-harness-agent/
+├── agent.py          # 主入口：REPL + agent loop
+├── llm.py            # LLM 调用封装（Anthropic SDK）
+├── tools.py          # 工具定义 + 执行
+├── prompts.py        # system prompt
+├── context.py        # 上下文裁剪
+└── requirements.txt  # anthropic
+```
+
+总共预计 \~400-500 行 Python。
+
+好的，现在我们可以进行自举开发，完善 改进整个agent。
+
+先试试给工具运行加上权限审批、再增加agent运行时状态管理。
+
+# 总结
+
+ReAct 解决的是"模型如何思考"；Harness 解决的是"模型如何稳定运行"。随着 Agent 从 Demo 走向工程，真正决定系统上限的已经不再只是 Prompt，而是 Harness。一个能够持续改进自己的 Harness Agent，最终会进入自举阶段：Agent 不断开发 Harness，Harness 又不断提升 Agent 的能力，形成持续演进的闭环。

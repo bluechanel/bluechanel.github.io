@@ -2,7 +2,6 @@
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import { useState } from "react";
-import Image from 'next/image';
 import {
   RenderImageContext,
   RenderImageProps,
@@ -15,6 +14,7 @@ import photos from '@/data/gallay.json';
 import NextJsImage from "@/components/nextjsimage";
 
 
+// 静态导出下 next/image 的 unoptimized 模式不支持 srcset，直接用原生 <img>
 function renderNextImage(
   { alt = "", title, sizes, onClick }: RenderImageProps,
   { photo, width, height }: RenderImageContext,
@@ -25,16 +25,27 @@ function renderNextImage(
         width: "100%",
         position: "relative",
         aspectRatio: `${width} / ${height}`,
+        backgroundImage:
+          "blurDataURL" in photo ? `url(${photo.blurDataURL})` : undefined,
+        backgroundSize: "cover",
       }}
     >
-      <Image
-        fill
+      <img
         src={photo.src}
+        srcSet={photo.srcSet?.map((s) => `${s.src} ${s.width}w`).join(", ")}
+        sizes={sizes}
         alt={alt}
         title={title}
-        sizes={sizes}
-        placeholder={"blurDataURL" in photo ? "blur" : undefined}
+        loading="lazy"
+        decoding="async"
         onClick={onClick}
+        style={{
+          position: "absolute",
+          inset: 0,
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+        }}
       />
     </div>
   );

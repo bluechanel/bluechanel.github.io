@@ -34,7 +34,11 @@ export default function Home() {
               <FadeIn key={post.id} delay={0.15 + index * 0.06}>
                 <article className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ease-in-out">
                   <div className="relative h-48 w-full">
-                    <Image src={`/posts/${post.cover}`} alt="封面图片" fill className="object-cover" />
+                    {post.cover ? (
+                      <Image src={`/posts/${post.cover}`} alt="封面图片" fill className="object-cover" />
+                    ) : (
+                      <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-purple-500" />
+                    )}
                   </div>
                   <div className="p-4">
                     <Link href={`/posts/${post.id}`} className="text-sm text-gray-600 dark:text-gray-400 font-semibold mb-2">{post.title}</Link>
