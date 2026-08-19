@@ -13,7 +13,11 @@ export async function generateMetadata(props: { params: any }) {
 }
 
 export default async function BookPage(props: { params: any }) {
-  const { notes: paginatedNotes, totalPages, currentPage } = getPaginatedNotesData(1, 9);
+  const {
+    notes: paginatedNotes,
+    totalPages,
+    currentPage,
+  } = getPaginatedNotesData(1, 12);
   return (
     <div className="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-12 mt-16">
       <div className="flex flex-col">
