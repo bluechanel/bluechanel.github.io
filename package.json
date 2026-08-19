@@ -8,7 +8,8 @@
     "dev": "next --turbopack",
     "start": "next start",
     "sync:douban": "node scripts/sync-douban.mjs",
-    "sync:notion": "node scripts/sync-notion.mjs"
+    "sync:notion": "node scripts/sync-notion.mjs",
+    "sync:gallery": "node scripts/sync-gallery.mjs"
   },
   "dependencies": {
     "@giscus/react": "^3.1.0",
@@ -38,6 +39,7 @@
   "devDependencies": {
     "@types/node": "24.2.1",
     "@types/react": "19.2.7",
+    "sharp": "^0.35.3",
     "typescript": "^5.9.3"
   },
   "pnpm": {

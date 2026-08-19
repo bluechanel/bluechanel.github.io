@@ -49,3 +49,12 @@ CLAUDE.md
 
 # Notion 同步脚本的原始数据缓存（可随时重新拉取）
 tmp
+
+# 相册原图体积大，仅本地保留；压缩结果提交在 public/gallery/
+/content/gallery/*.jpg
+/content/gallery/*.jpeg
+/content/gallery/*.png
+/content/gallery/*.webp
+/content/gallery/*.avif
+/content/gallery/*.heic
+/content/gallery/*.heif
