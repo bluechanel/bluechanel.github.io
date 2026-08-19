@@ -33,12 +33,13 @@ export async function generateStaticParams() {
   const POSTS_PER_PAGE = 9;
   const totalPages = Math.ceil(allPostsData.length / POSTS_PER_PAGE);
   
-  // 生成页面参数，从第2页开始（第1页由 /posts 处理）
+  // 生成 1..N；第 1 页与 /posts 内容相同（分页组件不链接到它）。
+  // 必须至少生成一个参数，否则 output:export 会报「missing generateStaticParams」
   const paths = [];
-  for (let i = 2; i <= totalPages; i++) {
+  for (let i = 1; i <= totalPages; i++) {
     paths.push({ page: i.toString() });
   }
-  
+
   return paths;
 }
 

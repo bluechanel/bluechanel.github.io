@@ -39,8 +39,9 @@ export async function generateStaticParams() {
   allTags.forEach(({ tag, count }) => {
     const totalPages = Math.ceil(count / POSTS_PER_PAGE);
 
-    // 生成页面参数，从第2页开始（第1页由 /posts/tag/[tag] 处理）
-    for (let i = 2; i <= totalPages; i++) {
+    // 生成 1..N；第 1 页与 /posts/tag/[tag] 内容相同（分页组件不链接到它）。
+    // 必须至少生成一个参数，否则 output:export 会报「missing generateStaticParams」
+    for (let i = 1; i <= totalPages; i++) {
       paths.push({
         tag: encodeURIComponent(tag),
         page: i.toString(),

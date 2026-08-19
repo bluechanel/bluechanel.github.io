@@ -3,6 +3,7 @@ import Markdoc, { Tag } from '@markdoc/markdoc';
 import GithubSlugger from 'github-slugger';
 import { codeToHtml } from 'shiki';
 import { notionTextColor, notionBgColor } from '@/lib/notion-format';
+import { resolveMentions } from '@/lib/page-links';
 
 /* ---------- 渲染组件 ---------- */
 
@@ -182,7 +183,16 @@ function buildConfig() {
         render: 'CodeBlock',
         attributes: { content: { type: String }, language: { type: String } },
       },
-      code: { render: 'InlineCode' },
+      // 行内代码：内容在 attributes.content，必须用 transform 提取成 children，
+      // 否则浅覆盖会丢掉默认 schema 的 transform，导致行内代码内容消失
+      code: {
+        render: 'InlineCode',
+        attributes: { content: { type: String, render: false, required: true } },
+        transform: (node: any, config: any) => {
+          const attributes = node.transformAttributes(config);
+          return new Tag('InlineCode', attributes, [node.attributes.content]);
+        },
+      },
       blockquote: { render: 'Blockquote' },
       link: {
         render: 'CustomLink',
@@ -205,7 +215,9 @@ const components = {
 };
 
 export function PostContent({ content }: { content: string }) {
-  const ast = Markdoc.parse(content);
+  // 先解析 Notion 内链 <mention-page>（uuid → slug），再交给 Markdoc
+  const resolved = resolveMentions(content);
+  const ast = Markdoc.parse(resolved);
   const transformed = Markdoc.transform(ast, buildConfig());
   const body = Markdoc.renderers.react(transformed, React, { components });
   return (
