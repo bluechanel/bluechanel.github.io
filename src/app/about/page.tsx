@@ -361,6 +361,7 @@ export default function AboutPage() {
                         "RAG",
                         "Agents",
                         "MCP",
+                        "Harness Agent",
                       ].map((item) => (
                         <span
                           key={item}
