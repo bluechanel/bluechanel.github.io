@@ -1,19 +1,72 @@
 import douban from "@/data/douban.json";
-import { getPaginatedNotesData } from "@/lib/notes";
+import { getPaginatedNotesData, getSortedNotesData } from "@/lib/notes";
 import { NoteCard } from "@/components/notecard";
 import { Pagination } from "@/components/pagination";
 import { Info } from "lucide-react";
+import { notFound } from "next/navigation";
 
-export async function generateMetadata(props: { params: any }) {
-  const params = await props.params;
+interface PageProps {
+  params: Promise<{
+    page: string;
+  }>;
+}
+
+export async function generateMetadata({ params }: PageProps) {
+  const { page } = await params;
+  const pageNumber = parseInt(page, 10);
+
+  if (isNaN(pageNumber) || pageNumber < 1) {
+    return {
+      title: `读书 | Wiley`,
+      description: "读书笔记与最近在看的书",
+    };
+  }
+
+  // 第 1 页的规范地址是 /books，这里复用相同标题避免重复
+  if (pageNumber === 1) {
+    return {
+      title: `读书 | Wiley`,
+      description: "读书笔记与最近在看的书",
+    };
+  }
+
   return {
-    title: `读书 | Wiley`,
-    description: "读书笔记与最近在看的书",
+    title: `读书 | 第${pageNumber}页 | Wiley`,
+    description: `读书笔记第${pageNumber}页`,
   };
 }
 
-export default async function BookPage(props: { params: any }) {
-  const { notes: paginatedNotes, totalPages, currentPage } = getPaginatedNotesData(1, 9);
+// 生成所有可能的页面路径（1..N；第 1 页与 /books 内容相同）
+export async function generateStaticParams() {
+  const allNotesData = getSortedNotesData();
+  const NOTES_PER_PAGE = 9;
+  const totalPages = Math.ceil(allNotesData.length / NOTES_PER_PAGE);
+
+  const paths = [];
+  // 第 1 页规范地址是 /books，这里 /books/page/1 渲染同样的第 1 页内容（分页组件不链接到它）。
+  // 必须至少生成一个参数，否则 output:export 会报「missing generateStaticParams」
+  for (let i = 1; i <= totalPages; i++) {
+    paths.push({ page: i.toString() });
+  }
+  return paths;
+}
+
+export default async function BooksPage({ params }: PageProps) {
+  const { page } = await params;
+  const pageNumber = parseInt(page, 10);
+
+  // 验证页码
+  if (isNaN(pageNumber) || pageNumber < 1) {
+    notFound();
+  }
+
+  const { notes: paginatedNotes, totalPages, currentPage } = getPaginatedNotesData(pageNumber, 9);
+
+  // 页码超出范围返回 404
+  if (pageNumber > totalPages) {
+    notFound();
+  }
+
   return (
     <div className="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-12 mt-16">
       <div className="flex flex-col">

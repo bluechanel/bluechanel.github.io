@@ -1,5 +1,6 @@
 export const dynamic = 'force-static';
 import { getSortedPostsData } from "@/lib/posts";
+import { getSortedNotesData } from "@/lib/notes";
 
 
 export async function GET() {
@@ -15,6 +16,9 @@ export async function GET() {
     url: `${baseUrl}/posts/${post.id}`,
     description: post.description,
   }));
+
+  // 获取所有读书笔记
+  const notes = await getSortedNotesData();
   let llms = `# Wiley Blog | AI/LLM developer blog 
 ## 介绍(Introduction) \n
 一个专注于人工智能、大型语言模型开发和前沿技术见解的技术博客。分享在人工智能和大型语言模型方面的实践经验和深入分析。涉及的技术栈包括，LangGraph，RAG，Agent，MCP，Python，NextJS，LLM等 \n
@@ -25,5 +29,15 @@ export async function GET() {
 - [${post.postName}](${post.url}): ${post.description} \n
     `
   })
+
+  if (notes.length) {
+    llms += `\n## 读书笔记(Notes) \n`
+    notes.forEach(note => {
+      llms += `
+- [${note.title}](${baseUrl}/books/${note.id}): 《${note.bookName}》 by ${note.author}（${note.status}） \n
+      `
+    })
+  }
+
   return new Response(llms);
 }

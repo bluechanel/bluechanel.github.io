@@ -1,5 +1,6 @@
 import { getPostData, getAllPostIds } from '@/lib/posts';
-import { notFound } from 'next/navigation';
+import { getAllNoteIds } from '@/lib/notes';
+import { notFound, redirect } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import { format } from 'date-fns';
@@ -11,13 +12,26 @@ import { Comment } from '@/components/comment';
 import ReadingProgress from '@/components/reading-progress';
 import { FadeIn } from '@/components/motion';
 
+// 读书笔记已迁到 /books/{id}，旧 URL /posts/{id} 需要静态重定向
+const noteIdSet = () => new Set(getAllNoteIds().map((p) => p.params.id));
+
 export async function generateMetadata({
   params,
 }: {
   params: Promise<{ id: string }>
 }) {
   const { id } = await params;
-  const post = await getPostData(id);
+
+  let post;
+  try {
+    post = await getPostData(id);
+  } catch {
+    // 读书笔记：该路径只作为重定向页生成，metadata 用占位即可
+    if (noteIdSet().has(id)) {
+      return { title: '读书笔记', description: '读书笔记' };
+    }
+    return {};
+  }
 
   return {
     title: `${post.title}-WileyZhang`,
@@ -25,10 +39,14 @@ export async function generateMetadata({
   }
 }
 
-// 这个函数会在构建时生成所有可能的文章路径
+// 这个函数会在构建时生成所有可能的文章路径（含读书笔记的旧 URL 重定向页）
 export async function generateStaticParams() {
   const paths = getAllPostIds();
-  return paths.map(path => ({ id: path.params.id }));
+  const notePaths = getAllNoteIds();
+  return [
+    ...paths.map(path => ({ id: path.params.id })),
+    ...notePaths.map(path => ({ id: path.params.id })),
+  ];
 }
 
 
@@ -43,6 +61,10 @@ export default async function Post({
   try {
     postData = await getPostData(id);
   } catch (error) {
+    // 博客里查不到 → 若是读书笔记，重定向到新位置 /books/{id}
+    if (noteIdSet().has(id)) {
+      redirect(`/books/${id}`);
+    }
     notFound();
   }
   const jsonLd = {
@@ -56,7 +78,7 @@ export default async function Post({
       name: 'WileyZhang',
       url: `https://wileyzhang.com/about`,
     }],
-    image: postData.cover,
+    ...(postData.cover ? { image: postData.cover } : {}),
     description: postData.description,
     mainEntityOfPage: {
       '@type': 'WebPage',
@@ -75,7 +97,11 @@ export default async function Post({
           />
           <FadeIn direction="none">
             <div className="relative h-64 sm:h-96 w-full">
-              <Image src={postData.cover} alt="文章封面" className="object-cover" fill/>
+              {postData.cover ? (
+                <Image src={postData.cover} alt="文章封面" className="object-cover" fill/>
+              ) : (
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-purple-500" />
+              )}
             </div>
           </FadeIn>
           <div className="p-4">

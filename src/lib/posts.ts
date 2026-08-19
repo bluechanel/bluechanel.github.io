@@ -2,11 +2,12 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 
-// posts 文件夹的路径
-const postsDirectory = path.join(process.cwd(), 'content');
+// posts 文件夹的路径（读书笔记在 content/notes，由 src/lib/notes.ts 单独加载）
+const postsDirectory = path.join(process.cwd(), 'content', 'posts');
 
 // 定义文章元数据的接口
 interface PostFrontMatter {
+  pageId?: string; // Notion 页面 UUID（同步脚本写入，用作唯一校验）
   date: Date;
   title: string;
   description: string;
@@ -15,8 +16,8 @@ interface PostFrontMatter {
   cover: string;
 }
 
-// 计算阅读时间的函数
-function calculateReadingTime(content: string): number {
+// 计算阅读时间的函数（notes.ts 亦复用）
+export function calculateReadingTime(content: string): number {
   const chineseAndEnglishChars = content.match(/[\u4e00-\u9fa5]|\b\w+\b/g) || [];
   const count = chineseAndEnglishChars.length;
   const speed = 300; // 假设每分钟阅读 300 个字/词

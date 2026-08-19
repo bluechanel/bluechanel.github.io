@@ -46,3 +46,6 @@ public/_pagefind
 scripts
 todo.md
 CLAUDE.md
+
+# Notion 同步脚本的原始数据缓存（可随时重新拉取）
+tmp
