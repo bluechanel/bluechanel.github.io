@@ -4,6 +4,9 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+overrides:
+  '@types/react': 19.2.7
+
 importers:
 
   .:
@@ -450,7 +453,7 @@ packages:
     resolution: {integrity: sha512-req3Wpi1xXIs7C+n2nsKv7oGeC0xREkpd+D+JRGZ/pIMXEuQSlT+s/I760fqdmiysvkx10EC3MGlScokRRcaSQ==}
     engines: {node: '>=14.7.0'}
     peerDependencies:
-      '@types/react': '*'
+      '@types/react': 19.2.7
       react: '*'
     peerDependenciesMeta:
       '@types/react':
@@ -989,7 +992,7 @@ packages:
     resolution: {integrity: sha512-pPaCoxEfVDhowpqxECq4SOD5kzP1Uao8PEN11Jasxayv4cZjad3Fy8SlKt6wvtLnVJRtOjsQDU/ZnnUuberwMg==}
     engines: {node: '>=18'}
     peerDependencies:
-      '@types/react': ^18 || ^19
+      '@types/react': 19.2.7
       react: ^18 || ^19
     peerDependenciesMeta:
       '@types/react':
@@ -1132,7 +1135,7 @@ packages:
     resolution: {integrity: sha512-bHjG1/DS4aWPkKb/6hNp0+zcgjda27wQlXBpJvb9TcblC1U1dY3Ih0pe85O8/ZLz+OIy+ZvLxN2gmsbDW0Q/QQ==}
     engines: {node: '>=14'}
     peerDependencies:
-      '@types/react': ^16 || ^17 || ^18 || ^19
+      '@types/react': 19.2.7
       '@types/react-dom': ^16 || ^17 || ^18 || ^19
       react: ^16.8.0 || ^17 || ^18 || ^19
       react-dom: ^16.8.0 || ^17 || ^18 || ^19
