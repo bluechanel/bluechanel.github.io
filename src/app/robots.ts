@@ -1,8 +1,8 @@
 import { MetadataRoute } from 'next';
+import { SITE_URL as baseUrl } from '@/lib/site';
+
 export const dynamic = 'force-static';
 export default function robots(): MetadataRoute.Robots {
-  // 您的网站的根 URL
-  const baseUrl = 'https://wileyzhang.com'; 
 
   return {
     rules: [

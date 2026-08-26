@@ -4,7 +4,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "build": "next build",
+    "build": "next build && node flatten-agent-md.mjs",
     "dev": "next --turbopack",
     "start": "next start",
     "sync:douban": "node scripts/sync-douban.mjs",

@@ -10,6 +10,8 @@ import { PostContent } from '@/components/content';
 import { Comment } from '@/components/comment';
 import ReadingProgress from '@/components/reading-progress';
 import { FadeIn } from '@/components/motion';
+import { buildNoteJsonLd } from '@/lib/jsonld';
+import { absoluteUrl } from '@/lib/site';
 
 // Notion Status select → 中文展示
 const STATUS_LABELS: Record<string, string> = {
@@ -29,6 +31,12 @@ export async function generateMetadata({
   return {
     title: `${note.bookName}-WileyZhang`,
     description: `《${note.bookName}》${note.author}的读书笔记`,
+    // 告知 Agent/LLM 本笔记的 Markdown 版本位置
+    alternates: {
+      types: {
+        'text/markdown': absoluteUrl(`/books/${note.id}.md`),
+      },
+    },
   }
 }
 
@@ -53,28 +61,7 @@ export default async function Note({
     notFound();
   }
   const statusLabel = STATUS_LABELS[note.status] ?? note.status;
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'Article',
-    headline: note.bookName,
-    datePublished: note.date,
-    dateModified: note.updateDate,
-    author: [{
-      '@type': 'Person',
-      name: 'WileyZhang',
-      url: `https://wileyzhang.com/about`,
-    }],
-    ...(note.cover ? { image: `https://wileyzhang.com/posts/${note.cover}` } : {}),
-    about: {
-      '@type': 'Book',
-      name: note.bookName,
-      author: note.author,
-    },
-    mainEntityOfPage: {
-      '@type': 'WebPage',
-      '@id': `https://wileyzhang.com/books/${note.id}`,
-    },
-  };
+  const jsonLd = buildNoteJsonLd(note);
 
   return (
     <>

@@ -6,9 +6,10 @@ import { ThemeProvider } from "next-themes";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import Script from "next/script";
+import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
-    metadataBase: new URL("https://wileyzhang.com"),
+    metadataBase: new URL(SITE_URL),
     icons: {
         icon: "/favicon.png",
     },

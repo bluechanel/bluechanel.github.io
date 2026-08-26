@@ -1,12 +1,11 @@
 import { MetadataRoute } from 'next';
 import { getSortedPostsData } from '@/lib/posts';
 import { getSortedNotesData } from '@/lib/notes';
+import { SITE_URL as baseUrl } from '@/lib/site';
 
 export const dynamic = 'force-static';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  // 您的网站的根 URL
-  const baseUrl = 'https://wileyzhang.com';
 
   // 获取所有博客文章
   const posts = await getSortedPostsData();

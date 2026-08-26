@@ -11,6 +11,8 @@ import { PostContent } from '@/components/content';
 import { Comment } from '@/components/comment';
 import ReadingProgress from '@/components/reading-progress';
 import { FadeIn } from '@/components/motion';
+import { buildPostJsonLd } from '@/lib/jsonld';
+import { absoluteUrl } from '@/lib/site';
 
 // 读书笔记已迁到 /books/{id}，旧 URL /posts/{id} 需要静态重定向
 const noteIdSet = () => new Set(getAllNoteIds().map((p) => p.params.id));
@@ -36,6 +38,12 @@ export async function generateMetadata({
   return {
     title: `${post.title}-WileyZhang`,
     description: post.description,
+    // 告知 Agent/LLM 本文的 Markdown 版本位置（Cloudflare "Markdown for Agents" 的静态等价物）
+    alternates: {
+      types: {
+        'text/markdown': absoluteUrl(`/posts/${post.id}.md`),
+      },
+    },
   }
 }
 
@@ -67,24 +75,7 @@ export default async function Post({
     }
     notFound();
   }
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'BlogPosting',
-    headline: postData.title,
-    datePublished: postData.date,
-    dateModified: postData.updateDate, // 如果有最后修改时间
-    author: [{
-      '@type': 'Person',
-      name: 'WileyZhang',
-      url: `https://wileyzhang.com/about`,
-    }],
-    ...(postData.cover ? { image: postData.cover } : {}),
-    description: postData.description,
-    mainEntityOfPage: {
-      '@type': 'WebPage',
-      '@id': `https://wileyzhang.com/posts/${postData.id}`,
-    },
-  };
+  const jsonLd = buildPostJsonLd(postData);
 
   return (
     <>
