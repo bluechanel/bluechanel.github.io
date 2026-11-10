@@ -1,2 +1,5 @@
 allowBuilds:
   sharp: false
+overrides:
+  "@types/react": 19.2.7
+verifyDepsBeforeRun: false
